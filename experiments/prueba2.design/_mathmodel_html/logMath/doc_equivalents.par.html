@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>Mathematical Model View</title>
+<link href="./css/mlog.css" rel="stylesheet">
+<script src="./css/jquery-1.10.2.min.js"></script>
+</head><body>
+<div data-role="page">
+<div data-role="main" class="ui-content">
+<div class="qindex"><a class="qindex" rel="external" data-ajax='false' href="../prueba2.design.par.html">Mathematical Model View</a>
+</div><div class="qindex"><a class="qindex" rel="external" data-ajax='false' href="../prueba2.design.par.html">Summary</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_vars.par.html">Variables</a> |
+<a class="qindexHL" rel="external" data-ajax='false' href="doc_equivalents.par.html">Equivalents</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_boundary.par.html">Boundary</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_jacobian.par.html">Jacobian</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_equations.par.html">Equations</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_init.par.html">Init</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_discrete.par.html">Discrete</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_design.par.html">Design</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_highindex.par.html">High Index</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_equationmatrix.par.html">Equation Matrix</a>
+</div><h2>Equivalent Variables<br /></h2>
+<br/>
+<font size="4" color="black">Equivalent Variables</font><br/>
+<table border="1" cellspacing="0" ><tr><td><color="black"><b>#&nbsp;</b></color></td>
+<td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>EQUIVALENTS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>1&nbsp;</td><td>CombCha.A_wet&nbsp;</td><td>CombCha.h.A, CoolingJacket.A_wet_nozzle, CoolingJacket.h.A&nbsp;</td></tr>
+<tr><td>2&nbsp;</td><td>CombCha.c_star&nbsp;</td><td>ControlPanel.c_star&nbsp;</td></tr>
+<tr><td>3&nbsp;</td><td>CombCha.eta_d&nbsp;</td><td>CombCha.eta&nbsp;</td></tr>
+<tr><td>4&nbsp;</td><td>CombCha.f_F.T&nbsp;</td><td>Injector_F.f_out.T&nbsp;</td></tr>
+<tr><td>5&nbsp;</td><td>CombCha.f_F.p&nbsp;</td><td>Injector_F.f_out.p&nbsp;</td></tr>
+<tr><td>6&nbsp;</td><td>CombCha.f_O.T&nbsp;</td><td>Injector_O.f_out.T&nbsp;</td></tr>
+<tr><td>7&nbsp;</td><td>CombCha.f_O.p&nbsp;</td><td>Injector_O.f_out.p&nbsp;</td></tr>
+<tr><td>8&nbsp;</td><td>CombCha.p_c&nbsp;</td><td>CombCha.f_F.p_c, CombCha.f_O.p_c, CombCha.g.pt, CombCha.p_trans, Injector_F.f_out.p_c, Injector_O.f_out.p_c, ThrustMonitor.g.pt&nbsp;</td></tr>
+<tr><td>9&nbsp;</td><td>ControlPanel.Thrust&nbsp;</td><td>ThrustMonitor.Thrust&nbsp;</td></tr>
+<tr><td>10&nbsp;</td><td>ControlPanel.i_Comb.Data&nbsp;</td><td>CombCha.i.Data&nbsp;</td></tr>
+<tr><td>11&nbsp;</td><td>ControlPanel.i_Thrust.Data&nbsp;</td><td>ThrustMonitor.i.Data&nbsp;</td></tr>
+<tr><td>12&nbsp;</td><td>CoolingJacket.h.Q&nbsp;</td><td>CombCha.h.Q, CoolingJacket.Q&nbsp;</td></tr>
+<tr><td>13&nbsp;</td><td>CoolingJacket.h.T&nbsp;</td><td>CombCha.h.T, CoolingJacket.T_w_hot&nbsp;</td></tr>
+<tr><td>14&nbsp;</td><td>CoolingJacket.l.Tt&nbsp;</td><td>FlowMeter_F.f_in.Tt, FlowMeter_F.f_out.Tt, Pump_F.f_out.Tt&nbsp;</td></tr>
+<tr><td>15&nbsp;</td><td>CoolingJacket.l.pt&nbsp;</td><td>FlowMeter_F.f_in.pt, FlowMeter_F.f_out.pt, Pump_F.f_out.pt&nbsp;</td></tr>
+<tr><td>16&nbsp;</td><td>FlowMeter_O.f_in.Tt&nbsp;</td><td>FlowMeter_O.f_out.Tt, Injector_O.f_in.Tt, Pump_O.f_out.Tt&nbsp;</td></tr>
+<tr><td>17&nbsp;</td><td>FlowMeter_O.f_in.pt&nbsp;</td><td>FlowMeter_O.f_out.pt, Injector_O.f_in.pt, Pump_O.f_out.pt&nbsp;</td></tr>
+<tr><td>18&nbsp;</td><td>HeadLoss_Junct.dp&nbsp;</td><td>HeadLoss_Junct.dp_d&nbsp;</td></tr>
+<tr><td>19&nbsp;</td><td>HeadLoss_Junct.f_in.Tt&nbsp;</td><td>HeadLoss_Junct.f_out.Tt, Injector_F.f_in.Tt, Junction.f_out.Tt&nbsp;</td></tr>
+<tr><td>20&nbsp;</td><td>HeadLoss_Junct.f_in.pt&nbsp;</td><td>Junction.f_out.pt&nbsp;</td></tr>
+<tr><td>21&nbsp;</td><td>HeadLoss_TF.dp&nbsp;</td><td>HeadLoss_TF.dp_d&nbsp;</td></tr>
+<tr><td>22&nbsp;</td><td>HeadLoss_TF.f_in.W&nbsp;</td><td>CoolingJacket.g.W, CoolingJacket.l.W, FlowMeter_F.f_in.W, FlowMeter_F.f_out.W, HeadLoss_TF.f_out.W, Pump_F.f_in.W, Pump_F.f_out.W, SplitFrac.f_in.W, Tank_F.f.W&nbsp;</td></tr>
+<tr><td>23&nbsp;</td><td>HeadLoss_TF.f_in.fluid&nbsp;</td><td>CoolingJacket.l.fluid, FlowMeter_F.f_in.fluid, FlowMeter_F.f_out.fluid, HeadLoss_TF.f_out.fluid, Pump_F.f_in.fluid, Pump_F.f_out.fluid, Tank_F.f.fluid&nbsp;</td></tr>
+<tr><td>24&nbsp;</td><td>HeadLoss_TO.dp&nbsp;</td><td>HeadLoss_TO.dp_d&nbsp;</td></tr>
+<tr><td>25&nbsp;</td><td>HeadLoss_TO.f_in.fluid&nbsp;</td><td>CombCha.f_O.fluid, FlowMeter_O.f_in.fluid, FlowMeter_O.f_out.fluid, HeadLoss_TO.f_out.fluid, Injector_O.f_in.fluid, Injector_O.f_out.fluid, Pump_O.f_in.fluid, Pump_O.f_out.fluid, Tank_O.f.fluid&nbsp;</td></tr>
+<tr><td>26&nbsp;</td><td>HeadLoss_Turb.dp&nbsp;</td><td>HeadLoss_Turb.dp_d&nbsp;</td></tr>
+<tr><td>27&nbsp;</td><td>HeadLoss_Turb.f_in.Tt&nbsp;</td><td>HeadLoss_Turb.f_out.Tt, Junction.f_in2.Tt, Turbine.f_out.Tt&nbsp;</td></tr>
+<tr><td>28&nbsp;</td><td>HeadLoss_Turb.f_in.W&nbsp;</td><td>HeadLoss_Turb.f_out.W, Junction.f_in2.W, SplitFrac.f_out.W, Turbine.f_in.W, Turbine.f_out.W&nbsp;</td></tr>
+<tr><td>29&nbsp;</td><td>HeadLoss_Turb.f_in.fluid&nbsp;</td><td>CombCha.f_F.fluid, CoolingJacket.g.fluid, HeadLoss_Junct.f_in.fluid, HeadLoss_Junct.f_out.fluid, HeadLoss_Turb.f_out.fluid, Injector_F.f_in.fluid, Injector_F.f_out.fluid, Junction.f_in1.fluid, Junction.f_in2.fluid, Junction.f_out.fluid, Regulator_F.f_in.fluid, Regulator_F.f_out.fluid, SplitFrac.f_b.fluid, SplitFrac.f_in.fluid, SplitFrac.f_out.fluid, Turbine.f_in.fluid, Turbine.f_out.fluid&nbsp;</td></tr>
+<tr><td>30&nbsp;</td><td>HeadLoss_Turb.f_in.pt&nbsp;</td><td>Turbine.f_out.pt&nbsp;</td></tr>
+<tr><td>31&nbsp;</td><td>Injector_F.W&nbsp;</td><td>CombCha.f_F.W, HeadLoss_Junct.f_in.W, HeadLoss_Junct.f_out.W, Injector_F.f_in.W, Injector_F.f_out.W, Junction.f_out.W&nbsp;</td></tr>
+<tr><td>32&nbsp;</td><td>Injector_F.f_in.pt&nbsp;</td><td>HeadLoss_Junct.f_out.pt&nbsp;</td></tr>
+<tr><td>33&nbsp;</td><td>Injector_O.W&nbsp;</td><td>CombCha.f_O.W, FlowMeter_O.f_in.W, FlowMeter_O.f_out.W, HeadLoss_TO.f_in.W, HeadLoss_TO.f_out.W, Injector_O.f_in.W, Injector_O.f_out.W, Pump_O.f_in.W, Pump_O.f_out.W, Tank_O.f.W&nbsp;</td></tr>
+<tr><td>34&nbsp;</td><td>Junction.f_in1.Tt&nbsp;</td><td>CoolingJacket.g.Tt, Regulator_F.f_in.Tt, Regulator_F.f_out.Tt, SplitFrac.f_b.Tt, SplitFrac.f_in.Tt, SplitFrac.f_out.Tt, Turbine.f_in.Tt&nbsp;</td></tr>
+<tr><td>35&nbsp;</td><td>Junction.f_in1.W&nbsp;</td><td>Regulator_F.f_in.W, Regulator_F.f_out.W, SplitFrac.f_b.W&nbsp;</td></tr>
+<tr><td>36&nbsp;</td><td>Junction.f_in1.pt&nbsp;</td><td>Regulator_F.f_out.pt&nbsp;</td></tr>
+<tr><td>37&nbsp;</td><td>Junction.f_in2.pt&nbsp;</td><td>HeadLoss_Turb.f_out.pt&nbsp;</td></tr>
+<tr><td>38&nbsp;</td><td>Pump_F.eta_d&nbsp;</td><td>Pump_F.eta&nbsp;</td></tr>
+<tr><td>39&nbsp;</td><td>Pump_F.f_in.pt&nbsp;</td><td>HeadLoss_TF.f_out.pt&nbsp;</td></tr>
+<tr><td>40&nbsp;</td><td>Pump_F.m.Power&nbsp;</td><td>Pump_F.Power&nbsp;</td></tr>
+<tr><td>41&nbsp;</td><td>Pump_F.phi_d&nbsp;</td><td>Pump_F.phi&nbsp;</td></tr>
+<tr><td>42&nbsp;</td><td>Pump_O.eta_d&nbsp;</td><td>Pump_O.eta&nbsp;</td></tr>
+<tr><td>43&nbsp;</td><td>Pump_O.f_in.pt&nbsp;</td><td>HeadLoss_TO.f_out.pt&nbsp;</td></tr>
+<tr><td>44&nbsp;</td><td>Pump_O.m.N&nbsp;</td><td>Gearbox.m_in.N&nbsp;</td></tr>
+<tr><td>45&nbsp;</td><td>Pump_O.m.Power&nbsp;</td><td>Gearbox.m_in.Power, Pump_O.Power&nbsp;</td></tr>
+<tr><td>46&nbsp;</td><td>Pump_O.phi_d&nbsp;</td><td>Pump_O.phi&nbsp;</td></tr>
+<tr><td>47&nbsp;</td><td>Regulator_F.f_in.pt&nbsp;</td><td>SplitFrac.f_b.pt&nbsp;</td></tr>
+<tr><td>48&nbsp;</td><td>SplitFrac.f_in.pt&nbsp;</td><td>CoolingJacket.g.pt&nbsp;</td></tr>
+<tr><td>49&nbsp;</td><td>Tank_F.Tt&nbsp;</td><td>HeadLoss_TF.f_in.Tt, HeadLoss_TF.f_out.Tt, Pump_F.f_in.Tt, Tank_F.f.Tt&nbsp;</td></tr>
+<tr><td>50&nbsp;</td><td>Tank_F.pt&nbsp;</td><td>HeadLoss_TF.f_in.pt, Tank_F.f.pt&nbsp;</td></tr>
+<tr><td>51&nbsp;</td><td>Tank_O.Tt&nbsp;</td><td>HeadLoss_TO.f_in.Tt, HeadLoss_TO.f_out.Tt, Pump_O.f_in.Tt, Tank_O.f.Tt&nbsp;</td></tr>
+<tr><td>52&nbsp;</td><td>Tank_O.pt&nbsp;</td><td>HeadLoss_TO.f_in.pt, Tank_O.f.pt&nbsp;</td></tr>
+<tr><td>53&nbsp;</td><td>ThrustMonitor.g.A_out&nbsp;</td><td>CombCha.A_out, CombCha.g.A_out, ThrustMonitor.A_out&nbsp;</td></tr>
+<tr><td>54&nbsp;</td><td>ThrustMonitor.g.Tt&nbsp;</td><td>CombCha.T_trans, CombCha.g.Tt&nbsp;</td></tr>
+<tr><td>55&nbsp;</td><td>ThrustMonitor.g.W&nbsp;</td><td>CombCha.g.W&nbsp;</td></tr>
+<tr><td>56&nbsp;</td><td>ThrustMonitor.g.fluid&nbsp;</td><td>CombCha.g.fluid&nbsp;</td></tr>
+<tr><td>57&nbsp;</td><td>Turbine.eta_d&nbsp;</td><td>Turbine.eta&nbsp;</td></tr>
+<tr><td>58&nbsp;</td><td>Turbine.f_in.pt&nbsp;</td><td>SplitFrac.f_out.pt&nbsp;</td></tr>
+<tr><td>59&nbsp;</td><td>Turbine.m.N&nbsp;</td><td>Gearbox.m_out.N, Pump_F.m.N&nbsp;</td></tr>
+<tr><td>60&nbsp;</td><td>Turbine.m.Power&nbsp;</td><td>Turbine.Power&nbsp;</td></tr>
+</table>
+<br/>
+</body></html>

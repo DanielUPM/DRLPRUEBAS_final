@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<partitionInfo version="1.0" library="DRLPRUEBAS" component="GG_comp" partition="escalon">
+<noDerivatives value="FALSE"/>
+<inhibitReductionConstantCoefEqts value="FALSE"/>
+<generatePartitionClass value="FALSE"/>
+<removeNotUsedVars value="FALSE"/>
+<showPropertyPanel value="FALSE"/>
+<generateProtectedMathFunctions value="TRUE"/>
+<generatePerformanceMeters value="FALSE"/>
+<generateObfuscatedCpp value="FALSE"/>
+<generateParInfoHTML value="TRUE"/>
+<generateMaxSignificantDigits value="FALSE"/>
+<noDatas>
+  <variable name="LH2_circuit.Tt"/>
+  <variable name="LH2_circuit.pt"/>
+  <variable name="LO2_circuit.Tt"/>
+  <variable name="LO2_circuit.pt"/>
+</noDatas>
+<boundaries>
+  <variable name="LH2_circuit.Tt"/>
+  <variable name="LH2_circuit.pt"/>
+  <variable name="LO2_circuit.Tt"/>
+  <variable name="LO2_circuit.pt"/>
+  <variable name="LPRES.Altitude"/>
+</boundaries>
+<dynamics>
+  <variable name="GasGen_1.rho_trans"/>
+  <variable name="GasGen_1.g.Tt"/>
+</dynamics>
+<algebraics>
+  <variable name="Injector_F.PR"/>
+  <variable name="NozzleConDiv_1.g_in.W"/>
+  <variable name="NozzleConDiv_1.p_out_ch"/>
+  <variable name="ThrustMonitor_1.M_out"/>
+</algebraics>
+</partitionInfo>

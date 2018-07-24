@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>Mathematical Model View</title>
+<link href="./css/mlog.css" rel="stylesheet">
+<script src="./css/jquery-1.10.2.min.js"></script>
+</head><body>
+<div data-role="page">
+<div data-role="main" class="ui-content">
+<div class="qindex"><a class="qindex" rel="external" data-ajax='false' href="../+r+l10_design.design.par.html">Mathematical Model View</a>
+</div><div class="qindex"><a class="qindex" rel="external" data-ajax='false' href="../+r+l10_design.design.par.html">Summary</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_vars.par.html">Variables</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_equivalents.par.html">Equivalents</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_boundary.par.html">Boundary</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_jacobian.par.html">Jacobian</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_equations.par.html">Equations</a> |
+<a class="qindexHL" rel="external" data-ajax='false' href="doc_init.par.html">Init</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_discrete.par.html">Discrete</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_design.par.html">Design</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_highindex.par.html">High Index</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_equationmatrix.par.html">Equation Matrix</a>
+</div><h2>Init Blocks<br /></h2>
+<br/>
+Note 1: Variables called "__aux_int_..." are internal integer variables, used to iterate<br/>
+Note 2: FOR statements are converted to WHILE statements<br/>
+<br/>
+  -- init(Tank_LOX.Inlet,100)<br/>
+LPRES.Init_fluid(Tank_LOX.fluid, HeadLoss_1.f_in.fluid)<br/>
+  -- init(Tank_LH2.Inlet,100)<br/>
+LPRES.Init_fluid(Tank_LH2.fluid, HeadLoss_2.f_in.fluid)<br/>
+  -- init(CC.CombCha,100)<br/>
+ASSERT CC.AR_r >= 1 KILLPOINT "AR_r CAN NOT BE LOWER THAN 1!"
+<br/>
+LPRES.Init_fluid(Comb_prod, ThrustMonitor.g.fluid)<br/>
+CC.Combustion =  TRUE <br/>
+CC.phi = 1<br/>
+CC.W_F = CC.W_F0<br/>
+IF CC.Zone == Convergent THEN
+	CC.M_r = 0.001
+	ELSE
+	CC.M_r = 100
+	END IF<br/>
+CC.k_1 = 1 / CC.mfr_ch<br/>
+CC.k_2 = 1 / (CC.mfr_ch * CC.T_ch)<br/>
+  -- init(CJ.CoolingJacket,90)<br/>
+LPRES.Init_fluid(LPRES.Vaporisation(HeadLoss_2.f_in.fluid), HeadLoss_3.f_in.fluid)<br/>
+CJ.T_w_cold = 500<br/>
+CJ.k_1 = 1 / CJ.mfr_ch<br/>
+CJ.k_2 = 1 / (CJ.mfr_ch * CJ.T_ch)<br/>
+  -- init(Turbine.Turbine,0)<br/>
+Turbine.M_2 = Turbine.M<br/>
+Turbine.U = Turbine.U_0<br/>
+  -- init(Pump_LOX.Pump,0)<br/>
+Pump_LOX.U = Pump_LOX.U_0<br/>
+  -- init(Pump_LH2.Pump,0)<br/>
+Pump_LH2.U = Pump_LH2.U_0<br/>
+</body></html>

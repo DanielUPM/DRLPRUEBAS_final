@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>Mathematical Model View</title>
+<link href="./css/mlog.css" rel="stylesheet">
+<script src="./css/jquery-1.10.2.min.js"></script>
+</head><body>
+<div data-role="page">
+<div data-role="main" class="ui-content">
+<div class="qindex"><a class="qindex" rel="external" data-ajax='false' href="../+f1_design.design.par.html">Mathematical Model View</a>
+</div><div class="qindex"><a class="qindex" rel="external" data-ajax='false' href="../+f1_design.design.par.html">Summary</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_vars.par.html">Variables</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_equivalents.par.html">Equivalents</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_boundary.par.html">Boundary</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_jacobian.par.html">Jacobian</a> |
+<a class="qindexHL" rel="external" data-ajax='false' href="doc_equations.par.html">Equations</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_init.par.html">Init</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_discrete.par.html">Discrete</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_design.par.html">Design</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_highindex.par.html">High Index</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_equationmatrix.par.html">Equation Matrix</a>
+</div><h2>Equations<br /></h2>
+Equations: 378<br/>
+Note 3: In equations 'E' means explicit,'I' implicit,'L' linear,'F' function<br/>
+<a name="e1">[E-1] </a>LPRES.Init_fluid(TankOpen_F.fluid, FlowMeter_F.f_in.fluid)	{F@FlowMeter_F.f_in.fluid}<br/>
+<a name="e2">[E-2] </a>FlowMeter_F.f_in.pt = LPRES.ISA_Pressure(LPRES.Altitude)<br/>
+<a name="e3">[E-3] </a>SplitFrac_F.f_in.pt = Pump_F.dp + FlowMeter_F.f_in.pt<br/>
+<a name="e4">[E-4] </a>Pump_F.H = (SplitFrac_F.f_in.pt - FlowMeter_F.f_in.pt) / (9.80665 * LPRES.rho(FlowMeter_F.f_in.fluid))<br/>
+<a name="e5">[E-5] </a>Pump_F.tau = (SplitFrac_F.f_in.pt - FlowMeter_F.f_in.pt) / (Pump_F.eta_d * LPRES.rho(FlowMeter_F.f_in.fluid))<br/>
+<a name="e6">[E-6] </a>Pump_F.psi = 1 - (1 - Pump_F.psi_d) / Pump_F.phi_d * Pump_F.phi_d<br/>
+<br/>
+<hr>BOX 1 IS NONLINEAR<hr><table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>#&nbsp;</b></color></td>
+<td><color="black"><b>ALGEBRAICS&nbsp;</b></color></td>
+<td><color="black"><b>ALIAS&nbsp;</b></color></td>
+<td><color="black"><b>UNITS&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>INITIAL&nbsp;</b></color></td>
+<td><color="black"><b>RESIDUE EQUATION
+&nbsp;</b></color></td>
+</tr>
+<tr><td>1&nbsp;</td><td><a href="doc_vars.par.html#v273" data-ajax='false'>Pump_F.U</a>&nbsp;</td><td><a href="doc_vars.par.html#v273" data-ajax='false'></a>&nbsp;</td><td>m/s&nbsp;</td><td>Blade speed&nbsp;</td><td>&nbsp;</td><td>[E-7] Pump_F.psi = Pump_F.tau / Pump_F.U ** 2&nbsp;</td></tr>
+</table>
+<br/>
+<h4>Equations:</h4>&nbsp;&nbsp;&nbsp;&nbsp;<b>(Residue equation) <a name="e7">[E-7] </a>Pump_F.psi = Pump_F.tau / Pump_F.U ** 2	{I@Pump_F.U}<br/>
+</b><hr>END OF BOX 1<hr><a name="e8">[E-8] </a>Pump_O.m.N = Turbine_ch.rpm * 2 * 3.14159265358979 / 60<br/>
+<a name="e9">[E-9] </a>Pump_F.r_m_d = Pump_F.U / Pump_O.m.N<br/>
+<a name="e10">[E-10] </a>Pump_F.A_in_d = FlowMeter_F.f_in.W / Pump_F.phi_d / LPRES.rho(FlowMeter_F.f_in.fluid) / Pump_F.U<br/>
+<a name="e11">[E-11] </a>Pump_F.m.Power = -(Pump_F.tau * FlowMeter_F.f_in.W)<br/>
+<a name="e12">[E-12] </a>Injector_F_1.f_in.Tt = (SplitFrac_F.f_in.pt - FlowMeter_F.f_in.pt) / LPRES.rho(FlowMeter_F.f_in.fluid) * (1 / Pump_F.eta_d - 1) / LPRES.cp(FlowMeter_F.f_in.fluid) + TankOpen_F.T_d<br/>
+<a name="e13">[E-13] </a>Nozzle_1.p_amb = LPRES.ISA_Pressure(LPRES.Altitude)<br/>
+<a name="e14">[E-14] </a>FlowMeter_O.f_in.pt = LPRES.ISA_Pressure(LPRES.Altitude)<br/>
+<a name="e15">[E-15] </a>SplitFrac_O.f_in.pt = Pump_O.dp + FlowMeter_O.f_in.pt<br/>
+<a name="e16">[E-16] </a>LPRES.Init_fluid(TankOpen_O.fluid, FlowMeter_O.f_in.fluid)	{F@FlowMeter_O.f_in.fluid}<br/>
+<a name="e17">[E-17] </a>Pump_O.tau = (SplitFrac_O.f_in.pt - FlowMeter_O.f_in.pt) / (Pump_O.eta_d * LPRES.rho(FlowMeter_O.f_in.fluid))<br/>
+<a name="e18">[E-18] </a>Pump_O.m.Power = -(Pump_O.tau * FlowMeter_O.f_in.W)<br/>
+<a name="e19">[E-19] </a>Shaft_1.m_1.Power = Pump_F.m.Power + Pump_O.m.Power<br/>
+<a name="e20">[E-20] </a>Turbine_ch.m.Power =  ZONE[2] (Turbine_ch.m.Power > 0) -(Shaft_1.m_1.Power / Shaft_1.eta)	  OTHERS -(Shaft_1.m_1.Power * Shaft_1.eta)<br/>
+<a name="e21">[E-21] </a>GasGen.fluid_O[LOX] = FlowMeter_O.f_in.fluid[LOX] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e22">[E-22] </a>Injector_F_1.W = FlowMeter_F.f_in.W - Injector_F.W<br/>
+<a name="e23">[E-23] </a>Injector_O_1.W = Turbine_ch.W - Injector_F_1.W<br/>
+<a name="e24">[E-24] </a>GasGen.W_O = Injector_O_1.W * (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e25">[E-25] </a>GasGen.W_F = Injector_F_1.W * (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e26">[E-26] </a>GasGen.OF = GasGen.W_O / GasGen.W_F<br/>
+<a name="e27">[E-27] </a>GasGen.phi = GasGen.OF_st / GasGen.OF<br/>
+<a name="e28">[E-28] </a>GasGen.fluid_F[LOX] = FlowMeter_F.f_in.fluid[LOX] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e29">[E-29] </a>GasGen.W_F_st = GasGen.W_F / GasGen.phi<br/>
+<a name="e30">[E-30] </a>GasGen.fluid_P[LOX] =  IF[46] (GasGen.Combustion) (GasGen.fluid_O[LOX] * MATH.max(1 - GasGen.phi, 0) * GasGen.W_O + GasGen.fluid_F[LOX] * MATH.max(GasGen.phi - 1, 0) * GasGen.W_F_st) / (GasGen.W_O + GasGen.W_F)	 ELSE (GasGen.fluid_O[LOX] * GasGen.W_O + GasGen.fluid_F[LOX] * GasGen.W_F) / (GasGen.W_O + GasGen.W_F)<br/>
+<a name="e31">[E-31] </a>Nozzle_1.g.fluid[LOX] = GasGen.fluid_P[LOX] * (GasGen.W_O + GasGen.W_F) / Turbine_ch.W<br/>
+<a name="e32">[E-32] </a>GasGen.fluid_O[NTO] = FlowMeter_O.f_in.fluid[NTO] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e33">[E-33] </a>GasGen.fluid_F[NTO] = FlowMeter_F.f_in.fluid[NTO] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e34">[E-34] </a>GasGen.fluid_P[NTO] =  IF[47] (GasGen.Combustion) (GasGen.fluid_O[NTO] * MATH.max(1 - GasGen.phi, 0) * GasGen.W_O + GasGen.fluid_F[NTO] * MATH.max(GasGen.phi - 1, 0) * GasGen.W_F_st) / (GasGen.W_O + GasGen.W_F)	 ELSE (GasGen.fluid_O[NTO] * GasGen.W_O + GasGen.fluid_F[NTO] * GasGen.W_F) / (GasGen.W_O + GasGen.W_F)<br/>
+<a name="e35">[E-35] </a>Nozzle_1.g.fluid[NTO] = GasGen.fluid_P[NTO] * (GasGen.W_O + GasGen.W_F) / Turbine_ch.W<br/>
+<a name="e36">[E-36] </a>GasGen.fluid_O[H2O2] = FlowMeter_O.f_in.fluid[H2O2] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e37">[E-37] </a>GasGen.fluid_F[H2O2] = FlowMeter_F.f_in.fluid[H2O2] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e38">[E-38] </a>GasGen.fluid_P[H2O2] =  IF[48] (GasGen.Combustion) (GasGen.fluid_O[H2O2] * MATH.max(1 - GasGen.phi, 0) * GasGen.W_O + GasGen.fluid_F[H2O2] * MATH.max(GasGen.phi - 1, 0) * GasGen.W_F_st) / (GasGen.W_O + GasGen.W_F)	 ELSE (GasGen.fluid_O[H2O2] * GasGen.W_O + GasGen.fluid_F[H2O2] * GasGen.W_F) / (GasGen.W_O + GasGen.W_F)<br/>
+<a name="e39">[E-39] </a>Nozzle_1.g.fluid[H2O2] = GasGen.fluid_P[H2O2] * (GasGen.W_O + GasGen.W_F) / Turbine_ch.W<br/>
+<a name="e40">[E-40] </a>GasGen.fluid_O[HNO3] = FlowMeter_O.f_in.fluid[HNO3] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e41">[E-41] </a>GasGen.fluid_F[HNO3] = FlowMeter_F.f_in.fluid[HNO3] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e42">[E-42] </a>GasGen.fluid_P[HNO3] =  IF[49] (GasGen.Combustion) (GasGen.fluid_O[HNO3] * MATH.max(1 - GasGen.phi, 0) * GasGen.W_O + GasGen.fluid_F[HNO3] * MATH.max(GasGen.phi - 1, 0) * GasGen.W_F_st) / (GasGen.W_O + GasGen.W_F)	 ELSE (GasGen.fluid_O[HNO3] * GasGen.W_O + GasGen.fluid_F[HNO3] * GasGen.W_F) / (GasGen.W_O + GasGen.W_F)<br/>
+<a name="e43">[E-43] </a>Nozzle_1.g.fluid[HNO3] = GasGen.fluid_P[HNO3] * (GasGen.W_O + GasGen.W_F) / Turbine_ch.W<br/>
+<a name="e44">[E-44] </a>GasGen.fluid_O[LF2] = FlowMeter_O.f_in.fluid[LF2] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e45">[E-45] </a>GasGen.fluid_F[LF2] = FlowMeter_F.f_in.fluid[LF2] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e46">[E-46] </a>GasGen.fluid_P[LF2] =  IF[50] (GasGen.Combustion) (GasGen.fluid_O[LF2] * MATH.max(1 - GasGen.phi, 0) * GasGen.W_O + GasGen.fluid_F[LF2] * MATH.max(GasGen.phi - 1, 0) * GasGen.W_F_st) / (GasGen.W_O + GasGen.W_F)	 ELSE (GasGen.fluid_O[LF2] * GasGen.W_O + GasGen.fluid_F[LF2] * GasGen.W_F) / (GasGen.W_O + GasGen.W_F)<br/>
+<a name="e47">[E-47] </a>Nozzle_1.g.fluid[LF2] = GasGen.fluid_P[LF2] * (GasGen.W_O + GasGen.W_F) / Turbine_ch.W<br/>
+<a name="e48">[E-48] </a>GasGen.fluid_O[RP_1] = FlowMeter_O.f_in.fluid[RP_1] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e49">[E-49] </a>GasGen.fluid_F[RP_1] = FlowMeter_F.f_in.fluid[RP_1] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e50">[E-50] </a>GasGen.fluid_P[RP_1] =  IF[51] (GasGen.Combustion) (GasGen.fluid_O[RP_1] * MATH.max(1 - GasGen.phi, 0) * GasGen.W_O + GasGen.fluid_F[RP_1] * MATH.max(GasGen.phi - 1, 0) * GasGen.W_F_st) / (GasGen.W_O + GasGen.W_F)	 ELSE (GasGen.fluid_O[RP_1] * GasGen.W_O + GasGen.fluid_F[RP_1] * GasGen.W_F) / (GasGen.W_O + GasGen.W_F)<br/>
+<a name="e51">[E-51] </a>Nozzle_1.g.fluid[RP_1] = GasGen.fluid_P[RP_1] * (GasGen.W_O + GasGen.W_F) / Turbine_ch.W<br/>
+<a name="e52">[E-52] </a>GasGen.fluid_O[LCH4] = FlowMeter_O.f_in.fluid[LCH4] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e53">[E-53] </a>GasGen.fluid_F[LCH4] = FlowMeter_F.f_in.fluid[LCH4] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e54">[E-54] </a>GasGen.fluid_P[LCH4] =  IF[52] (GasGen.Combustion) (GasGen.fluid_O[LCH4] * MATH.max(1 - GasGen.phi, 0) * GasGen.W_O + GasGen.fluid_F[LCH4] * MATH.max(GasGen.phi - 1, 0) * GasGen.W_F_st) / (GasGen.W_O + GasGen.W_F)	 ELSE (GasGen.fluid_O[LCH4] * GasGen.W_O + GasGen.fluid_F[LCH4] * GasGen.W_F) / (GasGen.W_O + GasGen.W_F)<br/>
+<a name="e55">[E-55] </a>Nozzle_1.g.fluid[LCH4] = GasGen.fluid_P[LCH4] * (GasGen.W_O + GasGen.W_F) / Turbine_ch.W<br/>
+<a name="e56">[E-56] </a>GasGen.fluid_O[LH2] = FlowMeter_O.f_in.fluid[LH2] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e57">[E-57] </a>GasGen.fluid_F[LH2] = FlowMeter_F.f_in.fluid[LH2] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e58">[E-58] </a>GasGen.fluid_P[LH2] =  IF[53] (GasGen.Combustion) (GasGen.fluid_O[LH2] * MATH.max(1 - GasGen.phi, 0) * GasGen.W_O + GasGen.fluid_F[LH2] * MATH.max(GasGen.phi - 1, 0) * GasGen.W_F_st) / (GasGen.W_O + GasGen.W_F)	 ELSE (GasGen.fluid_O[LH2] * GasGen.W_O + GasGen.fluid_F[LH2] * GasGen.W_F) / (GasGen.W_O + GasGen.W_F)<br/>
+<a name="e59">[E-59] </a>Nozzle_1.g.fluid[LH2] = GasGen.fluid_P[LH2] * (GasGen.W_O + GasGen.W_F) / Turbine_ch.W<br/>
+<a name="e60">[E-60] </a>GasGen.fluid_O[N2H4] = FlowMeter_O.f_in.fluid[N2H4] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e61">[E-61] </a>GasGen.fluid_F[N2H4] = FlowMeter_F.f_in.fluid[N2H4] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e62">[E-62] </a>GasGen.fluid_P[N2H4] =  IF[54] (GasGen.Combustion) (GasGen.fluid_O[N2H4] * MATH.max(1 - GasGen.phi, 0) * GasGen.W_O + GasGen.fluid_F[N2H4] * MATH.max(GasGen.phi - 1, 0) * GasGen.W_F_st) / (GasGen.W_O + GasGen.W_F)	 ELSE (GasGen.fluid_O[N2H4] * GasGen.W_O + GasGen.fluid_F[N2H4] * GasGen.W_F) / (GasGen.W_O + GasGen.W_F)<br/>
+<a name="e63">[E-63] </a>Nozzle_1.g.fluid[N2H4] = GasGen.fluid_P[N2H4] * (GasGen.W_O + GasGen.W_F) / Turbine_ch.W<br/>
+<a name="e64">[E-64] </a>GasGen.fluid_O[UDMH] = FlowMeter_O.f_in.fluid[UDMH] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e65">[E-65] </a>GasGen.fluid_F[UDMH] = FlowMeter_F.f_in.fluid[UDMH] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e66">[E-66] </a>GasGen.fluid_P[UDMH] =  IF[55] (GasGen.Combustion) (GasGen.fluid_O[UDMH] * MATH.max(1 - GasGen.phi, 0) * GasGen.W_O + GasGen.fluid_F[UDMH] * MATH.max(GasGen.phi - 1, 0) * GasGen.W_F_st) / (GasGen.W_O + GasGen.W_F)	 ELSE (GasGen.fluid_O[UDMH] * GasGen.W_O + GasGen.fluid_F[UDMH] * GasGen.W_F) / (GasGen.W_O + GasGen.W_F)<br/>
+<a name="e67">[E-67] </a>Nozzle_1.g.fluid[UDMH] = GasGen.fluid_P[UDMH] * (GasGen.W_O + GasGen.W_F) / Turbine_ch.W<br/>
+<a name="e68">[E-68] </a>GasGen.fluid_O[MMH] = FlowMeter_O.f_in.fluid[MMH] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e69">[E-69] </a>GasGen.fluid_F[MMH] = FlowMeter_F.f_in.fluid[MMH] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e70">[E-70] </a>GasGen.fluid_P[MMH] =  IF[56] (GasGen.Combustion) (GasGen.fluid_O[MMH] * MATH.max(1 - GasGen.phi, 0) * GasGen.W_O + GasGen.fluid_F[MMH] * MATH.max(GasGen.phi - 1, 0) * GasGen.W_F_st) / (GasGen.W_O + GasGen.W_F)	 ELSE (GasGen.fluid_O[MMH] * GasGen.W_O + GasGen.fluid_F[MMH] * GasGen.W_F) / (GasGen.W_O + GasGen.W_F)<br/>
+<a name="e71">[E-71] </a>Nozzle_1.g.fluid[MMH] = GasGen.fluid_P[MMH] * (GasGen.W_O + GasGen.W_F) / Turbine_ch.W<br/>
+<a name="e72">[E-72] </a>GasGen.fluid_O[JP_10] = FlowMeter_O.f_in.fluid[JP_10] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e73">[E-73] </a>GasGen.fluid_F[JP_10] = FlowMeter_F.f_in.fluid[JP_10] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e74">[E-74] </a>GasGen.fluid_P[JP_10] =  IF[57] (GasGen.Combustion) (GasGen.fluid_O[JP_10] * MATH.max(1 - GasGen.phi, 0) * GasGen.W_O + GasGen.fluid_F[JP_10] * MATH.max(GasGen.phi - 1, 0) * GasGen.W_F_st) / (GasGen.W_O + GasGen.W_F)	 ELSE (GasGen.fluid_O[JP_10] * GasGen.W_O + GasGen.fluid_F[JP_10] * GasGen.W_F) / (GasGen.W_O + GasGen.W_F)<br/>
+<a name="e75">[E-75] </a>Nozzle_1.g.fluid[JP_10] = GasGen.fluid_P[JP_10] * (GasGen.W_O + GasGen.W_F) / Turbine_ch.W<br/>
+<a name="e76">[E-76] </a>GasGen.fluid_O[Kerox] = FlowMeter_O.f_in.fluid[Kerox] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e77">[E-77] </a>GasGen.fluid_F[Kerox] = FlowMeter_F.f_in.fluid[Kerox] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e78">[E-78] </a>GasGen.fluid_P[Kerox] =  IF[58] (GasGen.Combustion) (GasGen.fluid_O[Kerox] * MATH.max(1 - GasGen.phi, 0) * GasGen.W_O + GasGen.fluid_F[Kerox] * MATH.max(GasGen.phi - 1, 0) * GasGen.W_F_st) / (GasGen.W_O + GasGen.W_F)	 ELSE (GasGen.fluid_O[Kerox] * GasGen.W_O + GasGen.fluid_F[Kerox] * GasGen.W_F) / (GasGen.W_O + GasGen.W_F)<br/>
+<a name="e79">[E-79] </a>Nozzle_1.g.fluid[Kerox] = GasGen.fluid_P[Kerox] * (GasGen.W_O + GasGen.W_F) / Turbine_ch.W<br/>
+<a name="e80">[E-80] </a>GasGen.fluid_O[Oil] = FlowMeter_O.f_in.fluid[Oil] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e81">[E-81] </a>GasGen.fluid_F[Oil] = FlowMeter_F.f_in.fluid[Oil] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e82">[E-82] </a>GasGen.fluid_P[Oil] =  IF[59] (GasGen.Combustion) (GasGen.fluid_O[Oil] * MATH.max(1 - GasGen.phi, 0) * GasGen.W_O + GasGen.fluid_F[Oil] * MATH.max(GasGen.phi - 1, 0) * GasGen.W_F_st) / (GasGen.W_O + GasGen.W_F)	 ELSE (GasGen.fluid_O[Oil] * GasGen.W_O + GasGen.fluid_F[Oil] * GasGen.W_F) / (GasGen.W_O + GasGen.W_F)<br/>
+<a name="e83">[E-83] </a>Nozzle_1.g.fluid[Oil] = GasGen.fluid_P[Oil] * (GasGen.W_O + GasGen.W_F) / Turbine_ch.W<br/>
+<a name="e84">[E-84] </a>GasGen.fluid_O[H2O] = FlowMeter_O.f_in.fluid[H2O] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e85">[E-85] </a>GasGen.fluid_F[H2O] = FlowMeter_F.f_in.fluid[H2O] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e86">[E-86] </a>GasGen.fluid_P[H2O] =  IF[60] (GasGen.Combustion) (GasGen.fluid_O[H2O] * MATH.max(1 - GasGen.phi, 0) * GasGen.W_O + GasGen.fluid_F[H2O] * MATH.max(GasGen.phi - 1, 0) * GasGen.W_F_st) / (GasGen.W_O + GasGen.W_F)	 ELSE (GasGen.fluid_O[H2O] * GasGen.W_O + GasGen.fluid_F[H2O] * GasGen.W_F) / (GasGen.W_O + GasGen.W_F)<br/>
+<a name="e87">[E-87] </a>Nozzle_1.g.fluid[H2O] = GasGen.fluid_P[H2O] * (GasGen.W_O + GasGen.W_F) / Turbine_ch.W<br/>
+<a name="e88">[E-88] </a>GasGen.fluid_O[IPA] = FlowMeter_O.f_in.fluid[IPA] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e89">[E-89] </a>GasGen.fluid_F[IPA] = FlowMeter_F.f_in.fluid[IPA] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e90">[E-90] </a>GasGen.fluid_P[IPA] =  IF[61] (GasGen.Combustion) (GasGen.fluid_O[IPA] * MATH.max(1 - GasGen.phi, 0) * GasGen.W_O + GasGen.fluid_F[IPA] * MATH.max(GasGen.phi - 1, 0) * GasGen.W_F_st) / (GasGen.W_O + GasGen.W_F)	 ELSE (GasGen.fluid_O[IPA] * GasGen.W_O + GasGen.fluid_F[IPA] * GasGen.W_F) / (GasGen.W_O + GasGen.W_F)<br/>
+<a name="e91">[E-91] </a>Nozzle_1.g.fluid[IPA] = GasGen.fluid_P[IPA] * (GasGen.W_O + GasGen.W_F) / Turbine_ch.W<br/>
+<a name="e92">[E-92] </a>GasGen.fluid_O[Air] = FlowMeter_O.f_in.fluid[Air] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e93">[E-93] </a>GasGen.fluid_F[Air] = FlowMeter_F.f_in.fluid[Air] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e94">[E-94] </a>GasGen.fluid_P[Air] =  IF[62] (GasGen.Combustion) (GasGen.fluid_O[Air] * MATH.max(1 - GasGen.phi, 0) * GasGen.W_O + GasGen.fluid_F[Air] * MATH.max(GasGen.phi - 1, 0) * GasGen.W_F_st) / (GasGen.W_O + GasGen.W_F)	 ELSE (GasGen.fluid_O[Air] * GasGen.W_O + GasGen.fluid_F[Air] * GasGen.W_F) / (GasGen.W_O + GasGen.W_F)<br/>
+<a name="e95">[E-95] </a>Nozzle_1.g.fluid[Air] = GasGen.fluid_P[Air] * (GasGen.W_O + GasGen.W_F) / Turbine_ch.W<br/>
+<a name="e96">[E-96] </a>GasGen.fluid_O[Ar] = FlowMeter_O.f_in.fluid[Ar] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e97">[E-97] </a>GasGen.fluid_F[Ar] = FlowMeter_F.f_in.fluid[Ar] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e98">[E-98] </a>GasGen.fluid_P[Ar] =  IF[63] (GasGen.Combustion) (GasGen.fluid_O[Ar] * MATH.max(1 - GasGen.phi, 0) * GasGen.W_O + GasGen.fluid_F[Ar] * MATH.max(GasGen.phi - 1, 0) * GasGen.W_F_st) / (GasGen.W_O + GasGen.W_F)	 ELSE (GasGen.fluid_O[Ar] * GasGen.W_O + GasGen.fluid_F[Ar] * GasGen.W_F) / (GasGen.W_O + GasGen.W_F)<br/>
+<a name="e99">[E-99] </a>Nozzle_1.g.fluid[Ar] = GasGen.fluid_P[Ar] * (GasGen.W_O + GasGen.W_F) / Turbine_ch.W<br/>
+<a name="e100">[E-100] </a>GasGen.fluid_O[CH4] = FlowMeter_O.f_in.fluid[CH4] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e101">[E-101] </a>GasGen.fluid_F[CH4] = FlowMeter_F.f_in.fluid[CH4] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e102">[E-102] </a>GasGen.fluid_P[CH4] =  IF[64] (GasGen.Combustion) (GasGen.fluid_O[CH4] * MATH.max(1 - GasGen.phi, 0) * GasGen.W_O + GasGen.fluid_F[CH4] * MATH.max(GasGen.phi - 1, 0) * GasGen.W_F_st) / (GasGen.W_O + GasGen.W_F)	 ELSE (GasGen.fluid_O[CH4] * GasGen.W_O + GasGen.fluid_F[CH4] * GasGen.W_F) / (GasGen.W_O + GasGen.W_F)<br/>
+<a name="e103">[E-103] </a>Nozzle_1.g.fluid[CH4] = GasGen.fluid_P[CH4] * (GasGen.W_O + GasGen.W_F) / Turbine_ch.W<br/>
+<a name="e104">[E-104] </a>GasGen.fluid_O[CO] = FlowMeter_O.f_in.fluid[CO] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e105">[E-105] </a>GasGen.fluid_F[CO] = FlowMeter_F.f_in.fluid[CO] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e106">[E-106] </a>GasGen.fluid_P[CO] =  IF[65] (GasGen.Combustion) (GasGen.fluid_O[CO] * MATH.max(1 - GasGen.phi, 0) * GasGen.W_O + GasGen.fluid_F[CO] * MATH.max(GasGen.phi - 1, 0) * GasGen.W_F_st) / (GasGen.W_O + GasGen.W_F)	 ELSE (GasGen.fluid_O[CO] * GasGen.W_O + GasGen.fluid_F[CO] * GasGen.W_F) / (GasGen.W_O + GasGen.W_F)<br/>
+<a name="e107">[E-107] </a>Nozzle_1.g.fluid[CO] = GasGen.fluid_P[CO] * (GasGen.W_O + GasGen.W_F) / Turbine_ch.W<br/>
+<a name="e108">[E-108] </a>GasGen.fluid_O[CO2] = FlowMeter_O.f_in.fluid[CO2] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e109">[E-109] </a>GasGen.fluid_F[CO2] = FlowMeter_F.f_in.fluid[CO2] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e110">[E-110] </a>GasGen.fluid_P[CO2] =  IF[66] (GasGen.Combustion) (GasGen.fluid_O[CO2] * MATH.max(1 - GasGen.phi, 0) * GasGen.W_O + GasGen.fluid_F[CO2] * MATH.max(GasGen.phi - 1, 0) * GasGen.W_F_st) / (GasGen.W_O + GasGen.W_F)	 ELSE (GasGen.fluid_O[CO2] * GasGen.W_O + GasGen.fluid_F[CO2] * GasGen.W_F) / (GasGen.W_O + GasGen.W_F)<br/>
+<a name="e111">[E-111] </a>Nozzle_1.g.fluid[CO2] = GasGen.fluid_P[CO2] * (GasGen.W_O + GasGen.W_F) / Turbine_ch.W<br/>
+<a name="e112">[E-112] </a>GasGen.fluid_O[H2] = FlowMeter_O.f_in.fluid[H2] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e113">[E-113] </a>GasGen.fluid_F[H2] = FlowMeter_F.f_in.fluid[H2] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e114">[E-114] </a>GasGen.fluid_P[H2] =  IF[67] (GasGen.Combustion) (GasGen.fluid_O[H2] * MATH.max(1 - GasGen.phi, 0) * GasGen.W_O + GasGen.fluid_F[H2] * MATH.max(GasGen.phi - 1, 0) * GasGen.W_F_st) / (GasGen.W_O + GasGen.W_F)	 ELSE (GasGen.fluid_O[H2] * GasGen.W_O + GasGen.fluid_F[H2] * GasGen.W_F) / (GasGen.W_O + GasGen.W_F)<br/>
+<a name="e115">[E-115] </a>Nozzle_1.g.fluid[H2] = GasGen.fluid_P[H2] * (GasGen.W_O + GasGen.W_F) / Turbine_ch.W<br/>
+<a name="e116">[E-116] </a>GasGen.fluid_O[He] = FlowMeter_O.f_in.fluid[He] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e117">[E-117] </a>GasGen.fluid_F[He] = FlowMeter_F.f_in.fluid[He] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e118">[E-118] </a>GasGen.fluid_P[He] =  IF[68] (GasGen.Combustion) (GasGen.fluid_O[He] * MATH.max(1 - GasGen.phi, 0) * GasGen.W_O + GasGen.fluid_F[He] * MATH.max(GasGen.phi - 1, 0) * GasGen.W_F_st) / (GasGen.W_O + GasGen.W_F)	 ELSE (GasGen.fluid_O[He] * GasGen.W_O + GasGen.fluid_F[He] * GasGen.W_F) / (GasGen.W_O + GasGen.W_F)<br/>
+<a name="e119">[E-119] </a>Nozzle_1.g.fluid[He] = GasGen.fluid_P[He] * (GasGen.W_O + GasGen.W_F) / Turbine_ch.W<br/>
+<a name="e120">[E-120] </a>GasGen.fluid_O[N2] = FlowMeter_O.f_in.fluid[N2] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e121">[E-121] </a>GasGen.fluid_F[N2] = FlowMeter_F.f_in.fluid[N2] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e122">[E-122] </a>GasGen.fluid_P[N2] =  IF[69] (GasGen.Combustion) (GasGen.fluid_O[N2] * MATH.max(1 - GasGen.phi, 0) * GasGen.W_O + GasGen.fluid_F[N2] * MATH.max(GasGen.phi - 1, 0) * GasGen.W_F_st) / (GasGen.W_O + GasGen.W_F)	 ELSE (GasGen.fluid_O[N2] * GasGen.W_O + GasGen.fluid_F[N2] * GasGen.W_F) / (GasGen.W_O + GasGen.W_F)<br/>
+<a name="e123">[E-123] </a>Nozzle_1.g.fluid[N2] = GasGen.fluid_P[N2] * (GasGen.W_O + GasGen.W_F) / Turbine_ch.W<br/>
+<a name="e124">[E-124] </a>GasGen.fluid_O[O2] = FlowMeter_O.f_in.fluid[O2] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e125">[E-125] </a>GasGen.fluid_F[O2] = FlowMeter_F.f_in.fluid[O2] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e126">[E-126] </a>GasGen.fluid_P[O2] =  IF[70] (GasGen.Combustion) (GasGen.fluid_O[O2] * MATH.max(1 - GasGen.phi, 0) * GasGen.W_O + GasGen.fluid_F[O2] * MATH.max(GasGen.phi - 1, 0) * GasGen.W_F_st) / (GasGen.W_O + GasGen.W_F)	 ELSE (GasGen.fluid_O[O2] * GasGen.W_O + GasGen.fluid_F[O2] * GasGen.W_F) / (GasGen.W_O + GasGen.W_F)<br/>
+<a name="e127">[E-127] </a>Nozzle_1.g.fluid[O2] = GasGen.fluid_P[O2] * (GasGen.W_O + GasGen.W_F) / Turbine_ch.W<br/>
+<a name="e128">[E-128] </a>GasGen.fluid_O[MMH_vapour] = FlowMeter_O.f_in.fluid[MMH_vapour] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e129">[E-129] </a>GasGen.fluid_F[MMH_vapour] = FlowMeter_F.f_in.fluid[MMH_vapour] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e130">[E-130] </a>GasGen.fluid_P[MMH_vapour] =  IF[71] (GasGen.Combustion) (GasGen.fluid_O[MMH_vapour] * MATH.max(1 - GasGen.phi, 0) * GasGen.W_O + GasGen.fluid_F[MMH_vapour] * MATH.max(GasGen.phi - 1, 0) * GasGen.W_F_st) / (GasGen.W_O + GasGen.W_F)	 ELSE (GasGen.fluid_O[MMH_vapour] * GasGen.W_O + GasGen.fluid_F[MMH_vapour] * GasGen.W_F) / (GasGen.W_O + GasGen.W_F)<br/>
+<a name="e131">[E-131] </a>Nozzle_1.g.fluid[MMH_vapour] = GasGen.fluid_P[MMH_vapour] * (GasGen.W_O + GasGen.W_F) / Turbine_ch.W<br/>
+<a name="e132">[E-132] </a>GasGen.fluid_O[Comb_prod] = 0<br/>
+<a name="e133">[E-133] </a>GasGen.fluid_F[Comb_prod] = 0<br/>
+<a name="e134">[E-134] </a>GasGen.fluid_P[Comb_prod] =  IF[72] (GasGen.Combustion) (GasGen.fluid_O[Comb_prod] * MATH.max(1 - GasGen.phi, 0) * GasGen.W_O + GasGen.fluid_F[Comb_prod] * MATH.max(GasGen.phi - 1, 0) * GasGen.W_F_st + (1 - MATH.max(1 - GasGen.phi, 0)) * (GasGen.W_O + GasGen.W_F_st)) / (GasGen.W_O + GasGen.W_F)	 ELSE 0<br/>
+<a name="e135">[E-135] </a>GasGen.W_IO = Injector_O_1.W - GasGen.W_O<br/>
+<a name="e136">[E-136] </a>GasGen.W_IF = Injector_F_1.W - GasGen.W_F<br/>
+<a name="e137">[E-137] </a>Nozzle_1.g.fluid[Comb_prod] = (GasGen.fluid_P[Comb_prod] * (GasGen.W_O + GasGen.W_F) + GasGen.W_IO + GasGen.W_IF) / Turbine_ch.W<br/>
+<a name="e138">[E-138] </a>GasGen.fluid_P[Comb_prod_M] =  IF[73] (GasGen.Combustion) GasGen.M_P	 ELSE 0<br/>
+<a name="e139">[E-139] </a>Nozzle_1.g.fluid[Comb_prod_M] = GasGen.fluid_P[Comb_prod_M]<br/>
+<a name="e140">[E-140] </a>GasGen.fluid_P[Comb_prod_cp] =  IF[74] (GasGen.Combustion) GasGen.cp_P	 ELSE 0<br/>
+<a name="e141">[E-141] </a>Nozzle_1.g.fluid[Comb_prod_cp] = GasGen.fluid_P[Comb_prod_cp]<br/>
+<a name="e142">[E-142] </a>GasGen.Q_comb_effective =  ZONE[6] (GasGen.Combustion) GasGen.Q_comb	  OTHERS 0<br/>
+<a name="e143">[E-143] </a>GasGen.fluid_O[Comb_prod_M] = 0<br/>
+<a name="e144">[E-144] </a>GasGen.fluid_O[Comb_prod_cp] = 0<br/>
+<a name="e145">[E-145] </a>GasGen.fluid_F[Comb_prod_M] = 0<br/>
+<a name="e146">[E-146] </a>GasGen.fluid_F[Comb_prod_cp] = 0<br/>
+<a name="e147">[E-147] </a>GasGen.cp_R = (GasGen.W_O * LPRES.cp(GasGen.fluid_O) + GasGen.W_F * LPRES.cp(GasGen.fluid_F)) / (GasGen.W_O + GasGen.W_F)<br/>
+<a name="e148">[E-148] </a>Injector_O_1.f_in.Tt = (SplitFrac_O.f_in.pt - FlowMeter_O.f_in.pt) / LPRES.rho(FlowMeter_O.f_in.fluid) * (1 / Pump_O.eta_d - 1) / LPRES.cp(FlowMeter_O.f_in.fluid) + TankOpen_O.T_d<br/>
+<a name="e149">[E-149] </a>Injector_O_1.f_in.pt = SplitFrac_O.f_in.pt * SplitFrac_O.TPL<br/>
+<a name="e150">[E-150] </a>Injector_O_1.PR = Injector_O_1.f_in.pt / GasGen.p_c<br/>
+<a name="e151">[E-151] </a>Injector_O_1.M_out =  ZONE[8] (LPRES.State(FlowMeter_O.f_in.fluid) == Gas AND Injector_O_1.PR < Injector_O_1.PR_sl) sqrt(2 * (Injector_O_1.PR ** ((LPRES.gamma(FlowMeter_O.f_in.fluid) - 1) / LPRES.gamma(FlowMeter_O.f_in.fluid)) - 1) / (LPRES.gamma(FlowMeter_O.f_in.fluid) - 1)) ZONE[8] (LPRES.State(FlowMeter_O.f_in.fluid) == Gas AND Injector_O_1.PR >= Injector_O_1.PR_sl) 1	  OTHERS 0<br/>
+<a name="e152">[E-152] </a>GasGen.f_O.T =  IF[87] (LPRES.State(FlowMeter_O.f_in.fluid) == Gas) Injector_O_1.f_in.Tt / (1 + (LPRES.gamma(FlowMeter_O.f_in.fluid) - 1) / 2 * Injector_O_1.M_out ** 2)	 ELSE Injector_O_1.f_in.Tt<br/>
+<a name="e153">[E-153] </a>Injector_F_1.f_in.pt = SplitFrac_F.f_in.pt * SplitFrac_F.TPL<br/>
+<a name="e154">[E-154] </a>Injector_F_1.PR = Injector_F_1.f_in.pt / GasGen.p_c<br/>
+<a name="e155">[E-155] </a>Injector_F_1.M_out =  ZONE[7] (LPRES.State(FlowMeter_F.f_in.fluid) == Gas AND Injector_F_1.PR < Injector_F_1.PR_sl) sqrt(2 * (Injector_F_1.PR ** ((LPRES.gamma(FlowMeter_F.f_in.fluid) - 1) / LPRES.gamma(FlowMeter_F.f_in.fluid)) - 1) / (LPRES.gamma(FlowMeter_F.f_in.fluid) - 1)) ZONE[7] (LPRES.State(FlowMeter_F.f_in.fluid) == Gas AND Injector_F_1.PR >= Injector_F_1.PR_sl) 1	  OTHERS 0<br/>
+<a name="e156">[E-156] </a>GasGen.f_F.T =  IF[79] (LPRES.State(FlowMeter_F.f_in.fluid) == Gas) Injector_F_1.f_in.Tt / (1 + (LPRES.gamma(FlowMeter_F.f_in.fluid) - 1) / 2 * Injector_F_1.M_out ** 2)	 ELSE Injector_F_1.f_in.Tt<br/>
+<a name="e157">[E-157] </a>GasGen.T_in = (LPRES.cp(GasGen.fluid_O) * GasGen.f_O.T + GasGen.phi / GasGen.OF_st * LPRES.cp(GasGen.fluid_F) * GasGen.f_F.T) / ((1 + GasGen.phi / GasGen.OF_st) * GasGen.cp_R)<br/>
+<a name="e158">[E-158] </a>GasGen.T_c = (GasGen.eta_d * GasGen.Q_comb_effective / ((1 + GasGen.OF) / MATH.min(GasGen.OF, GasGen.OF_st)) + GasGen.cp_R * (GasGen.T_in - 298.15)) / LPRES.cp(GasGen.fluid_P) + 298.15<br/>
+<a name="e159">[E-159] </a>Turbine_ch.f_in.Tt = (-((GasGen.W_O + GasGen.W_F) / Turbine_ch.W * LPRES.cp(GasGen.fluid_P) * -GasGen.T_c + GasGen.W_IO / Turbine_ch.W * FlowMeter_O.f_in.fluid[Comb_prod_cp] * -GasGen.f_O.T) - GasGen.W_IF / Turbine_ch.W * FlowMeter_F.f_in.fluid[Comb_prod_cp] * -GasGen.f_F.T) / ((GasGen.W_O + GasGen.W_F) / Turbine_ch.W * LPRES.cp(GasGen.fluid_P) + GasGen.W_IO / Turbine_ch.W * FlowMeter_O.f_in.fluid[Comb_prod_cp] + GasGen.W_IF / Turbine_ch.W * FlowMeter_F.f_in.fluid[Comb_prod_cp])<br/>
+<a name="e160">[E-160] </a>Nozzle_1.g.Tt = Turbine_ch.f_in.Tt - Turbine_ch.m.Power / (Turbine_ch.W * LPRES.cp(Nozzle_1.g.fluid))<br/>
+<a name="e161">[E-161] </a>Turbine_ch.alpha = Nozzle_1.g.Tt / Turbine_ch.f_in.Tt<br/>
+<a name="e162">[E-162] </a>Nozzle_1.g.pt = (1 - (1 - Turbine_ch.alpha) / Turbine_ch.eta_d) ** (1 / ((LPRES.gamma(Nozzle_1.g.fluid) - 1) / LPRES.gamma(Nozzle_1.g.fluid))) * GasGen.p_c<br/>
+<a name="e163">[E-163] </a>Nozzle_1.PR = Nozzle_1.g.pt / Nozzle_1.p_amb<br/>
+<a name="e164">[E-164] </a>Nozzle_1.PR_sl = ((LPRES.gamma(Nozzle_1.g.fluid) + 1) / 2) ** (LPRES.gamma(Nozzle_1.g.fluid) / (LPRES.gamma(Nozzle_1.g.fluid) - 1))<br/>
+<a name="e165">[E-165] </a>Nozzle_1.p_out_ch = Nozzle_1.g.pt / Nozzle_1.PR_sl<br/>
+<a name="e166">[E-166] </a>Nozzle_1.A_sl = Turbine_ch.W * sqrt(Nozzle_1.g.Tt * LPRES.R(Nozzle_1.g.fluid)) / Nozzle_1.g.pt / LPRES.FGAMMA(Nozzle_1.g.fluid)<br/>
+<a name="e167">[E-167] </a>Nozzle_1.M_out =  ZONE[1] (Nozzle_1.PR < Nozzle_1.PR_sl) sqrt(2 * (Nozzle_1.PR ** ((LPRES.gamma(Nozzle_1.g.fluid) - 1) / LPRES.gamma(Nozzle_1.g.fluid)) - 1) / (LPRES.gamma(Nozzle_1.g.fluid) - 1))	  OTHERS 1<br/>
+<a name="e168">[E-168] </a>Nozzle_1.A_d = Nozzle_1.A_sl * ((2 + (LPRES.gamma(Nozzle_1.g.fluid) - 1) * Nozzle_1.M_out ** 2) / (LPRES.gamma(Nozzle_1.g.fluid) + 1)) ** ((LPRES.gamma(Nozzle_1.g.fluid) + 1) / (2 * (LPRES.gamma(Nozzle_1.g.fluid) - 1))) / Nozzle_1.M_out<br/>
+<a name="e169">[E-169] </a>Nozzle_1.p_out = MATH.max(Nozzle_1.p_amb, Nozzle_1.p_out_ch)<br/>
+<a name="e170">[E-170] </a>Nozzle_1.T_out = Nozzle_1.g.Tt / (1 + (LPRES.gamma(Nozzle_1.g.fluid) - 1) / 2 * Nozzle_1.M_out ** 2)<br/>
+<a name="e171">[E-171] </a>Nozzle_1.v_out = Nozzle_1.M_out * sqrt(LPRES.gamma(Nozzle_1.g.fluid) * LPRES.R(Nozzle_1.g.fluid) * Nozzle_1.T_out)<br/>
+<a name="e172">[E-172] </a>Nozzle_1.Thrust = Turbine_ch.W * Nozzle_1.v_out + Nozzle_1.A_d * (Nozzle_1.p_out - Nozzle_1.p_amb)<br/>
+<a name="e173">[E-173] </a>Injector_O.W = FlowMeter_O.f_in.W - Injector_O_1.W<br/>
+<a name="e174">[E-174] </a>ThrustMonitor_1.g.W = Injector_O.W + Injector_F.W<br/>
+<a name="e175">[E-175] </a>CombCha_1.fluid_O[LOX] = FlowMeter_O.f_in.fluid[LOX] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e176">[E-176] </a>CombCha_1.W_O = Injector_O.W * (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e177">[E-177] </a>CombCha_1.W_F = Injector_F.W * (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e178">[E-178] </a>CombCha_1.OF = CombCha_1.W_O / CombCha_1.W_F<br/>
+<a name="e179">[E-179] </a>CombCha_1.phi = CombCha_1.OF_st / CombCha_1.OF<br/>
+<a name="e180">[E-180] </a>CombCha_1.fluid_F[LOX] = FlowMeter_F.f_in.fluid[LOX] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e181">[E-181] </a>CombCha_1.W_F_st = CombCha_1.W_F / CombCha_1.phi<br/>
+<a name="e182">[E-182] </a>CombCha_1.fluid_P[LOX] =  IF[1] (CombCha_1.Combustion) (CombCha_1.fluid_O[LOX] * MATH.max(1 - CombCha_1.phi, 0) * CombCha_1.W_O + CombCha_1.fluid_F[LOX] * MATH.max(CombCha_1.phi - 1, 0) * CombCha_1.W_F_st) / (CombCha_1.W_O + CombCha_1.W_F)	 ELSE (CombCha_1.fluid_O[LOX] * CombCha_1.W_O + CombCha_1.fluid_F[LOX] * CombCha_1.W_F) / (CombCha_1.W_O + CombCha_1.W_F)<br/>
+<a name="e183">[E-183] </a>ThrustMonitor_1.g.fluid[LOX] = CombCha_1.fluid_P[LOX] * (CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor_1.g.W<br/>
+<a name="e184">[E-184] </a>CombCha_1.fluid_O[NTO] = FlowMeter_O.f_in.fluid[NTO] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e185">[E-185] </a>CombCha_1.fluid_F[NTO] = FlowMeter_F.f_in.fluid[NTO] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e186">[E-186] </a>CombCha_1.fluid_P[NTO] =  IF[2] (CombCha_1.Combustion) (CombCha_1.fluid_O[NTO] * MATH.max(1 - CombCha_1.phi, 0) * CombCha_1.W_O + CombCha_1.fluid_F[NTO] * MATH.max(CombCha_1.phi - 1, 0) * CombCha_1.W_F_st) / (CombCha_1.W_O + CombCha_1.W_F)	 ELSE (CombCha_1.fluid_O[NTO] * CombCha_1.W_O + CombCha_1.fluid_F[NTO] * CombCha_1.W_F) / (CombCha_1.W_O + CombCha_1.W_F)<br/>
+<a name="e187">[E-187] </a>ThrustMonitor_1.g.fluid[NTO] = CombCha_1.fluid_P[NTO] * (CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor_1.g.W<br/>
+<a name="e188">[E-188] </a>CombCha_1.fluid_O[H2O2] = FlowMeter_O.f_in.fluid[H2O2] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e189">[E-189] </a>CombCha_1.fluid_F[H2O2] = FlowMeter_F.f_in.fluid[H2O2] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e190">[E-190] </a>CombCha_1.fluid_P[H2O2] =  IF[3] (CombCha_1.Combustion) (CombCha_1.fluid_O[H2O2] * MATH.max(1 - CombCha_1.phi, 0) * CombCha_1.W_O + CombCha_1.fluid_F[H2O2] * MATH.max(CombCha_1.phi - 1, 0) * CombCha_1.W_F_st) / (CombCha_1.W_O + CombCha_1.W_F)	 ELSE (CombCha_1.fluid_O[H2O2] * CombCha_1.W_O + CombCha_1.fluid_F[H2O2] * CombCha_1.W_F) / (CombCha_1.W_O + CombCha_1.W_F)<br/>
+<a name="e191">[E-191] </a>ThrustMonitor_1.g.fluid[H2O2] = CombCha_1.fluid_P[H2O2] * (CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor_1.g.W<br/>
+<a name="e192">[E-192] </a>CombCha_1.fluid_O[HNO3] = FlowMeter_O.f_in.fluid[HNO3] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e193">[E-193] </a>CombCha_1.fluid_F[HNO3] = FlowMeter_F.f_in.fluid[HNO3] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e194">[E-194] </a>CombCha_1.fluid_P[HNO3] =  IF[4] (CombCha_1.Combustion) (CombCha_1.fluid_O[HNO3] * MATH.max(1 - CombCha_1.phi, 0) * CombCha_1.W_O + CombCha_1.fluid_F[HNO3] * MATH.max(CombCha_1.phi - 1, 0) * CombCha_1.W_F_st) / (CombCha_1.W_O + CombCha_1.W_F)	 ELSE (CombCha_1.fluid_O[HNO3] * CombCha_1.W_O + CombCha_1.fluid_F[HNO3] * CombCha_1.W_F) / (CombCha_1.W_O + CombCha_1.W_F)<br/>
+<a name="e195">[E-195] </a>ThrustMonitor_1.g.fluid[HNO3] = CombCha_1.fluid_P[HNO3] * (CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor_1.g.W<br/>
+<a name="e196">[E-196] </a>CombCha_1.fluid_O[LF2] = FlowMeter_O.f_in.fluid[LF2] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e197">[E-197] </a>CombCha_1.fluid_F[LF2] = FlowMeter_F.f_in.fluid[LF2] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e198">[E-198] </a>CombCha_1.fluid_P[LF2] =  IF[5] (CombCha_1.Combustion) (CombCha_1.fluid_O[LF2] * MATH.max(1 - CombCha_1.phi, 0) * CombCha_1.W_O + CombCha_1.fluid_F[LF2] * MATH.max(CombCha_1.phi - 1, 0) * CombCha_1.W_F_st) / (CombCha_1.W_O + CombCha_1.W_F)	 ELSE (CombCha_1.fluid_O[LF2] * CombCha_1.W_O + CombCha_1.fluid_F[LF2] * CombCha_1.W_F) / (CombCha_1.W_O + CombCha_1.W_F)<br/>
+<a name="e199">[E-199] </a>ThrustMonitor_1.g.fluid[LF2] = CombCha_1.fluid_P[LF2] * (CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor_1.g.W<br/>
+<a name="e200">[E-200] </a>CombCha_1.fluid_O[RP_1] = FlowMeter_O.f_in.fluid[RP_1] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e201">[E-201] </a>CombCha_1.fluid_F[RP_1] = FlowMeter_F.f_in.fluid[RP_1] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e202">[E-202] </a>CombCha_1.fluid_P[RP_1] =  IF[6] (CombCha_1.Combustion) (CombCha_1.fluid_O[RP_1] * MATH.max(1 - CombCha_1.phi, 0) * CombCha_1.W_O + CombCha_1.fluid_F[RP_1] * MATH.max(CombCha_1.phi - 1, 0) * CombCha_1.W_F_st) / (CombCha_1.W_O + CombCha_1.W_F)	 ELSE (CombCha_1.fluid_O[RP_1] * CombCha_1.W_O + CombCha_1.fluid_F[RP_1] * CombCha_1.W_F) / (CombCha_1.W_O + CombCha_1.W_F)<br/>
+<a name="e203">[E-203] </a>ThrustMonitor_1.g.fluid[RP_1] = CombCha_1.fluid_P[RP_1] * (CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor_1.g.W<br/>
+<a name="e204">[E-204] </a>CombCha_1.fluid_O[LCH4] = FlowMeter_O.f_in.fluid[LCH4] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e205">[E-205] </a>CombCha_1.fluid_F[LCH4] = FlowMeter_F.f_in.fluid[LCH4] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e206">[E-206] </a>CombCha_1.fluid_P[LCH4] =  IF[7] (CombCha_1.Combustion) (CombCha_1.fluid_O[LCH4] * MATH.max(1 - CombCha_1.phi, 0) * CombCha_1.W_O + CombCha_1.fluid_F[LCH4] * MATH.max(CombCha_1.phi - 1, 0) * CombCha_1.W_F_st) / (CombCha_1.W_O + CombCha_1.W_F)	 ELSE (CombCha_1.fluid_O[LCH4] * CombCha_1.W_O + CombCha_1.fluid_F[LCH4] * CombCha_1.W_F) / (CombCha_1.W_O + CombCha_1.W_F)<br/>
+<a name="e207">[E-207] </a>ThrustMonitor_1.g.fluid[LCH4] = CombCha_1.fluid_P[LCH4] * (CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor_1.g.W<br/>
+<a name="e208">[E-208] </a>CombCha_1.fluid_O[LH2] = FlowMeter_O.f_in.fluid[LH2] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e209">[E-209] </a>CombCha_1.fluid_F[LH2] = FlowMeter_F.f_in.fluid[LH2] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e210">[E-210] </a>CombCha_1.fluid_P[LH2] =  IF[8] (CombCha_1.Combustion) (CombCha_1.fluid_O[LH2] * MATH.max(1 - CombCha_1.phi, 0) * CombCha_1.W_O + CombCha_1.fluid_F[LH2] * MATH.max(CombCha_1.phi - 1, 0) * CombCha_1.W_F_st) / (CombCha_1.W_O + CombCha_1.W_F)	 ELSE (CombCha_1.fluid_O[LH2] * CombCha_1.W_O + CombCha_1.fluid_F[LH2] * CombCha_1.W_F) / (CombCha_1.W_O + CombCha_1.W_F)<br/>
+<a name="e211">[E-211] </a>ThrustMonitor_1.g.fluid[LH2] = CombCha_1.fluid_P[LH2] * (CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor_1.g.W<br/>
+<a name="e212">[E-212] </a>CombCha_1.fluid_O[N2H4] = FlowMeter_O.f_in.fluid[N2H4] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e213">[E-213] </a>CombCha_1.fluid_F[N2H4] = FlowMeter_F.f_in.fluid[N2H4] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e214">[E-214] </a>CombCha_1.fluid_P[N2H4] =  IF[9] (CombCha_1.Combustion) (CombCha_1.fluid_O[N2H4] * MATH.max(1 - CombCha_1.phi, 0) * CombCha_1.W_O + CombCha_1.fluid_F[N2H4] * MATH.max(CombCha_1.phi - 1, 0) * CombCha_1.W_F_st) / (CombCha_1.W_O + CombCha_1.W_F)	 ELSE (CombCha_1.fluid_O[N2H4] * CombCha_1.W_O + CombCha_1.fluid_F[N2H4] * CombCha_1.W_F) / (CombCha_1.W_O + CombCha_1.W_F)<br/>
+<a name="e215">[E-215] </a>ThrustMonitor_1.g.fluid[N2H4] = CombCha_1.fluid_P[N2H4] * (CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor_1.g.W<br/>
+<a name="e216">[E-216] </a>CombCha_1.fluid_O[UDMH] = FlowMeter_O.f_in.fluid[UDMH] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e217">[E-217] </a>CombCha_1.fluid_F[UDMH] = FlowMeter_F.f_in.fluid[UDMH] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e218">[E-218] </a>CombCha_1.fluid_P[UDMH] =  IF[10] (CombCha_1.Combustion) (CombCha_1.fluid_O[UDMH] * MATH.max(1 - CombCha_1.phi, 0) * CombCha_1.W_O + CombCha_1.fluid_F[UDMH] * MATH.max(CombCha_1.phi - 1, 0) * CombCha_1.W_F_st) / (CombCha_1.W_O + CombCha_1.W_F)	 ELSE (CombCha_1.fluid_O[UDMH] * CombCha_1.W_O + CombCha_1.fluid_F[UDMH] * CombCha_1.W_F) / (CombCha_1.W_O + CombCha_1.W_F)<br/>
+<a name="e219">[E-219] </a>ThrustMonitor_1.g.fluid[UDMH] = CombCha_1.fluid_P[UDMH] * (CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor_1.g.W<br/>
+<a name="e220">[E-220] </a>CombCha_1.fluid_O[MMH] = FlowMeter_O.f_in.fluid[MMH] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e221">[E-221] </a>CombCha_1.fluid_F[MMH] = FlowMeter_F.f_in.fluid[MMH] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e222">[E-222] </a>CombCha_1.fluid_P[MMH] =  IF[11] (CombCha_1.Combustion) (CombCha_1.fluid_O[MMH] * MATH.max(1 - CombCha_1.phi, 0) * CombCha_1.W_O + CombCha_1.fluid_F[MMH] * MATH.max(CombCha_1.phi - 1, 0) * CombCha_1.W_F_st) / (CombCha_1.W_O + CombCha_1.W_F)	 ELSE (CombCha_1.fluid_O[MMH] * CombCha_1.W_O + CombCha_1.fluid_F[MMH] * CombCha_1.W_F) / (CombCha_1.W_O + CombCha_1.W_F)<br/>
+<a name="e223">[E-223] </a>ThrustMonitor_1.g.fluid[MMH] = CombCha_1.fluid_P[MMH] * (CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor_1.g.W<br/>
+<a name="e224">[E-224] </a>CombCha_1.fluid_O[JP_10] = FlowMeter_O.f_in.fluid[JP_10] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e225">[E-225] </a>CombCha_1.fluid_F[JP_10] = FlowMeter_F.f_in.fluid[JP_10] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e226">[E-226] </a>CombCha_1.fluid_P[JP_10] =  IF[12] (CombCha_1.Combustion) (CombCha_1.fluid_O[JP_10] * MATH.max(1 - CombCha_1.phi, 0) * CombCha_1.W_O + CombCha_1.fluid_F[JP_10] * MATH.max(CombCha_1.phi - 1, 0) * CombCha_1.W_F_st) / (CombCha_1.W_O + CombCha_1.W_F)	 ELSE (CombCha_1.fluid_O[JP_10] * CombCha_1.W_O + CombCha_1.fluid_F[JP_10] * CombCha_1.W_F) / (CombCha_1.W_O + CombCha_1.W_F)<br/>
+<a name="e227">[E-227] </a>ThrustMonitor_1.g.fluid[JP_10] = CombCha_1.fluid_P[JP_10] * (CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor_1.g.W<br/>
+<a name="e228">[E-228] </a>CombCha_1.fluid_O[Kerox] = FlowMeter_O.f_in.fluid[Kerox] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e229">[E-229] </a>CombCha_1.fluid_F[Kerox] = FlowMeter_F.f_in.fluid[Kerox] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e230">[E-230] </a>CombCha_1.fluid_P[Kerox] =  IF[13] (CombCha_1.Combustion) (CombCha_1.fluid_O[Kerox] * MATH.max(1 - CombCha_1.phi, 0) * CombCha_1.W_O + CombCha_1.fluid_F[Kerox] * MATH.max(CombCha_1.phi - 1, 0) * CombCha_1.W_F_st) / (CombCha_1.W_O + CombCha_1.W_F)	 ELSE (CombCha_1.fluid_O[Kerox] * CombCha_1.W_O + CombCha_1.fluid_F[Kerox] * CombCha_1.W_F) / (CombCha_1.W_O + CombCha_1.W_F)<br/>
+<a name="e231">[E-231] </a>ThrustMonitor_1.g.fluid[Kerox] = CombCha_1.fluid_P[Kerox] * (CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor_1.g.W<br/>
+<a name="e232">[E-232] </a>CombCha_1.fluid_O[Oil] = FlowMeter_O.f_in.fluid[Oil] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e233">[E-233] </a>CombCha_1.fluid_F[Oil] = FlowMeter_F.f_in.fluid[Oil] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e234">[E-234] </a>CombCha_1.fluid_P[Oil] =  IF[14] (CombCha_1.Combustion) (CombCha_1.fluid_O[Oil] * MATH.max(1 - CombCha_1.phi, 0) * CombCha_1.W_O + CombCha_1.fluid_F[Oil] * MATH.max(CombCha_1.phi - 1, 0) * CombCha_1.W_F_st) / (CombCha_1.W_O + CombCha_1.W_F)	 ELSE (CombCha_1.fluid_O[Oil] * CombCha_1.W_O + CombCha_1.fluid_F[Oil] * CombCha_1.W_F) / (CombCha_1.W_O + CombCha_1.W_F)<br/>
+<a name="e235">[E-235] </a>ThrustMonitor_1.g.fluid[Oil] = CombCha_1.fluid_P[Oil] * (CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor_1.g.W<br/>
+<a name="e236">[E-236] </a>CombCha_1.fluid_O[H2O] = FlowMeter_O.f_in.fluid[H2O] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e237">[E-237] </a>CombCha_1.fluid_F[H2O] = FlowMeter_F.f_in.fluid[H2O] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e238">[E-238] </a>CombCha_1.fluid_P[H2O] =  IF[15] (CombCha_1.Combustion) (CombCha_1.fluid_O[H2O] * MATH.max(1 - CombCha_1.phi, 0) * CombCha_1.W_O + CombCha_1.fluid_F[H2O] * MATH.max(CombCha_1.phi - 1, 0) * CombCha_1.W_F_st) / (CombCha_1.W_O + CombCha_1.W_F)	 ELSE (CombCha_1.fluid_O[H2O] * CombCha_1.W_O + CombCha_1.fluid_F[H2O] * CombCha_1.W_F) / (CombCha_1.W_O + CombCha_1.W_F)<br/>
+<a name="e239">[E-239] </a>ThrustMonitor_1.g.fluid[H2O] = CombCha_1.fluid_P[H2O] * (CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor_1.g.W<br/>
+<a name="e240">[E-240] </a>CombCha_1.fluid_O[IPA] = FlowMeter_O.f_in.fluid[IPA] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e241">[E-241] </a>CombCha_1.fluid_F[IPA] = FlowMeter_F.f_in.fluid[IPA] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e242">[E-242] </a>CombCha_1.fluid_P[IPA] =  IF[16] (CombCha_1.Combustion) (CombCha_1.fluid_O[IPA] * MATH.max(1 - CombCha_1.phi, 0) * CombCha_1.W_O + CombCha_1.fluid_F[IPA] * MATH.max(CombCha_1.phi - 1, 0) * CombCha_1.W_F_st) / (CombCha_1.W_O + CombCha_1.W_F)	 ELSE (CombCha_1.fluid_O[IPA] * CombCha_1.W_O + CombCha_1.fluid_F[IPA] * CombCha_1.W_F) / (CombCha_1.W_O + CombCha_1.W_F)<br/>
+<a name="e243">[E-243] </a>ThrustMonitor_1.g.fluid[IPA] = CombCha_1.fluid_P[IPA] * (CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor_1.g.W<br/>
+<a name="e244">[E-244] </a>CombCha_1.fluid_O[Air] = FlowMeter_O.f_in.fluid[Air] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e245">[E-245] </a>CombCha_1.fluid_F[Air] = FlowMeter_F.f_in.fluid[Air] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e246">[E-246] </a>CombCha_1.fluid_P[Air] =  IF[17] (CombCha_1.Combustion) (CombCha_1.fluid_O[Air] * MATH.max(1 - CombCha_1.phi, 0) * CombCha_1.W_O + CombCha_1.fluid_F[Air] * MATH.max(CombCha_1.phi - 1, 0) * CombCha_1.W_F_st) / (CombCha_1.W_O + CombCha_1.W_F)	 ELSE (CombCha_1.fluid_O[Air] * CombCha_1.W_O + CombCha_1.fluid_F[Air] * CombCha_1.W_F) / (CombCha_1.W_O + CombCha_1.W_F)<br/>
+<a name="e247">[E-247] </a>ThrustMonitor_1.g.fluid[Air] = CombCha_1.fluid_P[Air] * (CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor_1.g.W<br/>
+<a name="e248">[E-248] </a>CombCha_1.fluid_O[Ar] = FlowMeter_O.f_in.fluid[Ar] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e249">[E-249] </a>CombCha_1.fluid_F[Ar] = FlowMeter_F.f_in.fluid[Ar] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e250">[E-250] </a>CombCha_1.fluid_P[Ar] =  IF[18] (CombCha_1.Combustion) (CombCha_1.fluid_O[Ar] * MATH.max(1 - CombCha_1.phi, 0) * CombCha_1.W_O + CombCha_1.fluid_F[Ar] * MATH.max(CombCha_1.phi - 1, 0) * CombCha_1.W_F_st) / (CombCha_1.W_O + CombCha_1.W_F)	 ELSE (CombCha_1.fluid_O[Ar] * CombCha_1.W_O + CombCha_1.fluid_F[Ar] * CombCha_1.W_F) / (CombCha_1.W_O + CombCha_1.W_F)<br/>
+<a name="e251">[E-251] </a>ThrustMonitor_1.g.fluid[Ar] = CombCha_1.fluid_P[Ar] * (CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor_1.g.W<br/>
+<a name="e252">[E-252] </a>CombCha_1.fluid_O[CH4] = FlowMeter_O.f_in.fluid[CH4] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e253">[E-253] </a>CombCha_1.fluid_F[CH4] = FlowMeter_F.f_in.fluid[CH4] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e254">[E-254] </a>CombCha_1.fluid_P[CH4] =  IF[19] (CombCha_1.Combustion) (CombCha_1.fluid_O[CH4] * MATH.max(1 - CombCha_1.phi, 0) * CombCha_1.W_O + CombCha_1.fluid_F[CH4] * MATH.max(CombCha_1.phi - 1, 0) * CombCha_1.W_F_st) / (CombCha_1.W_O + CombCha_1.W_F)	 ELSE (CombCha_1.fluid_O[CH4] * CombCha_1.W_O + CombCha_1.fluid_F[CH4] * CombCha_1.W_F) / (CombCha_1.W_O + CombCha_1.W_F)<br/>
+<a name="e255">[E-255] </a>ThrustMonitor_1.g.fluid[CH4] = CombCha_1.fluid_P[CH4] * (CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor_1.g.W<br/>
+<a name="e256">[E-256] </a>CombCha_1.fluid_O[CO] = FlowMeter_O.f_in.fluid[CO] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e257">[E-257] </a>CombCha_1.fluid_F[CO] = FlowMeter_F.f_in.fluid[CO] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e258">[E-258] </a>CombCha_1.fluid_P[CO] =  IF[20] (CombCha_1.Combustion) (CombCha_1.fluid_O[CO] * MATH.max(1 - CombCha_1.phi, 0) * CombCha_1.W_O + CombCha_1.fluid_F[CO] * MATH.max(CombCha_1.phi - 1, 0) * CombCha_1.W_F_st) / (CombCha_1.W_O + CombCha_1.W_F)	 ELSE (CombCha_1.fluid_O[CO] * CombCha_1.W_O + CombCha_1.fluid_F[CO] * CombCha_1.W_F) / (CombCha_1.W_O + CombCha_1.W_F)<br/>
+<a name="e259">[E-259] </a>ThrustMonitor_1.g.fluid[CO] = CombCha_1.fluid_P[CO] * (CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor_1.g.W<br/>
+<a name="e260">[E-260] </a>CombCha_1.fluid_O[CO2] = FlowMeter_O.f_in.fluid[CO2] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e261">[E-261] </a>CombCha_1.fluid_F[CO2] = FlowMeter_F.f_in.fluid[CO2] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e262">[E-262] </a>CombCha_1.fluid_P[CO2] =  IF[21] (CombCha_1.Combustion) (CombCha_1.fluid_O[CO2] * MATH.max(1 - CombCha_1.phi, 0) * CombCha_1.W_O + CombCha_1.fluid_F[CO2] * MATH.max(CombCha_1.phi - 1, 0) * CombCha_1.W_F_st) / (CombCha_1.W_O + CombCha_1.W_F)	 ELSE (CombCha_1.fluid_O[CO2] * CombCha_1.W_O + CombCha_1.fluid_F[CO2] * CombCha_1.W_F) / (CombCha_1.W_O + CombCha_1.W_F)<br/>
+<a name="e263">[E-263] </a>ThrustMonitor_1.g.fluid[CO2] = CombCha_1.fluid_P[CO2] * (CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor_1.g.W<br/>
+<a name="e264">[E-264] </a>CombCha_1.fluid_O[H2] = FlowMeter_O.f_in.fluid[H2] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e265">[E-265] </a>CombCha_1.fluid_F[H2] = FlowMeter_F.f_in.fluid[H2] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e266">[E-266] </a>CombCha_1.fluid_P[H2] =  IF[22] (CombCha_1.Combustion) (CombCha_1.fluid_O[H2] * MATH.max(1 - CombCha_1.phi, 0) * CombCha_1.W_O + CombCha_1.fluid_F[H2] * MATH.max(CombCha_1.phi - 1, 0) * CombCha_1.W_F_st) / (CombCha_1.W_O + CombCha_1.W_F)	 ELSE (CombCha_1.fluid_O[H2] * CombCha_1.W_O + CombCha_1.fluid_F[H2] * CombCha_1.W_F) / (CombCha_1.W_O + CombCha_1.W_F)<br/>
+<a name="e267">[E-267] </a>ThrustMonitor_1.g.fluid[H2] = CombCha_1.fluid_P[H2] * (CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor_1.g.W<br/>
+<a name="e268">[E-268] </a>CombCha_1.fluid_O[He] = FlowMeter_O.f_in.fluid[He] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e269">[E-269] </a>CombCha_1.fluid_F[He] = FlowMeter_F.f_in.fluid[He] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e270">[E-270] </a>CombCha_1.fluid_P[He] =  IF[23] (CombCha_1.Combustion) (CombCha_1.fluid_O[He] * MATH.max(1 - CombCha_1.phi, 0) * CombCha_1.W_O + CombCha_1.fluid_F[He] * MATH.max(CombCha_1.phi - 1, 0) * CombCha_1.W_F_st) / (CombCha_1.W_O + CombCha_1.W_F)	 ELSE (CombCha_1.fluid_O[He] * CombCha_1.W_O + CombCha_1.fluid_F[He] * CombCha_1.W_F) / (CombCha_1.W_O + CombCha_1.W_F)<br/>
+<a name="e271">[E-271] </a>ThrustMonitor_1.g.fluid[He] = CombCha_1.fluid_P[He] * (CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor_1.g.W<br/>
+<a name="e272">[E-272] </a>CombCha_1.fluid_O[N2] = FlowMeter_O.f_in.fluid[N2] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e273">[E-273] </a>CombCha_1.fluid_F[N2] = FlowMeter_F.f_in.fluid[N2] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e274">[E-274] </a>CombCha_1.fluid_P[N2] =  IF[24] (CombCha_1.Combustion) (CombCha_1.fluid_O[N2] * MATH.max(1 - CombCha_1.phi, 0) * CombCha_1.W_O + CombCha_1.fluid_F[N2] * MATH.max(CombCha_1.phi - 1, 0) * CombCha_1.W_F_st) / (CombCha_1.W_O + CombCha_1.W_F)	 ELSE (CombCha_1.fluid_O[N2] * CombCha_1.W_O + CombCha_1.fluid_F[N2] * CombCha_1.W_F) / (CombCha_1.W_O + CombCha_1.W_F)<br/>
+<a name="e275">[E-275] </a>ThrustMonitor_1.g.fluid[N2] = CombCha_1.fluid_P[N2] * (CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor_1.g.W<br/>
+<a name="e276">[E-276] </a>CombCha_1.fluid_O[O2] = FlowMeter_O.f_in.fluid[O2] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e277">[E-277] </a>CombCha_1.fluid_F[O2] = FlowMeter_F.f_in.fluid[O2] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e278">[E-278] </a>CombCha_1.fluid_P[O2] =  IF[25] (CombCha_1.Combustion) (CombCha_1.fluid_O[O2] * MATH.max(1 - CombCha_1.phi, 0) * CombCha_1.W_O + CombCha_1.fluid_F[O2] * MATH.max(CombCha_1.phi - 1, 0) * CombCha_1.W_F_st) / (CombCha_1.W_O + CombCha_1.W_F)	 ELSE (CombCha_1.fluid_O[O2] * CombCha_1.W_O + CombCha_1.fluid_F[O2] * CombCha_1.W_F) / (CombCha_1.W_O + CombCha_1.W_F)<br/>
+<a name="e279">[E-279] </a>ThrustMonitor_1.g.fluid[O2] = CombCha_1.fluid_P[O2] * (CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor_1.g.W<br/>
+<a name="e280">[E-280] </a>CombCha_1.fluid_O[MMH_vapour] = FlowMeter_O.f_in.fluid[MMH_vapour] / (1 - FlowMeter_O.f_in.fluid[Comb_prod])<br/>
+<a name="e281">[E-281] </a>CombCha_1.fluid_F[MMH_vapour] = FlowMeter_F.f_in.fluid[MMH_vapour] / (1 - FlowMeter_F.f_in.fluid[Comb_prod])<br/>
+<a name="e282">[E-282] </a>CombCha_1.fluid_P[MMH_vapour] =  IF[26] (CombCha_1.Combustion) (CombCha_1.fluid_O[MMH_vapour] * MATH.max(1 - CombCha_1.phi, 0) * CombCha_1.W_O + CombCha_1.fluid_F[MMH_vapour] * MATH.max(CombCha_1.phi - 1, 0) * CombCha_1.W_F_st) / (CombCha_1.W_O + CombCha_1.W_F)	 ELSE (CombCha_1.fluid_O[MMH_vapour] * CombCha_1.W_O + CombCha_1.fluid_F[MMH_vapour] * CombCha_1.W_F) / (CombCha_1.W_O + CombCha_1.W_F)<br/>
+<a name="e283">[E-283] </a>ThrustMonitor_1.g.fluid[MMH_vapour] = CombCha_1.fluid_P[MMH_vapour] * (CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor_1.g.W<br/>
+<a name="e284">[E-284] </a>CombCha_1.fluid_O[Comb_prod] = 0<br/>
+<a name="e285">[E-285] </a>CombCha_1.fluid_F[Comb_prod] = 0<br/>
+<a name="e286">[E-286] </a>CombCha_1.fluid_P[Comb_prod] =  IF[27] (CombCha_1.Combustion) (CombCha_1.fluid_O[Comb_prod] * MATH.max(1 - CombCha_1.phi, 0) * CombCha_1.W_O + CombCha_1.fluid_F[Comb_prod] * MATH.max(CombCha_1.phi - 1, 0) * CombCha_1.W_F_st + (1 - MATH.max(1 - CombCha_1.phi, 0)) * (CombCha_1.W_O + CombCha_1.W_F_st)) / (CombCha_1.W_O + CombCha_1.W_F)	 ELSE 0<br/>
+<a name="e287">[E-287] </a>CombCha_1.W_IO = Injector_O.W - CombCha_1.W_O<br/>
+<a name="e288">[E-288] </a>CombCha_1.W_IF = Injector_F.W - CombCha_1.W_F<br/>
+<a name="e289">[E-289] </a>ThrustMonitor_1.g.fluid[Comb_prod] = (CombCha_1.fluid_P[Comb_prod] * (CombCha_1.W_O + CombCha_1.W_F) + CombCha_1.W_IO + CombCha_1.W_IF) / ThrustMonitor_1.g.W<br/>
+<a name="e290">[E-290] </a>CombCha_1.fluid_P[Comb_prod_M] =  IF[28] (CombCha_1.Combustion) CombCha_1.M_P	 ELSE 0<br/>
+<a name="e291">[E-291] </a>ThrustMonitor_1.g.fluid[Comb_prod_M] = CombCha_1.fluid_P[Comb_prod_M]<br/>
+<a name="e292">[E-292] </a>CombCha_1.fluid_P[Comb_prod_cp] =  IF[29] (CombCha_1.Combustion) CombCha_1.cp_P	 ELSE 0<br/>
+<a name="e293">[E-293] </a>ThrustMonitor_1.g.fluid[Comb_prod_cp] = CombCha_1.fluid_P[Comb_prod_cp]<br/>
+<a name="e294">[E-294] </a>CombCha_1.Q_comb_effective =  ZONE[3] (CombCha_1.Combustion) CombCha_1.Q_comb	  OTHERS 0<br/>
+<a name="e295">[E-295] </a>CombCha_1.fluid_O[Comb_prod_M] = 0<br/>
+<a name="e296">[E-296] </a>CombCha_1.fluid_O[Comb_prod_cp] = 0<br/>
+<a name="e297">[E-297] </a>CombCha_1.fluid_F[Comb_prod_M] = 0<br/>
+<a name="e298">[E-298] </a>CombCha_1.fluid_F[Comb_prod_cp] = 0<br/>
+<a name="e299">[E-299] </a>CombCha_1.cp_R = (CombCha_1.W_O * LPRES.cp(CombCha_1.fluid_O) + CombCha_1.W_F * LPRES.cp(CombCha_1.fluid_F)) / (CombCha_1.W_O + CombCha_1.W_F)<br/>
+<a name="e300">[E-300] </a>Injector_O.f_in.pt = SplitFrac_O.f_in.pt * SplitFrac_O.TPL<br/>
+<a name="e301">[E-301] </a>Injector_O.PR = Injector_O.f_in.pt / CombCha_1.p_c<br/>
+<a name="e302">[E-302] </a>Injector_O.M_out =  ZONE[4] (LPRES.State(FlowMeter_O.f_in.fluid) == Gas AND Injector_O.PR < Injector_O.PR_sl) sqrt(2 * (Injector_O.PR ** ((LPRES.gamma(FlowMeter_O.f_in.fluid) - 1) / LPRES.gamma(FlowMeter_O.f_in.fluid)) - 1) / (LPRES.gamma(FlowMeter_O.f_in.fluid) - 1)) ZONE[4] (LPRES.State(FlowMeter_O.f_in.fluid) == Gas AND Injector_O.PR >= Injector_O.PR_sl) 1	  OTHERS 0<br/>
+<a name="e303">[E-303] </a>CombCha_1.f_O.T =  IF[34] (LPRES.State(FlowMeter_O.f_in.fluid) == Gas) Injector_O_1.f_in.Tt / (1 + (LPRES.gamma(FlowMeter_O.f_in.fluid) - 1) / 2 * Injector_O.M_out ** 2)	 ELSE Injector_O_1.f_in.Tt<br/>
+<a name="e304">[E-304] </a>Injector_F.f_in.pt = SplitFrac_F.f_in.pt * SplitFrac_F.TPL<br/>
+<a name="e305">[E-305] </a>Injector_F.PR = Injector_F.f_in.pt / CombCha_1.p_c<br/>
+<a name="e306">[E-306] </a>Injector_F.M_out =  ZONE[5] (LPRES.State(FlowMeter_F.f_in.fluid) == Gas AND Injector_F.PR < Injector_F.PR_sl) sqrt(2 * (Injector_F.PR ** ((LPRES.gamma(FlowMeter_F.f_in.fluid) - 1) / LPRES.gamma(FlowMeter_F.f_in.fluid)) - 1) / (LPRES.gamma(FlowMeter_F.f_in.fluid) - 1)) ZONE[5] (LPRES.State(FlowMeter_F.f_in.fluid) == Gas AND Injector_F.PR >= Injector_F.PR_sl) 1	  OTHERS 0<br/>
+<a name="e307">[E-307] </a>CombCha_1.f_F.T =  IF[42] (LPRES.State(FlowMeter_F.f_in.fluid) == Gas) Injector_F_1.f_in.Tt / (1 + (LPRES.gamma(FlowMeter_F.f_in.fluid) - 1) / 2 * Injector_F.M_out ** 2)	 ELSE Injector_F_1.f_in.Tt<br/>
+<a name="e308">[E-308] </a>CombCha_1.T_in = (LPRES.cp(CombCha_1.fluid_O) * CombCha_1.f_O.T + CombCha_1.phi / CombCha_1.OF_st * LPRES.cp(CombCha_1.fluid_F) * CombCha_1.f_F.T) / ((1 + CombCha_1.phi / CombCha_1.OF_st) * CombCha_1.cp_R)<br/>
+<a name="e309">[E-309] </a>CombCha_1.T_c = (CombCha_1.eta_d * CombCha_1.Q_comb_effective / ((1 + CombCha_1.OF) / MATH.min(CombCha_1.OF, CombCha_1.OF_st)) + CombCha_1.cp_R * (CombCha_1.T_in - 298.15)) / LPRES.cp(CombCha_1.fluid_P) + 298.15<br/>
+<a name="e310">[E-310] </a>ThrustMonitor_1.g.Tt = (-((CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor_1.g.W * LPRES.cp(CombCha_1.fluid_P) * -CombCha_1.T_c + CombCha_1.W_IO / ThrustMonitor_1.g.W * FlowMeter_O.f_in.fluid[Comb_prod_cp] * -CombCha_1.f_O.T) - CombCha_1.W_IF / ThrustMonitor_1.g.W * FlowMeter_F.f_in.fluid[Comb_prod_cp] * -CombCha_1.f_F.T) / ((CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor_1.g.W * LPRES.cp(CombCha_1.fluid_P) + CombCha_1.W_IO / ThrustMonitor_1.g.W * FlowMeter_O.f_in.fluid[Comb_prod_cp] + CombCha_1.W_IF / ThrustMonitor_1.g.W * FlowMeter_F.f_in.fluid[Comb_prod_cp])<br/>
+<a name="e311">[E-311] </a>CombCha_1.A_r = ThrustMonitor_1.g.W * sqrt(LPRES.R(ThrustMonitor_1.g.fluid) * ThrustMonitor_1.g.Tt) / LPRES.FGAMMA(ThrustMonitor_1.g.fluid) / CombCha_1.p_c<br/>
+<a name="e312">[E-312] </a>ThrustMonitor_1.g.A_out = CombCha_1.AR * CombCha_1.A_r<br/>
+<br/>
+<hr>BOX 2 IS NONLINEAR<hr><table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>#&nbsp;</b></color></td>
+<td><color="black"><b>ALGEBRAICS&nbsp;</b></color></td>
+<td><color="black"><b>ALIAS&nbsp;</b></color></td>
+<td><color="black"><b>UNITS&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>INITIAL&nbsp;</b></color></td>
+<td><color="black"><b>RESIDUE EQUATION
+&nbsp;</b></color></td>
+</tr>
+<tr><td>1&nbsp;</td><td><a href="doc_vars.par.html#v369" data-ajax='false'>ThrustMonitor_1.M_out</a>&nbsp;</td><td><a href="doc_vars.par.html#v369" data-ajax='false'></a>&nbsp;</td><td>-&nbsp;</td><td>Gas Mach number&nbsp;</td><td>100&nbsp;</td><td>[E-313] ThrustMonitor_1.g.W * sqrt(LPRES.R(ThrustMonitor_1.g.fluid) * ThrustMonitor_1.g.Tt) / ThrustMonitor_1.g.A_out / CombCha_1.p_c = sqrt(LPRES.gamma(ThrustMonitor_1.g.fluid)) * ThrustMonitor_1.M_out * (1 + (LPRES.gamma(ThrustMonitor_1.g.fluid) - 1) / 2 * ThrustMonitor_1.M_out ** 2) ** (-(LPRES.gamma(ThrustMonitor_1.g.fluid) + 1) / 2 / (LPRES.gamma(ThrustMonitor_1.g.fluid) - 1))&nbsp;</td></tr>
+</table>
+<br/>
+<h4>Equations:</h4>&nbsp;&nbsp;&nbsp;&nbsp;<b>(Residue equation) <a name="e313">[E-313] </a>ThrustMonitor_1.g.W * sqrt(LPRES.R(ThrustMonitor_1.g.fluid) * ThrustMonitor_1.g.Tt) / ThrustMonitor_1.g.A_out / CombCha_1.p_c = sqrt(LPRES.gamma(ThrustMonitor_1.g.fluid)) * ThrustMonitor_1.M_out * (1 + (LPRES.gamma(ThrustMonitor_1.g.fluid) - 1) / 2 * ThrustMonitor_1.M_out ** 2) ** (-(LPRES.gamma(ThrustMonitor_1.g.fluid) + 1) / 2 / (LPRES.gamma(ThrustMonitor_1.g.fluid) - 1))	{I@ThrustMonitor_1.M_out}<br/>
+</b><hr>END OF BOX 2<hr><a name="e314">[E-314] </a>ThrustMonitor_1.T_out = ThrustMonitor_1.g.Tt / (1 + (LPRES.gamma(ThrustMonitor_1.g.fluid) - 1) / 2 * ThrustMonitor_1.M_out ** 2)<br/>
+<a name="e315">[E-315] </a>ThrustMonitor_1.v_out = ThrustMonitor_1.M_out * sqrt(LPRES.gamma(ThrustMonitor_1.g.fluid) * LPRES.R(ThrustMonitor_1.g.fluid) * ThrustMonitor_1.T_out)<br/>
+<a name="e316">[E-316] </a>ThrustMonitor_1.p_out = CombCha_1.p_c / (1 + (LPRES.gamma(ThrustMonitor_1.g.fluid) - 1) / 2 * ThrustMonitor_1.M_out ** 2) ** (1 / ((LPRES.gamma(ThrustMonitor_1.g.fluid) - 1) / LPRES.gamma(ThrustMonitor_1.g.fluid)))<br/>
+<a name="e317">[E-317] </a>ThrustMonitor_1.p_amb = LPRES.ISA_Pressure(LPRES.Altitude)<br/>
+<a name="e318">[E-318] </a>ThrustMonitor_1.Thrust = ThrustMonitor_1.g.W * ThrustMonitor_1.v_out + ThrustMonitor_1.g.A_out * (ThrustMonitor_1.p_out - ThrustMonitor_1.p_amb)<br/>
+<a name="e319">[E-319] </a>ThrustMonitor_1.i.Data[1] = ThrustMonitor_1.Thrust<br/>
+<a name="e320">[E-320] </a>ControlPanel_1.i_Thrust.Data[1] = Nozzle_1.Thrust + ThrustMonitor_1.i.Data[1]<br/>
+<a name="e321">[E-321] </a>Pump_O.H = (SplitFrac_O.f_in.pt - FlowMeter_O.f_in.pt) / (9.80665 * LPRES.rho(FlowMeter_O.f_in.fluid))<br/>
+<a name="e322">[E-322] </a>Pump_O.psi = 1 - (1 - Pump_O.psi_d) / Pump_O.phi_d * Pump_O.phi_d<br/>
+<br/>
+<hr>BOX 3 IS NONLINEAR<hr><table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>#&nbsp;</b></color></td>
+<td><color="black"><b>ALGEBRAICS&nbsp;</b></color></td>
+<td><color="black"><b>ALIAS&nbsp;</b></color></td>
+<td><color="black"><b>UNITS&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>INITIAL&nbsp;</b></color></td>
+<td><color="black"><b>RESIDUE EQUATION
+&nbsp;</b></color></td>
+</tr>
+<tr><td>1&nbsp;</td><td><a href="doc_vars.par.html#v300" data-ajax='false'>Pump_O.U</a>&nbsp;</td><td><a href="doc_vars.par.html#v300" data-ajax='false'></a>&nbsp;</td><td>m/s&nbsp;</td><td>Blade speed&nbsp;</td><td>&nbsp;</td><td>[E-323] Pump_O.psi = Pump_O.tau / Pump_O.U ** 2&nbsp;</td></tr>
+</table>
+<br/>
+<h4>Equations:</h4>&nbsp;&nbsp;&nbsp;&nbsp;<b>(Residue equation) <a name="e323">[E-323] </a>Pump_O.psi = Pump_O.tau / Pump_O.U ** 2	{I@Pump_O.U}<br/>
+</b><hr>END OF BOX 3<hr><a name="e324">[E-324] </a>Pump_O.r_m_d = Pump_O.U / Pump_O.m.N<br/>
+<a name="e325">[E-325] </a>Pump_O.A_in_d = FlowMeter_O.f_in.W / Pump_O.phi_d / LPRES.rho(FlowMeter_O.f_in.fluid) / Pump_O.U<br/>
+<a name="e326">[E-326] </a>Shaft_1.rpm = Pump_O.m.N / 0.10471975511966<br/>
+<a name="e327">[E-327] </a>CombCha_1.rho_trans = CombCha_1.p_c / ThrustMonitor_1.g.Tt / LPRES.R(CombCha_1.fluid_P)<br/>
+<br/>
+<hr>BOX 4 IS NONLINEAR<hr><table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>#&nbsp;</b></color></td>
+<td><color="black"><b>ALGEBRAICS&nbsp;</b></color></td>
+<td><color="black"><b>ALIAS&nbsp;</b></color></td>
+<td><color="black"><b>UNITS&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>INITIAL&nbsp;</b></color></td>
+<td><color="black"><b>RESIDUE EQUATION
+&nbsp;</b></color></td>
+</tr>
+<tr><td>1&nbsp;</td><td><a href="doc_vars.par.html#v66" data-ajax='false'>CombCha_1.p_out_ch</a>&nbsp;</td><td><a href="doc_vars.par.html#v66" data-ajax='false'></a>&nbsp;</td><td>Pa&nbsp;</td><td>Choked outlet pressure&nbsp;</td><td>100&nbsp;</td><td>[E-328] ThrustMonitor_1.g.A_out / CombCha_1.A_r = LPRES.FGAMMA(ThrustMonitor_1.g.fluid) / ((CombCha_1.p_out_ch / CombCha_1.p_c) ** (1 / LPRES.gamma(ThrustMonitor_1.g.fluid)) * sqrt(2 * LPRES.gamma(ThrustMonitor_1.g.fluid) * (1 - (CombCha_1.p_out_ch / CombCha_1.p_c) ** ((LPRES.gamma(ThrustMonitor_1.g.fluid) - 1) / LPRES.gamma(ThrustMonitor_1.g.fluid))) / (LPRES.gamma(ThrustMonitor_1.g.fluid) - 1)))&nbsp;</td></tr>
+</table>
+<br/>
+<h4>Equations:</h4>&nbsp;&nbsp;&nbsp;&nbsp;<b>(Residue equation) <a name="e328">[E-328] </a>ThrustMonitor_1.g.A_out / CombCha_1.A_r = LPRES.FGAMMA(ThrustMonitor_1.g.fluid) / ((CombCha_1.p_out_ch / CombCha_1.p_c) ** (1 / LPRES.gamma(ThrustMonitor_1.g.fluid)) * sqrt(2 * LPRES.gamma(ThrustMonitor_1.g.fluid) * (1 - (CombCha_1.p_out_ch / CombCha_1.p_c) ** ((LPRES.gamma(ThrustMonitor_1.g.fluid) - 1) / LPRES.gamma(ThrustMonitor_1.g.fluid))) / (LPRES.gamma(ThrustMonitor_1.g.fluid) - 1)))	{I@CombCha_1.p_out_ch}<br/>
+</b><hr>END OF BOX 4<hr><a name="e329">[E-329] </a>CombCha_1.c_star = sqrt(LPRES.R(ThrustMonitor_1.g.fluid) * ThrustMonitor_1.g.Tt) / LPRES.FGAMMA(ThrustMonitor_1.g.fluid)<br/>
+<a name="e330">[E-330] </a>CombCha_1.Pr_r = 4 * LPRES.gamma(ThrustMonitor_1.g.fluid) / (9 * LPRES.gamma(ThrustMonitor_1.g.fluid) - 5)<br/>
+<a name="e331">[E-331] </a>CombCha_1.M_r = 1<br/>
+<a name="e332">[E-332] </a>CombCha_1.h.T = ThrustMonitor_1.g.Tt * (1 + CombCha_1.Pr_r ** 0.33 * (LPRES.gamma(ThrustMonitor_1.g.fluid) - 1) * CombCha_1.M_r ** 2 / 2) / (1 + (LPRES.gamma(ThrustMonitor_1.g.fluid) - 1) * CombCha_1.M_r ** 2 / 2)<br/>
+<a name="e333">[E-333] </a>CombCha_1.visc_r = 1.184e-07 * LPRES.M(ThrustMonitor_1.g.fluid) ** 0.5 * CombCha_1.h.T ** 0.6<br/>
+<a name="e334">[E-334] </a>CombCha_1.h.A = 0<br/>
+<a name="e335">[E-335] </a>CombCha_1.h_g = 0<br/>
+<a name="e336">[E-336] </a>CombCha_1.h.Q = 0<br/>
+<a name="e337">[E-337] </a>Turbine_ch.A_in_d = Turbine_ch.W * sqrt(Turbine_ch.f_in.Tt * LPRES.R(Nozzle_1.g.fluid)) / (cos(Turbine_ch.alpha_2 * 3.14159265358979 / 180) * LPRES.FGAMMA(Nozzle_1.g.fluid)) / GasGen.p_c<br/>
+<a name="e338">[E-338] </a>Injector_O.PR_sl =  IF[30] (LPRES.State(FlowMeter_O.f_in.fluid) == Gas) ((LPRES.gamma(FlowMeter_O.f_in.fluid) + 1) / 2) ** (LPRES.gamma(FlowMeter_O.f_in.fluid) / (LPRES.gamma(FlowMeter_O.f_in.fluid) - 1))	 ELSE 0<br/>
+<a name="e339">[E-339] </a>Injector_O.p_out_ch =  IF[31] (LPRES.State(FlowMeter_O.f_in.fluid) == Gas) Injector_O.f_in.pt / Injector_O.PR_sl	 ELSE 0<br/>
+<a name="e340">[E-340] </a>Injector_O.A_sl =  IF[32] (LPRES.State(FlowMeter_O.f_in.fluid) == Gas) sqrt(Injector_O_1.f_in.Tt * LPRES.R(FlowMeter_O.f_in.fluid)) * Injector_O.W / (LPRES.FGAMMA(FlowMeter_O.f_in.fluid) * Injector_O.f_in.pt)	 ELSE 0<br/>
+<a name="e341">[E-341] </a>CombCha_1.f_O.p =  IF[33] (LPRES.State(FlowMeter_O.f_in.fluid) == Gas) MATH.max(CombCha_1.p_c, Injector_O.p_out_ch)	 ELSE CombCha_1.p_c<br/>
+<a name="e342">[E-342] </a>Injector_O.A_d =  IF[35] (LPRES.State(FlowMeter_O.f_in.fluid) == Gas) Injector_O.A_sl * ((2 + (LPRES.gamma(FlowMeter_O.f_in.fluid) - 1) * Injector_O.M_out ** 2) / (LPRES.gamma(FlowMeter_O.f_in.fluid) + 1)) ** ((LPRES.gamma(FlowMeter_O.f_in.fluid) + 1) / (2 * (LPRES.gamma(FlowMeter_O.f_in.fluid) - 1))) / Injector_O.M_out	 ELSE Injector_O.W / Injector_O.C_D / sqrt(2 * LPRES.rho(FlowMeter_O.f_in.fluid) * (Injector_O.f_in.pt - CombCha_1.f_O.p))<br/>
+<a name="e343">[E-343] </a>Injector_O.v_ideal =  IF[36] (LPRES.State(FlowMeter_O.f_in.fluid) == Gas) Injector_O.M_out * sqrt(LPRES.gamma(FlowMeter_O.f_in.fluid) * LPRES.R(FlowMeter_O.f_in.fluid) * CombCha_1.f_O.T)	 ELSE Injector_O.W / (LPRES.rho(FlowMeter_O.f_in.fluid) * Injector_O.A_d * Injector_O.C_D)<br/>
+<a name="e344">[E-344] </a>Injector_O.Re =  IF[37] (LPRES.State(FlowMeter_O.f_in.fluid) == Gas) 0	 ELSE LPRES.rho(FlowMeter_O.f_in.fluid) * Injector_O.v_ideal * Injector_O.C_D * sqrt(4 * Injector_O.A_d / 3.14159265358979) / LPRES.visc(FlowMeter_O.f_in.fluid)<br/>
+<a name="e345">[E-345] </a>Injector_F.PR_sl =  IF[38] (LPRES.State(FlowMeter_F.f_in.fluid) == Gas) ((LPRES.gamma(FlowMeter_F.f_in.fluid) + 1) / 2) ** (LPRES.gamma(FlowMeter_F.f_in.fluid) / (LPRES.gamma(FlowMeter_F.f_in.fluid) - 1))	 ELSE 0<br/>
+<a name="e346">[E-346] </a>Injector_F.p_out_ch =  IF[39] (LPRES.State(FlowMeter_F.f_in.fluid) == Gas) Injector_F.f_in.pt / Injector_F.PR_sl	 ELSE 0<br/>
+<a name="e347">[E-347] </a>Injector_F.A_sl =  IF[40] (LPRES.State(FlowMeter_F.f_in.fluid) == Gas) sqrt(Injector_F_1.f_in.Tt * LPRES.R(FlowMeter_F.f_in.fluid)) * Injector_F.W / (LPRES.FGAMMA(FlowMeter_F.f_in.fluid) * Injector_F.f_in.pt)	 ELSE 0<br/>
+<a name="e348">[E-348] </a>CombCha_1.f_F.p =  IF[41] (LPRES.State(FlowMeter_F.f_in.fluid) == Gas) MATH.max(CombCha_1.p_c, Injector_F.p_out_ch)	 ELSE CombCha_1.p_c<br/>
+<a name="e349">[E-349] </a>Injector_F.A_d =  IF[43] (LPRES.State(FlowMeter_F.f_in.fluid) == Gas) Injector_F.A_sl * ((2 + (LPRES.gamma(FlowMeter_F.f_in.fluid) - 1) * Injector_F.M_out ** 2) / (LPRES.gamma(FlowMeter_F.f_in.fluid) + 1)) ** ((LPRES.gamma(FlowMeter_F.f_in.fluid) + 1) / (2 * (LPRES.gamma(FlowMeter_F.f_in.fluid) - 1))) / Injector_F.M_out	 ELSE Injector_F.W / Injector_F.C_D / sqrt(2 * LPRES.rho(FlowMeter_F.f_in.fluid) * (Injector_F.f_in.pt - CombCha_1.f_F.p))<br/>
+<a name="e350">[E-350] </a>Injector_F.v_ideal =  IF[44] (LPRES.State(FlowMeter_F.f_in.fluid) == Gas) Injector_F.M_out * sqrt(LPRES.gamma(FlowMeter_F.f_in.fluid) * LPRES.R(FlowMeter_F.f_in.fluid) * CombCha_1.f_F.T)	 ELSE Injector_F.W / (LPRES.rho(FlowMeter_F.f_in.fluid) * Injector_F.A_d * Injector_F.C_D)<br/>
+<a name="e351">[E-351] </a>Injector_F.Re =  IF[45] (LPRES.State(FlowMeter_F.f_in.fluid) == Gas) 0	 ELSE LPRES.rho(FlowMeter_F.f_in.fluid) * Injector_F.v_ideal * Injector_F.C_D * sqrt(4 * Injector_F.A_d / 3.14159265358979) / LPRES.visc(FlowMeter_F.f_in.fluid)<br/>
+<a name="e352">[E-352] </a>ControlPanel_1.Thrust = ControlPanel_1.i_Thrust.Data[1]<br/>
+<a name="e353">[E-353] </a>FlowMeter_F.i.Data[1] = abs(FlowMeter_F.f_in.W)<br/>
+<a name="e354">[E-354] </a>FlowMeter_O.i.Data[1] = abs(FlowMeter_O.f_in.W)<br/>
+<a name="e355">[E-355] </a>ControlPanel_1.W_tot = FlowMeter_F.i.Data[1] + FlowMeter_O.i.Data[1]<br/>
+<a name="e356">[E-356] </a>ControlPanel_1.i_Comb.Data[1] = CombCha_1.c_star<br/>
+<a name="e357">[E-357] </a>ControlPanel_1.Isp = ControlPanel_1.Thrust / ControlPanel_1.W_tot<br/>
+<a name="e358">[E-358] </a>ControlPanel_1.C_E = ControlPanel_1.Isp / CombCha_1.c_star<br/>
+<a name="e359">[E-359] </a>ControlPanel_1.Isp_0 = ControlPanel_1.Isp / 9.80665<br/>
+<a name="e360">[E-360] </a>GasGen.rho_trans = GasGen.p_c / Turbine_ch.f_in.Tt / LPRES.R(GasGen.fluid_P)<br/>
+<a name="e361">[E-361] </a>GasGen.c_star = sqrt(LPRES.R(Nozzle_1.g.fluid) * Turbine_ch.f_in.Tt) / LPRES.FGAMMA(Nozzle_1.g.fluid)<br/>
+<a name="e362">[E-362] </a>GasGen.i.Data[1] = GasGen.c_star<br/>
+<a name="e363">[E-363] </a>Injector_F_1.PR_sl =  IF[75] (LPRES.State(FlowMeter_F.f_in.fluid) == Gas) ((LPRES.gamma(FlowMeter_F.f_in.fluid) + 1) / 2) ** (LPRES.gamma(FlowMeter_F.f_in.fluid) / (LPRES.gamma(FlowMeter_F.f_in.fluid) - 1))	 ELSE 0<br/>
+<a name="e364">[E-364] </a>Injector_F_1.p_out_ch =  IF[76] (LPRES.State(FlowMeter_F.f_in.fluid) == Gas) Injector_F_1.f_in.pt / Injector_F_1.PR_sl	 ELSE 0<br/>
+<a name="e365">[E-365] </a>Injector_F_1.A_sl =  IF[77] (LPRES.State(FlowMeter_F.f_in.fluid) == Gas) sqrt(Injector_F_1.f_in.Tt * LPRES.R(FlowMeter_F.f_in.fluid)) * Injector_F_1.W / (LPRES.FGAMMA(FlowMeter_F.f_in.fluid) * Injector_F_1.f_in.pt)	 ELSE 0<br/>
+<a name="e366">[E-366] </a>GasGen.f_F.p =  IF[78] (LPRES.State(FlowMeter_F.f_in.fluid) == Gas) MATH.max(GasGen.p_c, Injector_F_1.p_out_ch)	 ELSE GasGen.p_c<br/>
+<a name="e367">[E-367] </a>Injector_F_1.A_d =  IF[80] (LPRES.State(FlowMeter_F.f_in.fluid) == Gas) Injector_F_1.A_sl * ((2 + (LPRES.gamma(FlowMeter_F.f_in.fluid) - 1) * Injector_F_1.M_out ** 2) / (LPRES.gamma(FlowMeter_F.f_in.fluid) + 1)) ** ((LPRES.gamma(FlowMeter_F.f_in.fluid) + 1) / (2 * (LPRES.gamma(FlowMeter_F.f_in.fluid) - 1))) / Injector_F_1.M_out	 ELSE Injector_F_1.W / Injector_F_1.C_D / sqrt(2 * LPRES.rho(FlowMeter_F.f_in.fluid) * (Injector_F_1.f_in.pt - GasGen.f_F.p))<br/>
+<a name="e368">[E-368] </a>Injector_F_1.v_ideal =  IF[81] (LPRES.State(FlowMeter_F.f_in.fluid) == Gas) Injector_F_1.M_out * sqrt(LPRES.gamma(FlowMeter_F.f_in.fluid) * LPRES.R(FlowMeter_F.f_in.fluid) * GasGen.f_F.T)	 ELSE Injector_F_1.W / (LPRES.rho(FlowMeter_F.f_in.fluid) * Injector_F_1.A_d * Injector_F_1.C_D)<br/>
+<a name="e369">[E-369] </a>Injector_F_1.Re =  IF[82] (LPRES.State(FlowMeter_F.f_in.fluid) == Gas) 0	 ELSE LPRES.rho(FlowMeter_F.f_in.fluid) * Injector_F_1.v_ideal * Injector_F_1.C_D * sqrt(4 * Injector_F_1.A_d / 3.14159265358979) / LPRES.visc(FlowMeter_F.f_in.fluid)<br/>
+<a name="e370">[E-370] </a>Injector_O_1.PR_sl =  IF[83] (LPRES.State(FlowMeter_O.f_in.fluid) == Gas) ((LPRES.gamma(FlowMeter_O.f_in.fluid) + 1) / 2) ** (LPRES.gamma(FlowMeter_O.f_in.fluid) / (LPRES.gamma(FlowMeter_O.f_in.fluid) - 1))	 ELSE 0<br/>
+<a name="e371">[E-371] </a>Injector_O_1.p_out_ch =  IF[84] (LPRES.State(FlowMeter_O.f_in.fluid) == Gas) Injector_O_1.f_in.pt / Injector_O_1.PR_sl	 ELSE 0<br/>
+<a name="e372">[E-372] </a>Injector_O_1.A_sl =  IF[85] (LPRES.State(FlowMeter_O.f_in.fluid) == Gas) sqrt(Injector_O_1.f_in.Tt * LPRES.R(FlowMeter_O.f_in.fluid)) * Injector_O_1.W / (LPRES.FGAMMA(FlowMeter_O.f_in.fluid) * Injector_O_1.f_in.pt)	 ELSE 0<br/>
+<a name="e373">[E-373] </a>GasGen.f_O.p =  IF[86] (LPRES.State(FlowMeter_O.f_in.fluid) == Gas) MATH.max(GasGen.p_c, Injector_O_1.p_out_ch)	 ELSE GasGen.p_c<br/>
+<a name="e374">[E-374] </a>Injector_O_1.A_d =  IF[88] (LPRES.State(FlowMeter_O.f_in.fluid) == Gas) Injector_O_1.A_sl * ((2 + (LPRES.gamma(FlowMeter_O.f_in.fluid) - 1) * Injector_O_1.M_out ** 2) / (LPRES.gamma(FlowMeter_O.f_in.fluid) + 1)) ** ((LPRES.gamma(FlowMeter_O.f_in.fluid) + 1) / (2 * (LPRES.gamma(FlowMeter_O.f_in.fluid) - 1))) / Injector_O_1.M_out	 ELSE Injector_O_1.W / Injector_O_1.C_D / sqrt(2 * LPRES.rho(FlowMeter_O.f_in.fluid) * (Injector_O_1.f_in.pt - GasGen.f_O.p))<br/>
+<a name="e375">[E-375] </a>Injector_O_1.v_ideal =  IF[89] (LPRES.State(FlowMeter_O.f_in.fluid) == Gas) Injector_O_1.M_out * sqrt(LPRES.gamma(FlowMeter_O.f_in.fluid) * LPRES.R(FlowMeter_O.f_in.fluid) * GasGen.f_O.T)	 ELSE Injector_O_1.W / (LPRES.rho(FlowMeter_O.f_in.fluid) * Injector_O_1.A_d * Injector_O_1.C_D)<br/>
+<a name="e376">[E-376] </a>Injector_O_1.Re =  IF[90] (LPRES.State(FlowMeter_O.f_in.fluid) == Gas) 0	 ELSE LPRES.rho(FlowMeter_O.f_in.fluid) * Injector_O_1.v_ideal * Injector_O_1.C_D * sqrt(4 * Injector_O_1.A_d / 3.14159265358979) / LPRES.visc(FlowMeter_O.f_in.fluid)<br/>
+<a name="e377">[E-377] </a>ControlPanel_1.i_W.Data[1] = FlowMeter_F.i.Data[1] + FlowMeter_O.i.Data[1]<br/>
+<a name="e378">[E-378] </a>Nozzle_1.i.Data[1] = ControlPanel_1.i_Thrust.Data[1] - ThrustMonitor_1.i.Data[1]<br/>
+</body></html>

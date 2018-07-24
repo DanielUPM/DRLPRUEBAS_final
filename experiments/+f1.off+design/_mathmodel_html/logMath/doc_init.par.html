@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>Mathematical Model View</title>
+<link href="./css/mlog.css" rel="stylesheet">
+<script src="./css/jquery-1.10.2.min.js"></script>
+</head><body>
+<div data-role="page">
+<div data-role="main" class="ui-content">
+<div class="qindex"><a class="qindex" rel="external" data-ajax='false' href="../+f1.off+design.par.html">Mathematical Model View</a>
+</div><div class="qindex"><a class="qindex" rel="external" data-ajax='false' href="../+f1.off+design.par.html">Summary</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_vars.par.html">Variables</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_equivalents.par.html">Equivalents</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_boundary.par.html">Boundary</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_jacobian.par.html">Jacobian</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_equations.par.html">Equations</a> |
+<a class="qindexHL" rel="external" data-ajax='false' href="doc_init.par.html">Init</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_discrete.par.html">Discrete</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_design.par.html">Design</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_highindex.par.html">High Index</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_equationmatrix.par.html">Equation Matrix</a>
+</div><h2>Init Blocks<br /></h2>
+<br/>
+Note 1: Variables called "__aux_int_..." are internal integer variables, used to iterate<br/>
+Note 2: FOR statements are converted to WHILE statements<br/>
+<br/>
+  -- init(TankOpen_F.TankOpen,100)<br/>
+LPRES.Init_fluid(TankOpen_F.fluid, FlowMeter_F.f_in.fluid)<br/>
+  -- init(TankOpen_O.TankOpen,100)<br/>
+LPRES.Init_fluid(TankOpen_O.fluid, FlowMeter_O.f_in.fluid)<br/>
+  -- init(CombCha_1.CombCha,100)<br/>
+ASSERT CombCha_1.AR_r >= 1 KILLPOINT "AR_r CAN NOT BE LOWER THAN 1!"
+<br/>
+LPRES.Init_fluid(Comb_prod, ThrustMonitor_1.g.fluid)<br/>
+CombCha_1.Combustion =  TRUE <br/>
+CombCha_1.phi = 1<br/>
+CombCha_1.W_F = CombCha_1.W_F0<br/>
+IF CombCha_1.Zone == Convergent THEN
+	CombCha_1.M_r = 0.001
+	ELSE
+	CombCha_1.M_r = 100
+	END IF<br/>
+CombCha_1.k_1 = 1 / CombCha_1.mfr_ch<br/>
+CombCha_1.k_2 = 1 / (CombCha_1.mfr_ch * CombCha_1.T_ch)<br/>
+  -- init(GasGen.GasGen,100)<br/>
+LPRES.Init_fluid(Comb_prod, Nozzle_1.g.fluid)<br/>
+GasGen.Combustion =  TRUE <br/>
+GasGen.phi = 1<br/>
+GasGen.W_F = GasGen.W_F0<br/>
+GasGen.k_1 = 1 / GasGen.mfr_ch<br/>
+GasGen.k_2 = 1 / (GasGen.mfr_ch * GasGen.T_ch)<br/>
+  -- init(Pump_F.Pump,0)<br/>
+Pump_F.U = Pump_F.U_0<br/>
+  -- init(Pump_O.Pump,0)<br/>
+Pump_O.U = Pump_O.U_0<br/>
+  -- init(Nozzle_1.Nozzle,0)<br/>
+Nozzle_1.g.pt = 10000000<br/>
+</body></html>

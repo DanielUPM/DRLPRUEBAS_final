@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>Mathematical Model View</title>
+<link href="./css/mlog.css" rel="stylesheet">
+<script src="./css/jquery-1.10.2.min.js"></script>
+</head><body>
+<div data-role="page">
+<div data-role="main" class="ui-content">
+<div class="qindex"><a class="qindex" rel="external" data-ajax='false' href="../+g+g_comp.+o+f+f+d_valid.par.html">Mathematical Model View</a>
+</div><div class="qindex"><a class="qindex" rel="external" data-ajax='false' href="../+g+g_comp.+o+f+f+d_valid.par.html">Summary</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_vars.par.html">Variables</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_equivalents.par.html">Equivalents</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_boundary.par.html">Boundary</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_jacobian.par.html">Jacobian</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_equations.par.html">Equations</a> |
+<a class="qindexHL" rel="external" data-ajax='false' href="doc_init.par.html">Init</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_discrete.par.html">Discrete</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_design.par.html">Design</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_highindex.par.html">High Index</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_equationmatrix.par.html">Equation Matrix</a>
+</div><h2>Init Blocks<br /></h2>
+<br/>
+Note 1: Variables called "__aux_int_..." are internal integer variables, used to iterate<br/>
+Note 2: FOR statements are converted to WHILE statements<br/>
+<br/>
+  -- init(GasGen_1.GasGen,100)<br/>
+LPRES.Init_fluid(Comb_prod, NozzleConDiv_1.g_in.fluid)<br/>
+GasGen_1.Combustion =  TRUE <br/>
+GasGen_1.phi = 1<br/>
+GasGen_1.W_F = GasGen_1.W_F0<br/>
+GasGen_1.k_1 = 1 / GasGen_1.mfr_ch<br/>
+GasGen_1.k_2 = 1 / (GasGen_1.mfr_ch * GasGen_1.T_ch)<br/>
+  -- init(LH2_circuit.Inlet,100)<br/>
+LPRES.Init_fluid(LH2_circuit.fluid, GasGen_1.f_F.fluid)<br/>
+  -- init(LO2_circuit.Inlet,100)<br/>
+LPRES.Init_fluid(LO2_circuit.fluid, GasGen_1.f_O.fluid)<br/>
+</body></html>

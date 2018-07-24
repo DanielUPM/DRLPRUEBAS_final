@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<partitionInfo version="1.0" library="DRLPRUEBAS" component="CC_caso_escalon_OFFD" partition="caso_escalon">
+<noDerivatives value="FALSE"/>
+<inhibitReductionConstantCoefEqts value="FALSE"/>
+<generatePartitionClass value="FALSE"/>
+<removeNotUsedVars value="FALSE"/>
+<showPropertyPanel value="FALSE"/>
+<generateProtectedMathFunctions value="TRUE"/>
+<generatePerformanceMeters value="FALSE"/>
+<generateObfuscatedCpp value="FALSE"/>
+<generateParInfoHTML value="TRUE"/>
+<generateMaxSignificantDigits value="FALSE"/>
+<noDatas>
+  <variable name="LH2_circuit.Tt"/>
+  <variable name="LH2_circuit.pt"/>
+</noDatas>
+<boundaries>
+  <variable name="LH2_circuit.Tt"/>
+  <variable name="LH2_circuit.pt"/>
+  <variable name="LPRES.Altitude"/>
+</boundaries>
+<dynamics>
+  <variable name="CombCha_1.rho_trans"/>
+  <variable name="CombCha_1.g.Tt"/>
+</dynamics>
+<algebraics>
+  <variable name="Injector_F.PR"/>
+  <variable name="ThrustMonitor.g.W"/>
+  <variable name="CombCha_1.p_out_ch"/>
+  <variable name="ThrustMonitor.M_out"/>
+</algebraics>
+</partitionInfo>

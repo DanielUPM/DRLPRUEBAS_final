@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<usedInputFiles version="1.0" library="DRLPRUEBAS" component="CC_Cool_desacop" partition="partition2" experiment="exp22" date="2018:06:25" time="09:31:27">
+  <rboundlaw id="CoolingJacket.l.Tt"/>
+  <rboundlaw id="CoolingJacket.l.pt"/>
+  <rboundlaw id="LH2_circuit_1.Tt"/>
+  <rboundlaw id="LH2_circuit_1.f.Tt"/>
+  <rboundlaw id="LH2_circuit_1.f.pt"/>
+  <rboundlaw id="LH2_circuit_1.pt"/>
+  <rboundlaw id="LPRES.Altitude"/>
+</usedInputFiles>

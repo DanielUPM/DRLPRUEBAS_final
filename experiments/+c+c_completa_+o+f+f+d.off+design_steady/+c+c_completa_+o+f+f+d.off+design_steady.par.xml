@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<partitionInfo version="1.0" library="DRLPRUEBAS" component="CC_completa_OFFD" partition="offDesign_steady">
+<noDerivatives value="TRUE"/>
+<inhibitReductionConstantCoefEqts value="FALSE"/>
+<generatePartitionClass value="FALSE"/>
+<removeNotUsedVars value="FALSE"/>
+<showPropertyPanel value="FALSE"/>
+<generateProtectedMathFunctions value="TRUE"/>
+<generatePerformanceMeters value="FALSE"/>
+<generateObfuscatedCpp value="FALSE"/>
+<generateParInfoHTML value="TRUE"/>
+<generateMaxSignificantDigits value="FALSE"/>
+<boundaries>
+  <variable name="LPRES.Altitude"/>
+</boundaries>
+<algebraics>
+  <variable name="Injector_F.PR"/>
+  <variable name="CombCha_1.p_out_ch"/>
+  <variable name="ThrustMonitor.M_out"/>
+</algebraics>
+</partitionInfo>

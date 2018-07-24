@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>Mathematical Model View</title>
+<link href="./css/mlog.css" rel="stylesheet">
+<script src="./css/jquery-1.10.2.min.js"></script>
+</head><body>
+<div data-role="page">
+<div data-role="main" class="ui-content">
+<div class="qindex"><a class="qindex" rel="external" data-ajax='false' href="../+r+l10_design.design.par.html">Mathematical Model View</a>
+</div><div class="qindex"><a class="qindex" rel="external" data-ajax='false' href="../+r+l10_design.design.par.html">Summary</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_vars.par.html">Variables</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_equivalents.par.html">Equivalents</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_boundary.par.html">Boundary</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_jacobian.par.html">Jacobian</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_equations.par.html">Equations</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_init.par.html">Init</a> |
+<a class="qindexHL" rel="external" data-ajax='false' href="doc_discrete.par.html">Discrete</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_design.par.html">Design</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_highindex.par.html">High Index</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_equationmatrix.par.html">Equation Matrix</a>
+</div><h2>Discrete Blocks<br /></h2>
+ASSERT (Gas == LPRES.State(HeadLoss_3.f_in.fluid)) FATAL "ONLY GASES CAN GO THROUGH THE TURBINE!"
+<br/>
+ASSERT (Liquid == LPRES.State(HeadLoss_1.f_in.fluid)) FATAL "ONLY LIQUIDS CAN GO THROUGH THE PUMP!"
+<br/>
+ASSERT (Liquid == LPRES.State(HeadLoss_2.f_in.fluid)) FATAL "ONLY LIQUIDS CAN GO THROUGH THE PUMP!"
+<br/>
+WHEN ((CC.fluid_O[LOX] * CC.fluid_F[LOX] + CC.fluid_O[NTO] * CC.fluid_F[NTO] + CC.fluid_O[H2O2] * CC.fluid_F[H2O2] + CC.fluid_O[HNO3] * CC.fluid_F[HNO3] + CC.fluid_O[LF2] * CC.fluid_F[LF2] + CC.fluid_O[RP_1] * CC.fluid_F[RP_1] + CC.fluid_O[LCH4] * CC.fluid_F[LCH4] + CC.fluid_O[LH2] * CC.fluid_F[LH2] + CC.fluid_O[N2H4] * CC.fluid_F[N2H4] + CC.fluid_O[UDMH] * CC.fluid_F[UDMH] + CC.fluid_O[MMH] * CC.fluid_F[MMH] + CC.fluid_O[JP_10] * CC.fluid_F[JP_10] + CC.fluid_O[Kerox] * CC.fluid_F[Kerox] + CC.fluid_O[Oil] * CC.fluid_F[Oil] + CC.fluid_O[H2O] * CC.fluid_F[H2O] + CC.fluid_O[IPA] * CC.fluid_F[IPA] + CC.fluid_O[Air] * CC.fluid_F[Air] + CC.fluid_O[Ar] * CC.fluid_F[Ar] + CC.fluid_O[CH4] * CC.fluid_F[CH4] + CC.fluid_O[CO] * CC.fluid_F[CO] + CC.fluid_O[CO2] * CC.fluid_F[CO2] + CC.fluid_O[H2] * CC.fluid_F[H2] + CC.fluid_O[He] * CC.fluid_F[He] + CC.fluid_O[N2] * CC.fluid_F[N2] + CC.fluid_O[O2] * CC.fluid_F[O2] + CC.fluid_O[MMH_vapour] * CC.fluid_F[MMH_vapour]) != 0)  THEN
+	CC.Combustion =  FALSE 
+	END WHEN<br/>
+WHEN ((CC.fluid_O[LOX] * CC.fluid_F[LOX] + CC.fluid_O[NTO] * CC.fluid_F[NTO] + CC.fluid_O[H2O2] * CC.fluid_F[H2O2] + CC.fluid_O[HNO3] * CC.fluid_F[HNO3] + CC.fluid_O[LF2] * CC.fluid_F[LF2] + CC.fluid_O[RP_1] * CC.fluid_F[RP_1] + CC.fluid_O[LCH4] * CC.fluid_F[LCH4] + CC.fluid_O[LH2] * CC.fluid_F[LH2] + CC.fluid_O[N2H4] * CC.fluid_F[N2H4] + CC.fluid_O[UDMH] * CC.fluid_F[UDMH] + CC.fluid_O[MMH] * CC.fluid_F[MMH] + CC.fluid_O[JP_10] * CC.fluid_F[JP_10] + CC.fluid_O[Kerox] * CC.fluid_F[Kerox] + CC.fluid_O[Oil] * CC.fluid_F[Oil] + CC.fluid_O[H2O] * CC.fluid_F[H2O] + CC.fluid_O[IPA] * CC.fluid_F[IPA] + CC.fluid_O[Air] * CC.fluid_F[Air] + CC.fluid_O[Ar] * CC.fluid_F[Ar] + CC.fluid_O[CH4] * CC.fluid_F[CH4] + CC.fluid_O[CO] * CC.fluid_F[CO] + CC.fluid_O[CO2] * CC.fluid_F[CO2] + CC.fluid_O[H2] * CC.fluid_F[H2] + CC.fluid_O[He] * CC.fluid_F[He] + CC.fluid_O[N2] * CC.fluid_F[N2] + CC.fluid_O[O2] * CC.fluid_F[O2] + CC.fluid_O[MMH_vapour] * CC.fluid_F[MMH_vapour]) == 0)  THEN
+	CC.Combustion =  TRUE 
+	END WHEN<br/>
+ASSERT (Liquid == LPRES.State(HeadLoss_2.f_in.fluid)) FATAL "ONLY LIQUIDS CAN ENTER TO THE COOLING JACKET!"
+<br/>
+ASSERT (Gas == LPRES.State(ThrustMonitor.g.fluid)) FATAL "ONLY GASES CAN GO THROUGH THE THRUST MONITOR!"
+<br/>
+ASSERT (ThrustMonitor.M_out >= 1) KILLPOINT "THE CONVERGENT-DIVERGENT NOZZLE MUST BE CHOKED!"
+<br/>
+ASSERT ((ThrustMonitor.p_out / ThrustMonitor.p_amb) &gt; ((1.88 * ThrustMonitor.M_out - 1) ** -0.64)) WARNING "ACCORDING TO SCHMUCKER CRITERION, THE NOZZLE HAS A REGION OF DETACHMENT!"
+<br/>
+</body></html>

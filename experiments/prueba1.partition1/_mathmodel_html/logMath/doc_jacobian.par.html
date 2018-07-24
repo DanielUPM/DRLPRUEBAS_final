@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>Mathematical Model View</title>
+<link href="./css/mlog.css" rel="stylesheet">
+<script src="./css/jquery-1.10.2.min.js"></script>
+</head><body>
+<div data-role="page">
+<div data-role="main" class="ui-content">
+<div class="qindex"><a class="qindex" rel="external" data-ajax='false' href="../prueba1.partition1.par.html">Mathematical Model View</a>
+</div><div class="qindex"><a class="qindex" rel="external" data-ajax='false' href="../prueba1.partition1.par.html">Summary</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_vars.par.html">Variables</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_equivalents.par.html">Equivalents</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_boundary.par.html">Boundary</a> |
+<a class="qindexHL" rel="external" data-ajax='false' href="doc_jacobian.par.html">Jacobian</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_equations.par.html">Equations</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_init.par.html">Init</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_discrete.par.html">Discrete</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_design.par.html">Design</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_highindex.par.html">High Index</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_equationmatrix.par.html">Equation Matrix</a>
+</div><h2>Jacobian Matrix Information<br /></h2>
+<br/>
+<font size="4" color="black">Jacobian Independent Variables</font><br/>
+<table border="1" cellspacing="0"><tr><td><color="black"><b>POS&nbsp;</b></color></td>
+<td><color="black"><b>VARIABLE&nbsp;</b></color></td>
+<td><color="black"><b>ALIAS&nbsp;</b></color></td>
+<td><color="black"><b>CATEGORY&nbsp;</b></color></td>
+<td><color="black"><b>UNITS&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>INITIAL&nbsp;</b></color></td>
+<td><color="black"><b>RESIDUE EQUATION&nbsp;</b></color></td>
+<td><color="black"><b>BOX
+&nbsp;</b></color></td>
+</tr>
+<tr><td>1&nbsp;</td><td><a href="doc_vars.par.html#v13" data-ajax='false'>CombCha.M_r</a>&nbsp;</td><td><a href="doc_vars.par.html#v13" data-ajax='false'></a>&nbsp;</td><td>ALGEBRAIC&nbsp;</td><td>-&nbsp;</td><td>Mach number at the characteristic section of heat exchange&nbsp;</td><td>&nbsp;</td><td>[E-180] SplitFrac.f_in.W =  IF (LPRES.State(HeadLoss_Turb.f_in.fluid) == Gas) Injector_F.A * LPRES.FGAMMA(HeadLoss_Turb.f_in.fluid) * Injector_F.f_in.pt / sqrt(HeadLoss_Junct.f_in.Tt * LPRES.R(HeadLoss_Turb.f_in.fluid)) / (((2 + (LPRES.gamma(HeadLoss_Turb.f_in.fluid) - 1) * Injector_F.M_out ** 2) / (LPRES.gamma(HeadLoss_Turb.f_in.fluid) + 1)) ** ((LPRES.gamma(HeadLoss_Turb.f_in.fluid) + 1) / (2 * (LPRES.gamma(HeadLoss_Turb.f_in.fluid) - 1))) / Injector_F.M_out) ELSE Injector_F.A * Injector_F.C_D * sqrt(2 * LPRES.rho(HeadLoss_Turb.f_in.fluid) * (Injector_F.f_in.pt - CombCha.f_F.p))&nbsp;</td><td>1&nbsp;</td></tr>
+<tr><td>2&nbsp;</td><td><a href="doc_vars.par.html#v25" data-ajax='false'>CombCha.W_F</a>&nbsp;</td><td><a href="doc_vars.par.html#v25" data-ajax='false'></a>&nbsp;</td><td>ALGEBRAIC&nbsp;</td><td>kg/s&nbsp;</td><td>Fuel mass flow&nbsp;</td><td>&nbsp;</td><td>[E-186] (CombCha.W_O + CombCha.W_F) / ThrustMonitor.g.W * LPRES.cp(CombCha.fluid_P) * (ThrustMonitor.g.Tt - CombCha.T_c) + CombCha.W_IO / ThrustMonitor.g.W * HeadLoss_TO.f_in.fluid[Comb_prod_cp] * (ThrustMonitor.g.Tt - CombCha.f_O.T) + CombCha.W_IF / ThrustMonitor.g.W * HeadLoss_Turb.f_in.fluid[Comb_prod_cp] * (ThrustMonitor.g.Tt - CombCha.f_F.T) = 0&nbsp;</td><td>1&nbsp;</td></tr>
+<tr><td>3&nbsp;</td><td><a href="doc_vars.par.html#v67" data-ajax='false'>CombCha.phi</a>&nbsp;</td><td><a href="doc_vars.par.html#v67" data-ajax='false'></a>&nbsp;</td><td>ALGEBRAIC&nbsp;</td><td>-&nbsp;</td><td>Equivalence ratio&nbsp;</td><td>&nbsp;</td><td>[E-188] HeadLoss_TO.f_in.W =  IF (LPRES.State(HeadLoss_TO.f_in.fluid) == Gas) Injector_O.A * LPRES.FGAMMA(HeadLoss_TO.f_in.fluid) * FlowMeter_O.f_in.pt / sqrt(FlowMeter_O.f_in.Tt * LPRES.R(HeadLoss_TO.f_in.fluid)) / (((2 + (LPRES.gamma(HeadLoss_TO.f_in.fluid) - 1) * Injector_O.M_out ** 2) / (LPRES.gamma(HeadLoss_TO.f_in.fluid) + 1)) ** ((LPRES.gamma(HeadLoss_TO.f_in.fluid) + 1) / (2 * (LPRES.gamma(HeadLoss_TO.f_in.fluid) - 1))) / Injector_O.M_out) ELSE Injector_O.A * Injector_O.C_D * sqrt(2 * LPRES.rho(HeadLoss_TO.f_in.fluid) * (FlowMeter_O.f_in.pt - CombCha.f_O.p))&nbsp;</td><td>1&nbsp;</td></tr>
+<tr><td>4&nbsp;</td><td><a href="doc_vars.par.html#v249" data-ajax='false'>Junction.f_in1.Tt</a>&nbsp;</td><td><a href="doc_vars.par.html#v249" data-ajax='false'></a>&nbsp;</td><td>ALGEBRAIC&nbsp;</td><td>K&nbsp;</td><td>Total temperature&nbsp;</td><td>1&nbsp;</td><td>[E-194] CoolingJacket.h.Q = CombCha.h_g * (CombCha.T_aw - CoolingJacket.h.T) * CombCha.A_wet&nbsp;</td><td>1&nbsp;</td></tr>
+<tr><td>5&nbsp;</td><td><a href="doc_vars.par.html#v275" data-ajax='false'>Pump_F.U</a>&nbsp;</td><td><a href="doc_vars.par.html#v275" data-ajax='false'></a>&nbsp;</td><td>ALGEBRAIC&nbsp;</td><td>m/s&nbsp;</td><td>Blade speed&nbsp;</td><td>&nbsp;</td><td>[E-195] CombCha.AR_r = 1 / CombCha.M_r * LPRES.FGAMMA(ThrustMonitor.g.fluid) / sqrt(LPRES.gamma(ThrustMonitor.g.fluid)) * (1 + (LPRES.gamma(ThrustMonitor.g.fluid) - 1) * CombCha.M_r ** 2 / 2) ** ((LPRES.gamma(ThrustMonitor.g.fluid) + 1) / (2 * (LPRES.gamma(ThrustMonitor.g.fluid) - 1)))&nbsp;</td><td>1&nbsp;</td></tr>
+<tr><td>6&nbsp;</td><td><a href="doc_vars.par.html#v374" data-ajax='false'>ThrustMonitor.g.Tt</a>&nbsp;</td><td><a href="doc_vars.par.html#v374" data-ajax='false'></a>&nbsp;</td><td>ALGEBRAIC&nbsp;</td><td>K&nbsp;</td><td>Total temperature&nbsp;</td><td>1&nbsp;</td><td>[E-203] Pump_O.phi = HeadLoss_TO.f_in.W / (Pump_O.A_in * Pump_O.U * LPRES.rho(HeadLoss_TO.f_in.fluid))&nbsp;</td><td>1&nbsp;</td></tr>
+<tr><td>7&nbsp;</td><td><a href="doc_vars.par.html#v386" data-ajax='false'>Turbine.M_2</a>&nbsp;</td><td><a href="doc_vars.par.html#v386" data-ajax='false'></a>&nbsp;</td><td>ALGEBRAIC&nbsp;</td><td>-&nbsp;</td><td>Mach number in section 2&nbsp;</td><td>&nbsp;</td><td>[E-207] Turbine.phi = Turbine.V_z2 / Turbine.U&nbsp;</td><td>1&nbsp;</td></tr>
+<tr><td>8&nbsp;</td><td><a href="doc_vars.par.html#v66" data-ajax='false'>CombCha.p_out_ch</a>&nbsp;</td><td><a href="doc_vars.par.html#v66" data-ajax='false'></a>&nbsp;</td><td>ALGEBRAIC&nbsp;</td><td>Pa&nbsp;</td><td>Choked outlet pressure&nbsp;</td><td>100&nbsp;</td><td>[E-218] ThrustMonitor.g.A_out / CombCha.A_th = LPRES.FGAMMA(ThrustMonitor.g.fluid) / ((CombCha.p_out_ch / CombCha.f_O.p_c) ** (1 / LPRES.gamma(ThrustMonitor.g.fluid)) * sqrt(2 * LPRES.gamma(ThrustMonitor.g.fluid) * (1 - (CombCha.p_out_ch / CombCha.f_O.p_c) ** ((LPRES.gamma(ThrustMonitor.g.fluid) - 1) / LPRES.gamma(ThrustMonitor.g.fluid))) / (LPRES.gamma(ThrustMonitor.g.fluid) - 1)))&nbsp;</td><td>2&nbsp;</td></tr>
+<tr><td>9&nbsp;</td><td><a href="doc_vars.par.html#v370" data-ajax='false'>ThrustMonitor.M_out</a>&nbsp;</td><td><a href="doc_vars.par.html#v370" data-ajax='false'></a>&nbsp;</td><td>ALGEBRAIC&nbsp;</td><td>-&nbsp;</td><td>Gas Mach number&nbsp;</td><td>100&nbsp;</td><td>[E-220] ThrustMonitor.g.W * sqrt(LPRES.R(ThrustMonitor.g.fluid) * ThrustMonitor.g.Tt) / ThrustMonitor.g.A_out / CombCha.f_O.p_c = sqrt(LPRES.gamma(ThrustMonitor.g.fluid)) * ThrustMonitor.M_out * (1 + (LPRES.gamma(ThrustMonitor.g.fluid) - 1) / 2 * ThrustMonitor.M_out ** 2) ** (-(LPRES.gamma(ThrustMonitor.g.fluid) + 1) / 2 / (LPRES.gamma(ThrustMonitor.g.fluid) - 1))&nbsp;</td><td>3&nbsp;</td></tr>
+</table>
+<br/>
+</body></html>

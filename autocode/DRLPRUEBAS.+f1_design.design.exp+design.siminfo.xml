@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<usedInputFiles version="1.0" library="DRLPRUEBAS" component="F1_design" partition="design" experiment="expDesign" date="2018:06:28" time="11:45:39">
+  <rboundlaw id="CombCha_1.f_F.W"/>
+  <rboundlaw id="FlowMeter_F.f_in.W"/>
+  <rboundlaw id="FlowMeter_F.f_out.W"/>
+  <rboundlaw id="FlowMeter_O.f_in.W"/>
+  <rboundlaw id="FlowMeter_O.f_out.W"/>
+  <rboundlaw id="Injector_F.W"/>
+  <rboundlaw id="Injector_F.f_in.W"/>
+  <rboundlaw id="Injector_F.f_out.W"/>
+  <rboundlaw id="LPRES.Altitude"/>
+  <rboundlaw id="Pump_F.f_in.W"/>
+  <rboundlaw id="Pump_F.f_out.W"/>
+  <rboundlaw id="Pump_O.f_in.W"/>
+  <rboundlaw id="Pump_O.f_out.W"/>
+  <rboundlaw id="SplitFrac_F.f_in.W"/>
+  <rboundlaw id="SplitFrac_F.f_out.W"/>
+  <rboundlaw id="SplitFrac_O.f_in.W"/>
+  <rboundlaw id="TankOpen_F.l.W"/>
+  <rboundlaw id="TankOpen_O.l.W"/>
+</usedInputFiles>

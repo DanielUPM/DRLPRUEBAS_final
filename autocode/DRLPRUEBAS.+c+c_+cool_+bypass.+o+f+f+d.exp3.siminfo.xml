@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<usedInputFiles version="1.0" library="DRLPRUEBAS" component="CC_Cool_Bypass" partition="OFFD" experiment="exp3" date="2018:06:21" time="11:19:52">
+  <rboundlaw id="LPRES.Altitude"/>
+  <rboundlaw id="Turbine_1.m.N"/>
+</usedInputFiles>

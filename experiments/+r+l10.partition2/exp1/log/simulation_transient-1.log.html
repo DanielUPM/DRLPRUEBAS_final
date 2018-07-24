@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>Simulation Log</title>
+<link href="./css/mlog.css" rel="stylesheet">
+<link href="./css/jquery.mobile-1.4.1.min.css" rel="stylesheet">
+<script src="./css/jquery-1.10.2.min.js"></script>
+<script src="./css/jquery.mobile-1.4.1.min.js"></script>
+<script src="./css/Chart.bundle.js"></script>
+</head><body>
+<div data-role="page">
+<div data-role="main" class="ui-content">
+<div class="qindex">
+<a class="qindexHL" rel="external" data-ajax='false' href="../simulation.log.html">Simulation Log</a> |
+<a class="qindex" rel="external" data-ajax='false' href="summary_tree.log.html">Summary</a> |
+<a class="qindex" rel="external" data-ajax='false' href="errors.log.html">Errors</a> |
+<a class="qindex" rel="external" data-ajax='false' href="performance.log.html">Performance</a>
+</div><h2>INTERNAL CALCULATION LOG<br /></h2>
+<a name="transient-1"></a><div data-role="collapsible" data-collapsed="false">
+<h1>transient-1 (TIME: 0, TSTOP: 15, CINT: 0.1, Method: IDAS)</h1><p>[INITIAL] Executing the INIT blocks of components...</p>
+<p>[TIME: 0]   WHEN executed; condition: (CombCha.fluid_O[LOX] * CombCha.fluid_F[LOX] + CombCha.fluid_O[NTO] * CombCha.fluid_F[NTO] + CombCha.fluid_O[H2O2] * CombCha.fluid_F[H2O2] + CombCha.fluid_O[HNO3] * CombCha.fluid_F[HNO3] + CombCha.fluid_O[LF2] * CombCha.fluid_F[LF2] + CombCha.fluid_O[RP_1] * CombCha.fluid_F[RP_1] + CombCha.fluid_O[LCH4] * CombCha.fluid_F[LCH4] + CombCha.fluid_O[LH2] * CombCha.fluid_F[LH2] + CombCha.fluid_O[N2H4] * CombCha.fluid_F[N2H4] + CombCha.fluid_O[UDMH] * CombCha.fluid_F[UDMH] + CombCha.fluid_O[MMH] * CombCha.fluid_F[MMH] + CombCha.fluid_O[JP_10] * CombCha.fluid_F[JP_10] + CombCha.fluid_O[Kerox] * CombCha.fluid_F[Kerox] + CombCha.fluid_O[Oil] * CombCha.fluid_F[Oil] + CombCha.fluid_O[H2O] * CombCha.fluid_F[H2O] + CombCha.fluid_O[IPA] * CombCha.fluid_F[IPA] + CombCha.fluid_O[Air] * CombCha.fluid_F[Air] + CombCha.fluid_O[Ar] * CombCha.fluid_F[Ar] + CombCha.fluid_O[CH4] * CombCha.fluid_F[CH4] + CombCha.fluid_O[CO] * CombCha.fluid_F[CO] + CombCha.fluid_O[CO2] * CombCha.fluid_F[CO2] + CombCha.fluid_O[H2] * CombCha.fluid_F[H2] + CombCha.fluid_O[He] * CombCha.fluid_F[He] + CombCha.fluid_O[N2] * CombCha.fluid_F[N2] + CombCha.fluid_O[O2] * CombCha.fluid_F[O2] + CombCha.fluid_O[MMH_vapour] * CombCha.fluid_F[MMH_vapour]) == 0</p>
+<p>Convergence not reached: Iteration is not making good progress as measured by the improvement from the last 20 iterations trials. Check whether the step limitation imposed in unknowns is too strict (internal error code: 2)</p>
+<h2>Statistics</h2>
+<table border="1" cellspacing="0" cellpadding="3" summary="Tracing">
+<tr><td nowrap="nowrap"><b>Number of unknowns</b></td><td nowrap="nowrap">7</td></tr>
+<tr><td nowrap="nowrap"><b>Number of valid iterations</b></td><td nowrap="nowrap">263</td></tr>
+<tr><td nowrap="nowrap"><b>Number of valid Jacobian evaluations</b></td><td nowrap="nowrap">22</td></tr>
+<tr><td nowrap="nowrap"><b>Number of valid Broyden estimations</b></td><td nowrap="nowrap">470</td></tr>
+<tr><td nowrap="nowrap"><b>Number of total iterations</b></td><td nowrap="nowrap">492</td></tr>
+<tr><td nowrap="nowrap"><b>Number of total Jacobian evaluations</b></td><td nowrap="nowrap">22</td></tr>
+<tr><td nowrap="nowrap"><b>Number of total Broyden estimations</b></td><td nowrap="nowrap">470</td></tr>
+<tr><td nowrap="nowrap"><b>Number of total residues evaluations</b></td><td nowrap="nowrap">647</td></tr>
+</table>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 1 (code ESI:7:288:32:98)  ***</h1>
+<p>Cannot solve internal algebraic box number 1. Reason: Convergence not reached: Iteration is not making good progress as measured by the improvement from the last 20 iterations trials. Check whether the step limitation imposed in unknowns is too strict (internal error code: 2)
+</p>
+</div>
+<p>Convergence not reached: Iteration is not making good progress as measured by the improvement from the last 20 iterations trials. Check whether the step limitation imposed in unknowns is too strict (internal error code: 2)</p>
+<h2>Statistics</h2>
+<table border="1" cellspacing="0" cellpadding="3" summary="Tracing">
+<tr><td nowrap="nowrap"><b>Number of unknowns</b></td><td nowrap="nowrap">7</td></tr>
+<tr><td nowrap="nowrap"><b>Number of valid iterations</b></td><td nowrap="nowrap">12</td></tr>
+<tr><td nowrap="nowrap"><b>Number of valid Jacobian evaluations</b></td><td nowrap="nowrap">3</td></tr>
+<tr><td nowrap="nowrap"><b>Number of valid Broyden estimations</b></td><td nowrap="nowrap">29</td></tr>
+<tr><td nowrap="nowrap"><b>Number of total iterations</b></td><td nowrap="nowrap">32</td></tr>
+<tr><td nowrap="nowrap"><b>Number of total Jacobian evaluations</b></td><td nowrap="nowrap">3</td></tr>
+<tr><td nowrap="nowrap"><b>Number of total Broyden estimations</b></td><td nowrap="nowrap">29</td></tr>
+<tr><td nowrap="nowrap"><b>Number of total residues evaluations</b></td><td nowrap="nowrap">54</td></tr>
+</table>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 1 (code ESI:7:288:32:98)  ***</h1>
+<p>Cannot solve internal algebraic box number 1. Reason: Convergence not reached: Iteration is not making good progress as measured by the improvement from the last 20 iterations trials. Check whether the step limitation imposed in unknowns is too strict (internal error code: 2)
+</p>
+</div>
+<p>[TIME: 0]   Integration method changed to: IDAS</p>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 1 (code 7:213:24:98) path: ThrustMonitor. in file "LPRES_CompBasic.el" at line 894  ***</h1>
+<p>Assertion violation((ThrustMonitor.p_out / ThrustMonitor.p_amb) > ((1.88 * ThrustMonitor.M_out - 1) ** -0.64)): ACCORDING TO SCHMUCKER CRITERION, THE NOZZLE HAS A REGION OF DETACHMENT!</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_Junct.f_in.W violated, actual value is -0.77313520373619948, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable CombCha.f_O.p_c violated, actual value is -184430.71785539549, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_TO.f_in.W violated, actual value is -0.56810346266239109, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable CombCha.f_O.p violated, actual value is -184430.71785539549, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable CombCha.f_O.p_c violated, actual value is -184430.71785539549, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable ThrustMonitor.g.W violated, actual value is -1.3412386663985902, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable CombCha.f_O.p_c violated, actual value is -184430.71785539549, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_Junct.f_in.W violated, actual value is -0.77313520373619948, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_Junct.f_in.W violated, actual value is -0.77313520373619948, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_Junct.f_in.W violated, actual value is -0.77313520373619948, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_Junct.f_in.W violated, actual value is -0.77313520373619948, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_TO.f_in.W violated, actual value is -0.56810346266239109, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_TO.f_in.W violated, actual value is -0.56810346266239109, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_Junct.f_in.W violated, actual value is -0.77313520373619948, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_Junct.f_in.W violated, actual value is -0.77313520373619948, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_Junct.f_in.W violated, actual value is -0.77313520373619948, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_Junct.f_in.W violated, actual value is -0.77313520373619948, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_TO.f_in.W violated, actual value is -0.56810346266239109, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_TO.f_in.W violated, actual value is -0.56810346266239109, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_Turb.f_in.W violated, actual value is -2.7814162366407214, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_Turb.f_in.W violated, actual value is -2.7814162366407214, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_Junct.f_in.W violated, actual value is -0.77313520373619948, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_Junct.f_in.W violated, actual value is -0.77313520373619948, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable CombCha.f_O.p_c violated, actual value is -184430.71785539549, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_TO.f_in.W violated, actual value is -0.56810346266239109, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_TO.f_in.W violated, actual value is -0.56810346266239109, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable CombCha.f_O.p violated, actual value is -184430.71785539549, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable CombCha.f_O.p_c violated, actual value is -184430.71785539549, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_Turb.f_in.W violated, actual value is -2.7814162366407214, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_Junct.f_in.W violated, actual value is -0.77313520373619948, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_Junct.f_in.W violated, actual value is -0.77313520373619948, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_Junct.f_in.W violated, actual value is -0.77313520373619948, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_TO.f_in.W violated, actual value is -0.56810346266239109, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_TO.f_in.W violated, actual value is -0.56810346266239109, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_Junct.f_in.W violated, actual value is -0.77313520373619948, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_Turb.f_in.W violated, actual value is -2.7814162366407214, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_Junct.f_in.W violated, actual value is -0.77313520373619948, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_TO.f_in.W violated, actual value is -0.56810346266239109, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable ThrustMonitor.g.W violated, actual value is -1.3412386663985902, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable CombCha.f_O.p_c violated, actual value is -184430.71785539549, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_Turb.f_in.W violated, actual value is -2.7814162366407214, valid range is [0,1e+038]</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 2 (code ESI:7:257:51:98)  ***</h1>
+<p>Range of variable HeadLoss_Turb.f_in.W violated, actual value is -2.7814162366407214, valid range is [0,1e+038]</p>
+</div>
+<p>[TIME: 4.4408921e-017]   Retrying integration</p>
+<div data-role="collapsible" data-mini="true" data-theme="c">
+<h1>***  KILLPOINT level 2 (code ESI:9:917:11:98)  ***</h1>
+<p>Bad-numerical-operation(division): Invalid division by zero detected when making "0 / 0". Source code formula uses the denominator "fluid[Comb_prod_M]"</p>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="c">
+<h1>***  KILLPOINT level 2 (code ESI:9:201:32:98)  ***</h1>
+<p>Cannot converge on the integration step from time 0.000000 to time 0.000000
+Reason: At t = 0 and h = 9.53674e-11, the corrector convergence failed repeatedly or with |h| = hmin.
+</p>
+</div>
+
+</div>
+<br/><p><font size="2">(Document generated automatically with PROOSIS Version: 3.8.1 Date: 2018:06:25 Time: 13:35:01)</font></p>
+</div>
+</div>
+</body>
+</html>

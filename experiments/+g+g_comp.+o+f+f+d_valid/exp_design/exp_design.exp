@@ -1,0 +1,42 @@
+ /*-----------------------------------------------------------------------------------------
+ LIBRARY: DRLPRUEBAS
+ COMPONENT: GG_comp
+ PARTITION: OFFD_valid
+ EXPERIMENT: exp_design
+ TEMPLATE: STEADY
+ CREATION DATE: 21/06/2018
+-----------------------------------------------------------------------------------------*/
+
+EXPERIMENT exp_design ON GG_comp.OFFD_valid
+   DECLS
+   OBJECTS
+   INIT
+      -- initial values for state variables
+      GasGen_1.rho_trans = 1
+      GasGen_1.g.Tt = 2500
+
+      -- initial values for algebraics
+      Injector_F.PR = 10
+      NozzleConDiv_1.g_in.W = 10
+      NozzleConDiv_1.p_out_ch = 1000
+      ThrustMonitor_1.M_out = 10
+
+   BOUNDS
+      -- Set equations for boundaries: boundVar = f(TIME;...)
+      LPRES.Altitude = 9000
+
+   BODY
+      -- report results in file reportAll.rpt
+      REPORT_LIST("reportAll","*",TRUE)
+
+      DEBUG_LEVEL= 4      -- Range 0..4
+      -- Settings for different actions. Valid actions are: SEV_DISABLE, SEV_NONE, SEV_WARNING, SEV_ERROR, SEV_KILLPOINT and SEV_FATALL
+      --eSetErrorAction(ERR_BAD_OPER,SEV_KILLPOINT) -- Detect bad numerical operations (eg division by zero), default is SEV_NONE, recommended is SEV_KILLPOINT
+      --eSetErrorAction(ERR_NAN_INF, SEV_KILLPOINT) -- Detect NaN or Inf values, default is SEV_NONE, recommended is SEV_KILLPOINT
+      TOLTYPE= RELTOL -- convergence criteria
+      TOLERANCE = 1e-06 -- steady solver relative tolerance 
+
+      -- Call the steady state function
+      STEADY()
+
+END EXPERIMENT

@@ -1,0 +1,47 @@
+ /*-----------------------------------------------------------------------------------------
+ LIBRARY: DRLPRUEBAS
+ COMPONENT: CC_GG_OFFD
+ PARTITION: partition1
+ EXPERIMENT: exp_OFFDvalid
+ TEMPLATE: STEADY
+ CREATION DATE: 26/06/2018
+-----------------------------------------------------------------------------------------*/
+
+EXPERIMENT exp_OFFDvalid ON CC_GG_OFFD.partition1
+   DECLS
+   OBJECTS
+   INIT
+      -- initial values for state variables
+      CombCha_1.rho_trans = 1
+      CombCha_1.g.Tt = 2500
+      GasGen_1.rho_trans = 1
+      GasGen_1.g.Tt = 2500
+
+      -- initial values for algebraics
+      Injector_F.PR = 10
+      Injector_F_1.PR = 10
+      ThrustMonitor.g.W = 10
+      CombCha_1.p_out_ch = 1000
+      Nozzle_1.g.W = 10
+      ThrustMonitor.M_out = 10
+
+   BOUNDS
+      -- Set equations for boundaries: boundVar = f(TIME;...)
+      LPRES.Altitude = 9000
+      Turbine_ch.m.N = 581.194641
+
+   BODY
+      -- report results in file reportAll.rpt
+      REPORT_LIST("reportAll","*",TRUE)
+
+      DEBUG_LEVEL= 4      -- Range 0..4
+      -- Settings for different actions. Valid actions are: SEV_DISABLE, SEV_NONE, SEV_WARNING, SEV_ERROR, SEV_KILLPOINT and SEV_FATALL
+      --eSetErrorAction(ERR_BAD_OPER,SEV_KILLPOINT) -- Detect bad numerical operations (eg division by zero), default is SEV_NONE, recommended is SEV_KILLPOINT
+      --eSetErrorAction(ERR_NAN_INF, SEV_KILLPOINT) -- Detect NaN or Inf values, default is SEV_NONE, recommended is SEV_KILLPOINT
+      TOLTYPE= RELTOL -- convergence criteria
+      TOLERANCE = 1e-06 -- steady solver relative tolerance 
+
+      -- Call the steady state function
+      STEADY()
+
+END EXPERIMENT

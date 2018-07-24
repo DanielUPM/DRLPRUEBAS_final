@@ -1,0 +1,39 @@
+ /*-----------------------------------------------------------------------------------------
+ LIBRARY: DRLPRUEBAS
+ COMPONENT: F1_design
+ PARTITION: design
+ EXPERIMENT: expDesign
+ TEMPLATE: STEADY
+ CREATION DATE: 28/06/2018
+-----------------------------------------------------------------------------------------*/
+
+EXPERIMENT expDesign ON F1_design.design
+   DECLS
+   OBJECTS
+   INIT
+      -- initial values for algebraics
+      ThrustMonitor_1.M_out = 10
+      CombCha_1.p_out_ch = 1000
+
+   BOUNDS
+      -- Set equations for boundaries: boundVar = f(TIME;...)
+      FlowMeter_F.f_in.W = 788
+      FlowMeter_O.f_in.W = 1789
+      Injector_F.W = 722.652542
+      LPRES.Altitude = 9000
+
+   BODY
+      -- report results in file reportAll.rpt
+      REPORT_LIST("reportAll","*",TRUE)
+
+      DEBUG_LEVEL= 4      -- Range 0..4
+      -- Settings for different actions. Valid actions are: SEV_DISABLE, SEV_NONE, SEV_WARNING, SEV_ERROR, SEV_KILLPOINT and SEV_FATALL
+      --eSetErrorAction(ERR_BAD_OPER,SEV_KILLPOINT) -- Detect bad numerical operations (eg division by zero), default is SEV_NONE, recommended is SEV_KILLPOINT
+      --eSetErrorAction(ERR_NAN_INF, SEV_KILLPOINT) -- Detect NaN or Inf values, default is SEV_NONE, recommended is SEV_KILLPOINT
+      TOLTYPE= RELTOL -- convergence criteria
+      TOLERANCE = 1e-06 -- steady solver relative tolerance 
+
+      -- Call the steady state function
+      STEADY()
+
+END EXPERIMENT

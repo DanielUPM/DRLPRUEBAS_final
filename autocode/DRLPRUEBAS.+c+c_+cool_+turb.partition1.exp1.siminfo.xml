@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<usedInputFiles version="1.0" library="DRLPRUEBAS" component="CC_Cool_Turb" partition="partition1" experiment="exp1" date="2018:06:28" time="14:00:20">
+  <rboundlaw id="Injector_F.PR"/>
+  <rboundlaw id="LPRES.Altitude"/>
+</usedInputFiles>

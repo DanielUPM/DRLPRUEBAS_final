@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<experiment version="1.4.0">
+	<experimentViews>
+		<tab name="Tab_1">
+			<tableWindow title="Table_1" x="0" y="0" dx="350" dy="250" state="maximized">
+				<table id="Table_1" colums="false">
+					<var name="#Calculation id"/>
+					<var name="#Status"/>
+					<var name="#ESI"/>
+					<var name="#Case"/>
+					<var name="#Point"/>
+					<var name="TIME"/>
+					<var name="CombCha_1.g.Tt"/>
+					<var name="CombCha_1.g.pt"/>
+					<var name="CombCha_1.rho_trans"/>
+					<var name="CombCha_1.g.W"/>
+					<var name="Injector_F.PR"/>
+					<var name="Injector_O.PR"/>
+					<var name="Injector_F.f_out.W"/>
+					<var name="Injector_F.f_out.T"/>
+					<var name="Injector_F.f_out.p"/>
+					<var name="Injector_O.f_out.W"/>
+					<var name="Injector_O.f_out.T"/>
+					<var name="Injector_O.f_out.p"/>
+					<var name="Injector_F.A_d"/>
+					<var name="Injector_O.A_d"/>
+					<var name="CombCha_1.g.Tt'"/>
+					<var name="CombCha_1.p_out_ch"/>
+					<var name="CombCha_1.rho_trans'"/>
+				</table>
+			</tableWindow>
+		</tab>
+		<tab name="Tab_2">
+			<plotWindow title="Plot_1" x="0" y="0" dx="1642" dy="392" state="maximized">
+				<plot id="Plot_1" graphType="plot_time">
+						<title value="">
+							<font family="MS Shell Dlg 2"/>
+						</title>
+						<axeX variableName="TIME">
+							<titleAxe value="Tiempo (s)"/>
+							<scale minCurrent="-1.18803" maxCurrent="18.218" scaleType="current"/>
+						</axeX>
+						<axeY>
+							<titleAxe value="Densidad"/>
+							<scale minCurrent="5.13159" maxCurrent="6.15202" scaleType="current"/>
+						</axeY>
+						<axeY2 isShowed="TRUE">
+							<titleAxe value=""/>
+							<scale minCurrent="312.456" maxCurrent="392.199" scaleType="current"/>
+						</axeY2>
+						<layout>
+							<font family="MS Shell Dlg 2" size="12"/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font family="MS Shell Dlg 2"/>
+						</legend>
+						<chartStyles>
+							<var name="CombCha_1.rho_trans" nick=""/>
+							<var name="CombCha_1.rho_trans&#39;" nick="" isShowed="false" isY2="TRUE"/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
+			<plotWindow title="Plot_2" x="0" y="0" dx="350" dy="250" state="maximized">
+				<plot id="Plot_2" graphType="plot_time">
+						<title value="">
+							<font family="MS Shell Dlg 2"/>
+						</title>
+						<axeX variableName="TIME">
+							<titleAxe value="Tiempo (s)"/>
+							<scale minCurrent="-0.382171" maxCurrent="17.7424" scaleType="current"/>
+						</axeX>
+						<axeY>
+							<titleAxe value="Temperatura"/>
+							<scale minCurrent="3547.03" maxCurrent="3551.1" scaleType="current"/>
+						</axeY>
+						<axeY2 isShowed="TRUE">
+							<titleAxe value=""/>
+							<scale minCurrent="54907" maxCurrent="55310.4" scaleType="current"/>
+						</axeY2>
+						<layout>
+							<font family="MS Shell Dlg 2" size="12"/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font family="MS Shell Dlg 2"/>
+						</legend>
+						<chartStyles>
+							<var name="CombCha_1.g.Tt" nick=""/>
+							<var name="CombCha_1.g.Tt&#39;" nick="" isShowed="false" isY2="TRUE"/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
+		</tab>
+		<tab name="Tab_3">
+			<plotWindow title="Plot_2" x="350" y="0" dx="350" dy="250">
+				<plot id="Plot_2" graphType="plot_time">
+						<title value="">
+							<font family="MS Shell Dlg 2"/>
+						</title>
+						<axeX variableName="TIME">
+							<titleAxe value="Tiempo (s)"/>
+							<scale minCurrent="-0.440917" maxCurrent="17.7109" scaleType="current"/>
+						</axeX>
+						<axeY>
+							<titleAxe value="Densidad"/>
+							<scale minCurrent="39.1444" maxCurrent="50.3167" scaleType="current"/>
+						</axeY>
+						<axeY2 isShowed="TRUE">
+							<titleAxe value=""/>
+							<scale minCurrent="-309.291" maxCurrent="63.7272" scaleType="current"/>
+						</axeY2>
+						<layout>
+							<font family="MS Shell Dlg 2" size="12"/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font family="MS Shell Dlg 2"/>
+						</legend>
+						<chartStyles>
+							<var name="GasGen.rho_trans" nick=""/>
+							<var name="GasGen.rho_trans&#39;" nick="" isShowed="false" isY2="TRUE"/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
+			<plotWindow title="Plot_1" x="0" y="0" dx="350" dy="250">
+				<plot id="Plot_1" graphType="plot_time">
+						<title value="">
+							<font family="MS Shell Dlg 2"/>
+						</title>
+						<axeX variableName="TIME">
+							<titleAxe value="Tiempo (s)"/>
+							<scale minCurrent="3.39247" maxCurrent="17.1195" scaleType="current"/>
+						</axeX>
+						<axeY isShowed="TRUE">
+							<titleAxe value="Temperatura"/>
+							<scale minCurrent="1061.55" maxCurrent="1072.42" scaleType="current"/>
+						</axeY>
+						<axeY2 isShowed="TRUE">
+							<titleAxe value=""/>
+							<scale minCurrent="-1570.05" maxCurrent="-1233.7" scaleType="current"/>
+						</axeY2>
+						<layout>
+							<font family="MS Shell Dlg 2" size="12"/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font family="MS Shell Dlg 2"/>
+						</legend>
+						<chartStyles>
+							<var name="GasGen.g.Tt" nick=""/>
+							<var name="GasGen.g.Tt&#39;" nick="" isShowed="false" isY2="TRUE"/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
+		</tab>
+	</experimentViews>
+	<watch width="266" height="71" visible="true" pos="right" >
+		<currentTab name="view"/>
+		<variables>
+			<tab name="initial"> 
+			</tab> 
+			<tab name="inputs"> 
+			</tab> 
+			<tab name="view"> 
+			</tab> 
+		</variables>
+		<layout>
+			<tab name="initial"> 
+				<column name="name" width="100"/> 
+				<column name="value" width="100"/> 
+				<column name="units" width="100"/> 
+				<column name="category" width="100"/> 
+				<column name="type" width="100"/> 
+			</tab> 
+			<tab name="inputs"> 
+				<column name="name" width="100"/> 
+				<column name="value" width="100"/> 
+				<column name="units" width="100"/> 
+				<column name="category" width="100"/> 
+			</tab> 
+			<tab name="view"> 
+				<column name="name" width="100"/> 
+				<column name="value" width="100"/> 
+				<column name="units" width="100"/> 
+				<column name="category" width="100"/> 
+			</tab> 
+		</layout>
+	</watch>
+	<outputWindow height="71" width="1440" visible="true" pos="bottom" />
+	<alarms globalEnabled="TRUE">
+	</alarms>
+
+	<mainWindow  mode="maximized" currentTab="Tab_3" />
+</experiment>

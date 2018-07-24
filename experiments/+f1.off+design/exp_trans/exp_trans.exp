@@ -1,0 +1,56 @@
+ /*-----------------------------------------------------------------------------------------
+ LIBRARY: DRLPRUEBAS
+ COMPONENT: F1
+ PARTITION: offDesign
+ EXPERIMENT: exp_trans
+ TEMPLATE: TRANSIENT
+ CREATION DATE: 28/06/2018
+-----------------------------------------------------------------------------------------*/
+
+EXPERIMENT exp_trans ON F1.offDesign
+   DECLS
+   OBJECTS
+   INIT
+    -- initial values for state variables
+      CombCha_1.rho_trans = 8
+      CombCha_1.g.Tt = 4000
+      GasGen.rho_trans = 50
+      GasGen.g.Tt = 1200
+
+      -- initial values for algebraics
+      Nozzle_1.g.W = 100
+      ThrustMonitor_1.g.W = 4000
+      ThrustMonitor_1.M_out = 2
+      CombCha_1.p_out_ch = 90000
+
+   BOUNDS
+      -- Set equations for boundaries: boundVar = f(TIME;...)
+      LPRES.Altitude = 9000
+
+   BODY
+      -- creates an ASCII file with the results in table format
+      -- REPORT_TABLE("results.rpt", "*",TRUE)
+
+      -- set the debug level (valid range [0,4])
+      DEBUG_LEVEL= 4   
+      -- select default integration solver. Valid methods are IDAS (_SPARSE), DASSL(_SPARSE), CVODE_BDF(_SPARSE), CVODE_AM, RK4, EULER, AM1, AM2 and AM4
+      IMETHOD= IDAS -- default is DASSL, recommended is either IDAS or IDAS_SPARSE  
+      -- Settings for different actions. Valid actions are: SEV_DISABLE, SEV_NONE, SEV_WARNING, SEV_ERROR, SEV_KILLPOINT, SEV_FATAL
+      --eSetErrorAction(ERR_BAD_OPER,SEV_KILLPOINT) -- Detect bad numerical operations (eg division by zero), default is SEV_NONE, recommended is SEV_KILLPOINT
+      --eSetErrorAction(ERR_NAN_INF, SEV_KILLPOINT) -- Detect NaN or Inf values, default is SEV_NONE, recommended is SEV_KILLPOINT
+      eSetConfig(CFG_FORCE_STOP_CINT,TRUE) -- Force or not to stop the solver each CINT. Sometimes you can speed up the simulation if you select FALSE
+      -- set tolerances and other important inputs
+      REL_ERROR = 1e-06 -- transient solver relative tolerance
+      ABS_ERROR = 1e-06 -- transient solver absolute tolerance
+      TOLERANCE = 1e-06 -- steady solver relative tolerance
+      INIT_INTEG_STEP = -1 -- initial integration step size (-1 means use the solver estimation) 
+      MAX_INTEG_STEP = -1 -- maximum integration step size (-1 means use the solver estimation) 
+      NSTEPS = 1 -- Only for explicit solvers use CINT/NSTEPS as integration step size
+      REPORT_MODE = IS_EVENT -- by default it reports results at every CINT and event detection. Other valid options are IS_STEP, IS_CINT and IS_MANUAL_REFRESH 
+
+      -- simulate a transient in range[TIME,TSTOP] reporting every CINT
+      TIME = 0
+      TSTOP = 0.05
+      CINT = 0.001
+      INTEG()
+END EXPERIMENT

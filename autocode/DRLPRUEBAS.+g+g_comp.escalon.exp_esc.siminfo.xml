@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<usedInputFiles version="1.0" library="DRLPRUEBAS" component="GG_comp" partition="escalon" experiment="exp_esc" date="2018:06:29" time="10:10:25">
+  <rboundlaw id="Injector_F.f_in.Tt"/>
+  <rboundlaw id="Injector_F.f_in.pt"/>
+  <rboundlaw id="Injector_O.f_in.Tt"/>
+  <rboundlaw id="Injector_O.f_in.pt"/>
+  <rboundlaw id="LH2_circuit.Tt"/>
+  <rboundlaw id="LH2_circuit.f.Tt"/>
+  <rboundlaw id="LH2_circuit.f.pt"/>
+  <rboundlaw id="LH2_circuit.pt"/>
+  <rboundlaw id="LO2_circuit.Tt"/>
+  <rboundlaw id="LO2_circuit.f.Tt"/>
+  <rboundlaw id="LO2_circuit.f.pt"/>
+  <rboundlaw id="LO2_circuit.pt"/>
+  <rboundlaw id="LPRES.Altitude"/>
+</usedInputFiles>

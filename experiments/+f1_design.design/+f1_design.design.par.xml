@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<partitionInfo version="1.0" library="DRLPRUEBAS" component="F1_design" partition="design">
+<noDerivatives value="TRUE"/>
+<inhibitReductionConstantCoefEqts value="FALSE"/>
+<generatePartitionClass value="FALSE"/>
+<removeNotUsedVars value="FALSE"/>
+<showPropertyPanel value="FALSE"/>
+<generateProtectedMathFunctions value="TRUE"/>
+<generatePerformanceMeters value="FALSE"/>
+<generateObfuscatedCpp value="FALSE"/>
+<generateParInfoHTML value="TRUE"/>
+<generateMaxSignificantDigits value="FALSE"/>
+<noDatas>
+  <variable name="Injector_F.W"/>
+  <variable name="Injector_F_1.W"/>
+  <variable name="Injector_O.W"/>
+  <variable name="Injector_O_1.W"/>
+</noDatas>
+<boundaries>
+  <variable name="FlowMeter_F.f_in.W"/>
+  <variable name="FlowMeter_O.f_in.W"/>
+  <variable name="Injector_F.W"/>
+  <variable name="LPRES.Altitude"/>
+</boundaries>
+<algebraics>
+  <variable name="Pump_F.U"/>
+  <variable name="ThrustMonitor_1.M_out"/>
+  <variable name="Pump_O.U"/>
+  <variable name="CombCha_1.p_out_ch"/>
+</algebraics>
+</partitionInfo>

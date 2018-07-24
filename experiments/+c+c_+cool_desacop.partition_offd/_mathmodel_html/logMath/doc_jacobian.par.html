@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>Mathematical Model View</title>
+<link href="./css/mlog.css" rel="stylesheet">
+<script src="./css/jquery-1.10.2.min.js"></script>
+</head><body>
+<div data-role="page">
+<div data-role="main" class="ui-content">
+<div class="qindex"><a class="qindex" rel="external" data-ajax='false' href="../+c+c_+cool_desacop.partition_offd.par.html">Mathematical Model View</a>
+</div><div class="qindex"><a class="qindex" rel="external" data-ajax='false' href="../+c+c_+cool_desacop.partition_offd.par.html">Summary</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_vars.par.html">Variables</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_equivalents.par.html">Equivalents</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_boundary.par.html">Boundary</a> |
+<a class="qindexHL" rel="external" data-ajax='false' href="doc_jacobian.par.html">Jacobian</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_equations.par.html">Equations</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_init.par.html">Init</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_discrete.par.html">Discrete</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_design.par.html">Design</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_highindex.par.html">High Index</a> |
+<a class="qindex" rel="external" data-ajax='false' href="doc_equationmatrix.par.html">Equation Matrix</a>
+</div><h2>Jacobian Matrix Information<br /></h2>
+<br/>
+<font size="4" color="black">Jacobian Independent Variables</font><br/>
+<table border="1" cellspacing="0"><tr><td><color="black"><b>POS&nbsp;</b></color></td>
+<td><color="black"><b>VARIABLE&nbsp;</b></color></td>
+<td><color="black"><b>ALIAS&nbsp;</b></color></td>
+<td><color="black"><b>CATEGORY&nbsp;</b></color></td>
+<td><color="black"><b>UNITS&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>INITIAL&nbsp;</b></color></td>
+<td><color="black"><b>RESIDUE EQUATION&nbsp;</b></color></td>
+<td><color="black"><b>BOX
+&nbsp;</b></color></td>
+</tr>
+<tr><td>1&nbsp;</td><td><a href="doc_vars.par.html#v70" data-ajax='false'>CombCha_1.rho_trans</a>&nbsp;</td><td><a href="doc_vars.par.html#v70" data-ajax='false'></a>&nbsp;</td><td>DYNAMIC&nbsp;</td><td>kg/m^3&nbsp;</td><td>Density calculated in transient model&nbsp;</td><td>&nbsp;</td><td>CombCha_1.rho_trans' = (CombCha_1.f_O.W + CombCha_1.f_F.W - ThrustMonitor.g.W) / (CombCha_1.temp_ch / (CombCha_1.rho_ch * CombCha_1.k_1))&nbsp;</td><td>0&nbsp;</td></tr>
+<tr><td>2&nbsp;</td><td><a href="doc_vars.par.html#v51" data-ajax='false'>CombCha_1.g.Tt</a>&nbsp;</td><td><a href="doc_vars.par.html#v51" data-ajax='false'></a>&nbsp;</td><td>DYNAMIC&nbsp;</td><td>K&nbsp;</td><td>Total temperature&nbsp;</td><td>1&nbsp;</td><td>CombCha_1.g.Tt' = (((CombCha_1.W_O + CombCha_1.W_F) / ThrustMonitor.g.W * LPRES.cp(CombCha_1.fluid_P) * (CombCha_1.g.Tt - CombCha_1.T_c) + CombCha_1.W_IO / ThrustMonitor.g.W * CombCha_1.f_O.fluid[Comb_prod_cp] * (CombCha_1.g.Tt - CombCha_1.f_O.T) + CombCha_1.W_IF / ThrustMonitor.g.W * CombCha_1.f_F.fluid[Comb_prod_cp] * (CombCha_1.g.Tt - CombCha_1.f_F.T)) / -(CombCha_1.temp_ch / (ThrustMonitor.g.W * CombCha_1.rho_ch * CombCha_1.k_2 * CombCha_1.T_ch)) - CombCha_1.g.Tt * LPRES.cv(CombCha_1.fluid_P) * CombCha_1.rho_trans') / (CombCha_1.rho_trans * LPRES.cv(CombCha_1.fluid_P))&nbsp;</td><td>0&nbsp;</td></tr>
+<tr><td>3&nbsp;</td><td><a href="doc_vars.par.html#v110" data-ajax='false'>CoolingJacket.rho_trans</a>&nbsp;</td><td><a href="doc_vars.par.html#v110" data-ajax='false'></a>&nbsp;</td><td>DYNAMIC&nbsp;</td><td>kg/m^3&nbsp;</td><td>Gas density calculated in transient model&nbsp;</td><td>&nbsp;</td><td>CoolingJacket.rho_trans' = (CoolingJacket.l.W - Nozzle_1.g.W) / (CoolingJacket.temp_ch / (CoolingJacket.rho_ch * CoolingJacket.k_1))&nbsp;</td><td>0&nbsp;</td></tr>
+<tr><td>4&nbsp;</td><td><a href="doc_vars.par.html#v92" data-ajax='false'>CoolingJacket.g.Tt</a>&nbsp;</td><td><a href="doc_vars.par.html#v92" data-ajax='false'></a>&nbsp;</td><td>DYNAMIC&nbsp;</td><td>K&nbsp;</td><td>Total temperature&nbsp;</td><td>1&nbsp;</td><td>CoolingJacket.g.Tt' = ((CoolingJacket.h.Q + LPRES.cp(Nozzle_1.g.fluid) * (CoolingJacket.l.W * LH2_circuit_1.Tt - Nozzle_1.g.W * CoolingJacket.g.Tt)) / (CoolingJacket.temp_ch / (CoolingJacket.rho_ch * CoolingJacket.k_2 * CoolingJacket.T_ch)) - CoolingJacket.g.Tt * LPRES.cv(Nozzle_1.g.fluid) * CoolingJacket.rho_trans') / (CoolingJacket.rho_trans * LPRES.cv(Nozzle_1.g.fluid))&nbsp;</td><td>0&nbsp;</td></tr>
+<br/>
+<tr><td>5&nbsp;</td><td><a href="doc_vars.par.html#v121" data-ajax='false'>Injector_F.PR</a>&nbsp;</td><td><a href="doc_vars.par.html#v121" data-ajax='false'></a>&nbsp;</td><td>ALGEBRAIC&nbsp;</td><td>-&nbsp;</td><td>Pressure ratio&nbsp;</td><td>10&nbsp;</td><td>[E-104] CombCha_1.f_O.p_c = CombCha_1.rho_trans * LPRES.R(CombCha_1.fluid_P) * CombCha_1.g.Tt&nbsp;</td><td>1&nbsp;</td></tr>
+<tr><td>6&nbsp;</td><td><a href="doc_vars.par.html#v219" data-ajax='false'>ThrustMonitor.g.W</a>&nbsp;</td><td><a href="doc_vars.par.html#v219" data-ajax='false'></a>&nbsp;</td><td>ALGEBRAIC&nbsp;</td><td>kg/s&nbsp;</td><td>Mass flow&nbsp;</td><td>1&nbsp;</td><td>[E-136] ThrustMonitor.g.W = CombCha_1.f_O.p_c * CombCha_1.A_th / (sqrt(LPRES.R(ThrustMonitor.g.fluid) * CombCha_1.g.Tt) / LPRES.FGAMMA(ThrustMonitor.g.fluid))&nbsp;</td><td>2&nbsp;</td></tr>
+<tr><td>7&nbsp;</td><td><a href="doc_vars.par.html#v67" data-ajax='false'>CombCha_1.p_out_ch</a>&nbsp;</td><td><a href="doc_vars.par.html#v67" data-ajax='false'></a>&nbsp;</td><td>ALGEBRAIC&nbsp;</td><td>Pa&nbsp;</td><td>Choked outlet pressure&nbsp;</td><td>100&nbsp;</td><td>[E-149] ThrustMonitor.g.A_out / CombCha_1.A_th = LPRES.FGAMMA(ThrustMonitor.g.fluid) / ((CombCha_1.p_out_ch / CombCha_1.f_O.p_c) ** (1 / LPRES.gamma(ThrustMonitor.g.fluid)) * sqrt(2 * LPRES.gamma(ThrustMonitor.g.fluid) * (1 - (CombCha_1.p_out_ch / CombCha_1.f_O.p_c) ** ((LPRES.gamma(ThrustMonitor.g.fluid) - 1) / LPRES.gamma(ThrustMonitor.g.fluid))) / (LPRES.gamma(ThrustMonitor.g.fluid) - 1)))&nbsp;</td><td>3&nbsp;</td></tr>
+<tr><td>8&nbsp;</td><td><a href="doc_vars.par.html#v13" data-ajax='false'>CombCha_1.M_r</a>&nbsp;</td><td><a href="doc_vars.par.html#v13" data-ajax='false'></a>&nbsp;</td><td>ALGEBRAIC&nbsp;</td><td>-&nbsp;</td><td>Mach number at the characteristic section of heat exchange&nbsp;</td><td>&nbsp;</td><td>[E-153] CombCha_1.AR_r = 1 / CombCha_1.M_r * LPRES.FGAMMA(ThrustMonitor.g.fluid) / sqrt(LPRES.gamma(ThrustMonitor.g.fluid)) * (1 + (LPRES.gamma(ThrustMonitor.g.fluid) - 1) * CombCha_1.M_r ** 2 / 2) ** ((LPRES.gamma(ThrustMonitor.g.fluid) + 1) / (2 * (LPRES.gamma(ThrustMonitor.g.fluid) - 1)))&nbsp;</td><td>4&nbsp;</td></tr>
+<tr><td>9&nbsp;</td><td><a href="doc_vars.par.html#v115" data-ajax='false'>CoolingJacket.v</a>&nbsp;</td><td><a href="doc_vars.par.html#v115" data-ajax='false'></a>&nbsp;</td><td>ALGEBRAIC&nbsp;</td><td>m/s&nbsp;</td><td>Cooling liquid speed&nbsp;</td><td>&nbsp;</td><td>[E-165] Nozzle_1.g.pt = LH2_circuit_1.pt - CoolingJacket.f * CoolingJacket.L / CoolingJacket.D_eq * 0.5 * LPRES.rho(CoolingJacket.l.fluid) * CoolingJacket.v ** 2&nbsp;</td><td>5&nbsp;</td></tr>
+<tr><td>10&nbsp;</td><td><a href="doc_vars.par.html#v214" data-ajax='false'>ThrustMonitor.M_out</a>&nbsp;</td><td><a href="doc_vars.par.html#v214" data-ajax='false'></a>&nbsp;</td><td>ALGEBRAIC&nbsp;</td><td>-&nbsp;</td><td>Gas Mach number&nbsp;</td><td>100&nbsp;</td><td>[E-180] ThrustMonitor.g.W * sqrt(LPRES.R(ThrustMonitor.g.fluid) * CombCha_1.g.Tt) / ThrustMonitor.g.A_out / CombCha_1.f_O.p_c = sqrt(LPRES.gamma(ThrustMonitor.g.fluid)) * ThrustMonitor.M_out * (1 + (LPRES.gamma(ThrustMonitor.g.fluid) - 1) / 2 * ThrustMonitor.M_out ** 2) ** (-(LPRES.gamma(ThrustMonitor.g.fluid) + 1) / 2 / (LPRES.gamma(ThrustMonitor.g.fluid) - 1))&nbsp;</td><td>7&nbsp;</td></tr>
+</table>
+<br/>
+</body></html>

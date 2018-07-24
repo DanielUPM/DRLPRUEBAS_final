@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<partitionInfo version="1.0" library="DRLPRUEBAS" component="CC_Cool_OFFD" partition="Escalon">
+<noDerivatives value="FALSE"/>
+<inhibitReductionConstantCoefEqts value="FALSE"/>
+<generatePartitionClass value="FALSE"/>
+<removeNotUsedVars value="FALSE"/>
+<showPropertyPanel value="FALSE"/>
+<generateProtectedMathFunctions value="TRUE"/>
+<generatePerformanceMeters value="FALSE"/>
+<generateObfuscatedCpp value="FALSE"/>
+<generateParInfoHTML value="TRUE"/>
+<generateMaxSignificantDigits value="FALSE"/>
+<noDatas>
+  <variable name="LH2_circuit_1.Tt"/>
+  <variable name="LH2_circuit_1.pt"/>
+</noDatas>
+<boundaries>
+  <variable name="LH2_circuit_1.Tt"/>
+  <variable name="LH2_circuit_1.pt"/>
+  <variable name="LPRES.Altitude"/>
+</boundaries>
+<dynamics>
+  <variable name="CombCha_1.rho_trans"/>
+  <variable name="CombCha_1.g.Tt"/>
+  <variable name="CoolingJacket.rho_trans"/>
+  <variable name="CoolingJacket.g.Tt"/>
+</dynamics>
+<algebraics>
+  <variable name="Injector_F.PR"/>
+  <variable name="ThrustMonitor.g.W"/>
+  <variable name="CombCha_1.p_out_ch"/>
+  <variable name="CombCha_1.M_r"/>
+  <variable name="CoolingJacket.v"/>
+  <variable name="ThrustMonitor.M_out"/>
+</algebraics>
+</partitionInfo>

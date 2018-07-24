@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<experiment version="1.4.0">
+	<experimentViews>
+		<tab name="Tab_1">
+			<tableWindow title="Table_1" x="0" y="0" dx="350" dy="250" state="maximized">
+				<table id="Table_1" colums="false">
+					<var name="#Calculation id"/>
+					<var name="#Status"/>
+					<var name="#ESI"/>
+					<var name="#Case"/>
+					<var name="#Point"/>
+					<var name="CombCha_1.g.Tt"/>
+					<var name="CombCha_1.g.pt"/>
+					<var name="CombCha_1.rho_trans"/>
+					<var name="CombCha_1.g.W"/>
+					<var name="Injector_F.PR"/>
+					<var name="Injector_O.PR"/>
+					<var name="Injector_F.f_out.W"/>
+					<var name="Injector_F.f_out.T"/>
+					<var name="Injector_F.f_out.p"/>
+					<var name="Injector_O.f_out.W"/>
+					<var name="Injector_O.f_out.T"/>
+					<var name="Injector_O.f_out.p"/>
+					<var name="ThrustMonitor.A_out"/>
+					<var name="ThrustMonitor.p_amb"/>
+					<var name="ThrustMonitor.p_out"/>
+					<var name="ThrustMonitor.M_out"/>
+					<var name="ThrustMonitor.T_out"/>
+					<var name="ThrustMonitor.v_out"/>
+					<var name="Injector_F.A_d"/>
+					<var name="Injector_O.A_d"/>
+				</table>
+			</tableWindow>
+		</tab>
+	</experimentViews>
+	<watch width="266" height="71" visible="true" pos="right" >
+		<currentTab name="view"/>
+		<variables>
+			<tab name="initial"> 
+			</tab> 
+			<tab name="inputs"> 
+			</tab> 
+			<tab name="view"> 
+			</tab> 
+		</variables>
+		<layout>
+			<tab name="initial"> 
+				<column name="name" width="100"/> 
+				<column name="value" width="100"/> 
+				<column name="units" width="100"/> 
+				<column name="category" width="100"/> 
+				<column name="type" width="100"/> 
+			</tab> 
+			<tab name="inputs"> 
+				<column name="name" width="100"/> 
+				<column name="value" width="100"/> 
+				<column name="units" width="100"/> 
+				<column name="category" width="100"/> 
+			</tab> 
+			<tab name="view"> 
+				<column name="name" width="100"/> 
+				<column name="value" width="100"/> 
+				<column name="units" width="100"/> 
+				<column name="category" width="100"/> 
+			</tab> 
+		</layout>
+	</watch>
+	<outputWindow height="71" width="1920" visible="true" pos="bottom" />
+	<alarms globalEnabled="TRUE">
+	</alarms>
+
+	<mainWindow  mode="maximized" currentTab="Tab_1" />
+</experiment>

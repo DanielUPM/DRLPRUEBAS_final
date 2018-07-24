@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<usedInputFiles version="1.0" library="DRLPRUEBAS" component="GG_comp" partition="OFFD_valid" experiment="exp_design" date="2018:06:22" time="13:28:18">
+  <rboundlaw id="LPRES.Altitude"/>
+</usedInputFiles>

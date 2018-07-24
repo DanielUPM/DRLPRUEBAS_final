@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<usedInputFiles version="1.0" library="DRLPRUEBAS" component="CC_GG_OFFD" partition="partition3" experiment="exp_esc" date="2018:06:29" time="12:59:55">
+  <rboundlaw id="FlowMeter_1.f_in.Tt"/>
+  <rboundlaw id="FlowMeter_1.f_in.pt"/>
+  <rboundlaw id="FlowMeter_1.f_out.Tt"/>
+  <rboundlaw id="FlowMeter_1.f_out.pt"/>
+  <rboundlaw id="FlowMeter_1_1.f_in.Tt"/>
+  <rboundlaw id="FlowMeter_1_1.f_in.pt"/>
+  <rboundlaw id="FlowMeter_1_1.f_out.Tt"/>
+  <rboundlaw id="FlowMeter_1_1.f_out.pt"/>
+  <rboundlaw id="Injector_F.f_in.Tt"/>
+  <rboundlaw id="Injector_F_1.f_in.Tt"/>
+  <rboundlaw id="Injector_O.f_in.Tt"/>
+  <rboundlaw id="Injector_O_1.f_in.Tt"/>
+  <rboundlaw id="LH2_circuit_1.Tt"/>
+  <rboundlaw id="LH2_circuit_1.f.Tt"/>
+  <rboundlaw id="LH2_circuit_1.f.pt"/>
+  <rboundlaw id="LH2_circuit_1.pt"/>
+  <rboundlaw id="LO2_circuit_1.Tt"/>
+  <rboundlaw id="LO2_circuit_1.f.Tt"/>
+  <rboundlaw id="LO2_circuit_1.f.pt"/>
+  <rboundlaw id="LO2_circuit_1.pt"/>
+  <rboundlaw id="LPRES.Altitude"/>
+  <rboundlaw id="SplitFrac_O.f_b.Tt"/>
+  <rboundlaw id="SplitFrac_O.f_in.Tt"/>
+  <rboundlaw id="SplitFrac_O.f_in.pt"/>
+  <rboundlaw id="SplitFrac_O.f_out.Tt"/>
+  <rboundlaw id="SplitFrac_O_1.f_b.Tt"/>
+  <rboundlaw id="SplitFrac_O_1.f_in.Tt"/>
+  <rboundlaw id="SplitFrac_O_1.f_in.pt"/>
+  <rboundlaw id="SplitFrac_O_1.f_out.Tt"/>
+  <rboundlaw id="Turbine_ch.m.N"/>
+</usedInputFiles>

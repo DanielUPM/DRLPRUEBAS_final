@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<library version="1.1.1">
+ <filedeps>
+  <file name="version.el"/>
+  <file name="prueba1.eds"/>
+  <file name="RL10.eds"/>
+  <file name="Camara_comb_completa.eds"/>
+  <file name="F1.eds"/>
+  <file name="CC_completa_OFFD.eds"/>
+  <file name="CC_Gen_OFFD.eds"/>
+  <file name="CC_GG_completa.eds"/>
+  <file name="CC_Cool_OFFD.eds"/>
+  <file name="CC_CJ_completa.eds"/>
+  <file name="CC_caso_escalon_OFFD.eds"/>
+  <file name="CC_Cool_desacop.eds"/>
+  <file name="CC_Cool_Turb.eds"/>
+  <file name="CC_Cool_TBOFFD.eds"/>
+  <file name="CC_Cool_Bypass.eds"/>
+  <file name="RL10_design.eds"/>
+  <file name="GG_comp.eds"/>
+  <file name="CC_GG_OFFD.eds"/>
+  <file name="F1_design.eds"/>
+ </filedeps>
+ <libdeps>
+ </libdeps>
+ <otherdeps>
+ </otherdeps>
+</library>

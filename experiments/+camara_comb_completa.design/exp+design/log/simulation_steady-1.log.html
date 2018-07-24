@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>Simulation Log</title>
+<link href="./css/mlog.css" rel="stylesheet">
+<link href="./css/jquery.mobile-1.4.1.min.css" rel="stylesheet">
+<script src="./css/jquery-1.10.2.min.js"></script>
+<script src="./css/jquery.mobile-1.4.1.min.js"></script>
+<script src="./css/Chart.bundle.js"></script>
+</head><body>
+<div data-role="page">
+<div data-role="main" class="ui-content">
+<div class="qindex">
+<a class="qindexHL" rel="external" data-ajax='false' href="../simulation.log.html">Simulation Log</a> |
+<a class="qindex" rel="external" data-ajax='false' href="summary_tree.log.html">Summary</a> |
+<a class="qindex" rel="external" data-ajax='false' href="errors.log.html">Errors</a> |
+<a class="qindex" rel="external" data-ajax='false' href="performance.log.html">Performance</a>
+</div><h2>INTERNAL CALCULATION LOG<br /></h2>
+<a name="steady-1"></a><div data-role="collapsible" data-collapsed="false">
+<h1>steady-1 (TIME: 0, Method: NR, TOLTYPE: RELTOL, TOLERANCE: 1e-006)</h1><p>[INITIAL] Executing the INIT blocks of components...</p>
+<p>[INITIAL] Resetting events (detecting active WHEN's)...</p>
+<p>ZONE[1]: Initial branch is ' CombCha_1.Combustion ' </p>
+<p>ZONE[2]: Initial branch is ' LPRES.State(CombCha_1.f_F.fluid) == Gas AND Injector_F.PR >= Injector_F.PR_sl ' </p>
+<p>ZONE[3]: Initial branch is ' OTHERS ' </p>
+<p>[TIME: 0]   WHEN executed; condition: (CombCha_1.fluid_O[LOX] * CombCha_1.fluid_F[LOX] + CombCha_1.fluid_O[NTO] * CombCha_1.fluid_F[NTO] + CombCha_1.fluid_O[H2O2] * CombCha_1.fluid_F[H2O2] + CombCha_1.fluid_O[HNO3] * CombCha_1.fluid_F[HNO3] + CombCha_1.fluid_O[LF2] * CombCha_1.fluid_F[LF2] + CombCha_1.fluid_O[RP_1] * CombCha_1.fluid_F[RP_1] + CombCha_1.fluid_O[LCH4] * CombCha_1.fluid_F[LCH4] + CombCha_1.fluid_O[LH2] * CombCha_1.fluid_F[LH2] + CombCha_1.fluid_O[N2H4] * CombCha_1.fluid_F[N2H4] + CombCha_1.fluid_O[UDMH] * CombCha_1.fluid_F[UDMH] + CombCha_1.fluid_O[MMH] * CombCha_1.fluid_F[MMH] + CombCha_1.fluid_O[JP_10] * CombCha_1.fluid_F[JP_10] + CombCha_1.fluid_O[Kerox] * CombCha_1.fluid_F[Kerox] + CombCha_1.fluid_O[Oil] * CombCha_1.fluid_F[Oil] + CombCha_1.fluid_O[H2O] * CombCha_1.fluid_F[H2O] + CombCha_1.fluid_O[IPA] * CombCha_1.fluid_F[IPA] + CombCha_1.fluid_O[Air] * CombCha_1.fluid_F[Air] + CombCha_1.fluid_O[Ar] * CombCha_1.fluid_F[Ar] + CombCha_1.fluid_O[CH4] * CombCha_1.fluid_F[CH4] + CombCha_1.fluid_O[CO] * CombCha_1.fluid_F[CO] + CombCha_1.fluid_O[CO2] * CombCha_1.fluid_F[CO2] + CombCha_1.fluid_O[H2] * CombCha_1.fluid_F[H2] + CombCha_1.fluid_O[He] * CombCha_1.fluid_F[He] + CombCha_1.fluid_O[N2] * CombCha_1.fluid_F[N2] + CombCha_1.fluid_O[O2] * CombCha_1.fluid_F[O2] + CombCha_1.fluid_O[MMH_vapour] * CombCha_1.fluid_F[MMH_vapour]) == 0</p>
+<p>[TIME: 0]   ZONE[2]: changes to branch (LPRES.State(CombCha_1.f_F.fluid) == Gas AND Injector_F.PR < Injector_F.PR_sl)</p>
+<br><br><hr size="2"><p><h2><b>(NR, BOX 1 ITERATION, TIME: 0) </b></h2></p><hr size="2"><p>Convergence reached.</p>
+<h2>Statistics</h2>
+<table border="1" cellspacing="0" cellpadding="3" summary="Tracing">
+<tr><td nowrap="nowrap"><b>Number of unknowns</b></td><td nowrap="nowrap">1</td></tr>
+<tr><td nowrap="nowrap"><b>Number of valid iterations</b></td><td nowrap="nowrap">16</td></tr>
+<tr><td nowrap="nowrap"><b>Number of valid Jacobian evaluations</b></td><td nowrap="nowrap">1</td></tr>
+<tr><td nowrap="nowrap"><b>Number of valid Broyden estimations</b></td><td nowrap="nowrap">15</td></tr>
+<tr><td nowrap="nowrap"><b>Number of total iterations</b></td><td nowrap="nowrap">16</td></tr>
+<tr><td nowrap="nowrap"><b>Number of total Jacobian evaluations</b></td><td nowrap="nowrap">1</td></tr>
+<tr><td nowrap="nowrap"><b>Number of total Broyden estimations</b></td><td nowrap="nowrap">15</td></tr>
+<tr><td nowrap="nowrap"><b>Number of total residues evaluations</b></td><td nowrap="nowrap">18</td></tr>
+</table>
+<h2>Solver parameters</h2>
+<h3>Global settings</h3>
+<table border="1" cellspacing="0" cellpadding="3" summary="Global settings">
+<tr><td nowrap="nowrap"><b>Global convergence criteria (TOLTYPE)</b></td><td nowrap="nowrap">RELTOL</td></tr>
+<tr><td nowrap="nowrap"><b>Global tolerance (TOLERANCE)</b></td><td nowrap="nowrap">1e-006</td></tr>
+<tr><td nowrap="nowrap"><b>Maximum number of iterations (MAXITER)</b></td><td nowrap="nowrap">10000</td></tr>
+<tr><td nowrap="nowrap"><b>Maximum number of valid/no-valid residue evaluations (MAXFEVAL)</b></td><td nowrap="nowrap">40000</td></tr>
+<tr><td nowrap="nowrap"><b>Maximum number of valid/no-valid Jacobian evaluations (MAXJACEVAL)</b></td><td nowrap="nowrap">60</td></tr>
+<tr><td nowrap="nowrap"><b>Maximum number of consecutive Broyden updates (MAXBROYDEN)</b></td><td nowrap="nowrap">60</td></tr>
+</table>
+<h2>Unknown variables</h2>
+<p>Colors: yellow background means that dynamic is frozen, instead uses the derivative</p>
+<div style="width: 100%; height: 100%; overflow: auto">
+<table border="1" cellspacing="0" cellpadding="3" summary="Unknown variables parameters">
+<tr><th nowrap="nowrap"><b>#<b></th><th nowrap="nowrap"><b>Name<b></th><th nowrap="nowrap"><b>Initial guess</b></th><th nowrap="nowrap"><b>Absolute perturbation</b></th><th nowrap="nowrap"><b>Relative perturbation</b></th><th nowrap="nowrap"><b>Absolute maximum step</b></th><th nowrap="nowrap"><b>Relative maximum step</b></th></tr>
+<tr><td nowrap="nowrap" >1</td><td nowrap="nowrap" ><b>CombCha_1.p_out_ch</b></td><td nowrap="nowrap" >100</td><td nowrap="nowrap" >1.5e-008</td><td nowrap="nowrap" >1.5e-008</td><td nowrap="nowrap" >1.79769313486232e+308</td><td nowrap="nowrap" >1.79769313486232e+308</td></tr>
+</table>
+</div>
+<h2>Residue equations</h2>
+<div style="width: 100%; height: 100%; overflow: auto">
+<table border="1" cellspacing="0" cellpadding="3" summary="Residue equations parameters">
+<tr><th nowrap="nowrap"><b>#</b></th><th nowrap="nowrap"><b>Normalisation mode</b></th><th nowrap="nowrap"><b>Local tolerance</b></th><th nowrap="nowrap"><b>Residue expression</b></th></tr>
+<tr><td nowrap="nowrap"><b><a name="Residue-1-1">Residue-1</a></b>:</td><td nowrap="nowrap">ABSTOL</td><td nowrap="nowrap">1e-006</td><td nowrap="nowrap">[142] ThrustMonitor.g.A_out / CombCha_1.A_r = LPRES.FGAMMA(ThrustMonitor.g.fluid) / ((CombCha_1.p_out_ch / CombCha_1.p_c) ** (1 / LPRES.gamma(ThrustMonitor.g.fluid)) * sqrt(2 * LPRES.gamma(ThrustMonitor.g.fluid) * (1 - (CombCha_1.p_out_ch / CombCha_1.p_c) ** ((LPRES.gamma(ThrustMonitor.g.fluid) - 1) / LPRES.gamma(ThrustMonitor.g.fluid))) / (LPRES.gamma(ThrustMonitor.g.fluid) - 1)))</td></tr>
+</table>
+</div>
+<h2>Iterative process results</h2>
+<h3>Unknown tracing table. Jacobian variables plus variables marked with trace flag.</h3>
+<p>Colors: yellow background means that dynamic is frozen, instead uses the derivative. Orange background means highest relative increment</p>
+<p><b>I</b>: Iteration, <b>VI</b>: Valid-iteration, <b>SR</b>: Step-reduction, <b>SRU</b>: Step-reduction-unknown.</p>
+<br/>
+<div style="width: 100%; height: 100%; overflow: auto">
+<table border="1" cellspacing="0" cellpadding="3" summary="Unknowns">
+<tr><th nowrap="nowrap"><b>I</b></th><th nowrap="nowrap"><b>VI</b></th><th nowrap="nowrap"><b>SR</b></th><th nowrap="nowrap"><b>SRU</b></th><th nowrap="nowrap" bgcolor="#4B0082"></th><th nowrap="nowrap"><b> CombCha_1.p_out_ch</b></th><th nowrap="nowrap" bgcolor="#4B0082"></th></tr>
+<tr><td nowrap="nowrap">0</td><td nowrap="nowrap">0</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap">100</td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">1</td><td nowrap="nowrap">1</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>110</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">2</td><td nowrap="nowrap">2</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>130</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">3</td><td nowrap="nowrap">3</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>170</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">4</td><td nowrap="nowrap">4</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>250</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">5</td><td nowrap="nowrap">5</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>410</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">6</td><td nowrap="nowrap">6</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>685.848179132012</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">7</td><td nowrap="nowrap">7</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>1098.33080295247</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">8</td><td nowrap="nowrap">8</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>1691.39437446563</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">9</td><td nowrap="nowrap">9</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>2438.80012267445</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">10</td><td nowrap="nowrap">10</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>3226.29275794666</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">11</td><td nowrap="nowrap">11</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>3847.8162802529</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">12</td><td nowrap="nowrap">12</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>4163.16051874056</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">13</td><td nowrap="nowrap">13</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>4244.4411812765</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">14</td><td nowrap="nowrap">14</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>4251.9426578281</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">15</td><td nowrap="nowrap">15</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>4252.08654005736</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">16</td><td nowrap="nowrap">16</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>4252.08677343859</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+</table>
+</div>
+<br/>
+<h3>Increment of unknowns with respect to their initial value.</h3>
+<p>Criteria: &delta;&nbsp;unk is calculated as (unk - unk0) / unk0, where unk0 is the initial value</p>
+<p>Colors: yellow background means that dynamic is frozen, instead uses the derivative. Orange background means highest normalized unknown on iteration</p>
+<p><b>I</b>: Iteration, <b>VI</b>: Valid-iteration, <b>SR</b>: Step-reduction, <b>SRU</b>: Step-reduction-unknown.</p>
+<br/>
+<div style="width: 100%; height: 100%; overflow: auto">
+<table border="1" cellspacing="0" cellpadding="3" summary="Unknowns (normalized)">
+<tr><th nowrap="nowrap"><b>I</b></th><th nowrap="nowrap"><b>VI</b></th><th nowrap="nowrap"><b>SR</b></th><th nowrap="nowrap"><b>SRU</b></th><th nowrap="nowrap" bgcolor="#4B0082"></th><th nowrap="nowrap"><b>&delta;&nbsp;CombCha_1.p_out_ch</b></th></tr>
+<tr><td nowrap="nowrap">0</td><td nowrap="nowrap">0</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap">0</td></tr>
+<tr><td nowrap="nowrap">1</td><td nowrap="nowrap">1</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>0.1</b></td></tr>
+<tr><td nowrap="nowrap">2</td><td nowrap="nowrap">2</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>0.3</b></td></tr>
+<tr><td nowrap="nowrap">3</td><td nowrap="nowrap">3</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>0.7</b></td></tr>
+<tr><td nowrap="nowrap">4</td><td nowrap="nowrap">4</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>1.5</b></td></tr>
+<tr><td nowrap="nowrap">5</td><td nowrap="nowrap">5</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>3.1</b></td></tr>
+<tr><td nowrap="nowrap">6</td><td nowrap="nowrap">6</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>5.85848179132012</b></td></tr>
+<tr><td nowrap="nowrap">7</td><td nowrap="nowrap">7</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>9.98330802952472</b></td></tr>
+<tr><td nowrap="nowrap">8</td><td nowrap="nowrap">8</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>15.9139437446563</b></td></tr>
+<tr><td nowrap="nowrap">9</td><td nowrap="nowrap">9</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>23.3880012267445</b></td></tr>
+<tr><td nowrap="nowrap">10</td><td nowrap="nowrap">10</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>31.2629275794666</b></td></tr>
+<tr><td nowrap="nowrap">11</td><td nowrap="nowrap">11</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>37.478162802529</b></td></tr>
+<tr><td nowrap="nowrap">12</td><td nowrap="nowrap">12</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>40.6316051874056</b></td></tr>
+<tr><td nowrap="nowrap">13</td><td nowrap="nowrap">13</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>41.444411812765</b></td></tr>
+<tr><td nowrap="nowrap">14</td><td nowrap="nowrap">14</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>41.519426578281</b></td></tr>
+<tr><td nowrap="nowrap">15</td><td nowrap="nowrap">15</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>41.5208654005736</b></td></tr>
+<tr><td nowrap="nowrap">16</td><td nowrap="nowrap">16</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>41.5208677343859</b></td></tr>
+</table>
+</div>
+<div style="width:75%;">
+  <canvas id="canvas_steady_1_unknown_delta_evolution"></canvas>
+  <button style="width:15%; display: inline-block;" id="showPlot_steady_1_unknown_delta_evolution">Show Plots</button>
+  <button style="width:15%; display: inline-block;" id="hidePlot_steady_1_unknown_delta_evolution">Hide Plots</button>
+  <button style="width:15%; display: inline-block;" id="viewDataFile_steady_1_unknown_delta_evolution">View data file</button>
+</div>
+<script>
+var randomColorFactor = function() {
+  return Math.round(Math.random() * 255);
+};
+var randomColor = function(opacity) {
+  return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',' + (opacity || '.3') + ')';
+};
+var config_steady_1_unknown_delta_evolution = {
+  type: 'line',
+  data: {
+    labels: [
+0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16				],
+    datasets: [
+      {
+        label: "CombCha_1.p_out_ch (u1)",
+        data: [0,0.1,0.3,0.7,1.5,3.1,5.85848179132012,9.98330802952472,15.9139437446563,23.3880012267445,31.2629275794666,37.478162802529,40.6316051874056,41.444411812765,41.519426578281,41.5208654005736,41.5208677343859],
+        fill: false,
+        hidden: false,
+      }
+	  ]
+  },
+  options: {
+    responsive: true,
+    title: {
+      display:true,
+      text:'Unknown Evolution'
+    },
+    tooltips: {
+      mode: 'label',
+    },
+    hover: {
+      mode: 'dataset'
+    },
+    legend: {
+      position: 'bottom',
+    },
+    scales: {
+      xAxes: [{
+        display: true,
+        scaleLabel: {
+          show: true,
+          labelString: 'Iterations'
+        }
+      }],
+      yAxes: [{
+        display: true,
+        scaleLabel: {
+          show: true,
+          labelString: 'Value'
+        }
+      }]
+    }
+  }
+};
+$.each(config_steady_1_unknown_delta_evolution.data.datasets, function(i, dataset) {
+dataset.borderColor = randomColor(0.4);
+dataset.backgroundColor = randomColor(0.5);
+dataset.pointBorderColor = randomColor(0.7);
+dataset.pointBackgroundColor = randomColor(0.5);
+dataset.pointBorderWidth = 1;
+});
+$('#showPlot_steady_1_unknown_delta_evolution').click(function() {
+  $.each(config_steady_1_unknown_delta_evolution.data.datasets, function(i, dataset) {
+     dataset.hidden = false;})
+  window.myLine_steady_1_unknown_delta_evolution.update();
+});
+$('#hidePlot_steady_1_unknown_delta_evolution').click(function() {
+  $.each(config_steady_1_unknown_delta_evolution.data.datasets, function(i, dataset) {
+     dataset.hidden = true;})
+  window.myLine_steady_1_unknown_delta_evolution.update();
+});
+$('#viewDataFile_steady_1_unknown_delta_evolution').click(function() {
+  var win = window.open("./log_data/plot_steady-1-unknown-delta-evolution_data.dat", '_blank');
+  win.focus();
+});
+</script>
+<h3>Convergence process table</h3>
+<p>Colors: yellow background means that dynamic is frozen, instead uses the derivative. Orange background means highest residue on iteration. Green background means convergence reached.</p>
+<p><b>I</b>: Iteration, <b>VI</b>: Valid-iteration.</p>
+<br/>
+<div style="width: 100%; height: 100%; overflow: auto">
+<table border="1" cellspacing="0" cellpadding="3" summary="Residues">
+<tr><th nowrap="nowrap"><b>I</b></th><th nowrap="nowrap"><b>VI</b></th><th nowrap="nowrap"><b><a rel="external" data-ajax='false' href="#Residue-1-1">Residue-1</a></b></th><th nowrap="nowrap"><b>Global Error</b></th><th nowrap="nowrap"><b>Convergence Ratio</b></th></tr>
+<tr><td nowrap="nowrap" >0</td><td nowrap="nowrap"  >0</td><td nowrap="nowrap" bgcolor="Orange"><b>-1093.3795598328</b></td><td nowrap="nowrap" >1093.3795598328</td><td nowrap="nowrap" >1</td></tr>
+<tr><td nowrap="nowrap" >1</td><td nowrap="nowrap"  >1</td><td nowrap="nowrap" bgcolor="Orange"><b>-1007.80429450471</b></td><td nowrap="nowrap" >1007.80429450471</td><td nowrap="nowrap" >0.921733249393128</td></tr>
+<tr><td nowrap="nowrap" >2</td><td nowrap="nowrap"  >2</td><td nowrap="nowrap" bgcolor="Orange"><b>-872.958498511438</b></td><td nowrap="nowrap" >872.958498511438</td><td nowrap="nowrap" >0.866198430857505</td></tr>
+<tr><td nowrap="nowrap" >3</td><td nowrap="nowrap"  >3</td><td nowrap="nowrap" bgcolor="Orange"><b>-691.391783321075</b></td><td nowrap="nowrap" >691.391783321075</td><td nowrap="nowrap" >0.792009911696869</td></tr>
+<tr><td nowrap="nowrap" >4</td><td nowrap="nowrap"  >4</td><td nowrap="nowrap" bgcolor="Orange"><b>-490.951667140995</b></td><td nowrap="nowrap" >490.951667140995</td><td nowrap="nowrap" >0.710091845151422</td></tr>
+<tr><td nowrap="nowrap" >5</td><td nowrap="nowrap"  >5</td><td nowrap="nowrap" bgcolor="Orange"><b>-310.723159822241</b></td><td nowrap="nowrap" >310.723159822241</td><td nowrap="nowrap" >0.63289969383688</td></tr>
+<tr><td nowrap="nowrap" >6</td><td nowrap="nowrap"  >6</td><td nowrap="nowrap" bgcolor="Orange"><b>-186.201029643754</b></td><td nowrap="nowrap" >186.201029643754</td><td nowrap="nowrap" >0.599250566807689</td></tr>
+<tr><td nowrap="nowrap" >7</td><td nowrap="nowrap"  >7</td><td nowrap="nowrap" bgcolor="Orange"><b>-109.819964684282</b></td><td nowrap="nowrap" >109.819964684282</td><td nowrap="nowrap" >0.589792467283307</td></tr>
+<tr><td nowrap="nowrap" >8</td><td nowrap="nowrap"  >8</td><td nowrap="nowrap" bgcolor="Orange"><b>-61.2323397973378</b></td><td nowrap="nowrap" >61.2323397973378</td><td nowrap="nowrap" >0.557570201132124</td></tr>
+<tr><td nowrap="nowrap" >9</td><td nowrap="nowrap"  >9</td><td nowrap="nowrap" bgcolor="Orange"><b>-31.4157713304313</b></td><td nowrap="nowrap" >31.4157713304313</td><td nowrap="nowrap" >0.513058482403398</td></tr>
+<tr><td nowrap="nowrap" >10</td><td nowrap="nowrap"  >10</td><td nowrap="nowrap" bgcolor="Orange"><b>-13.8576415523964</b></td><td nowrap="nowrap" >13.8576415523964</td><td nowrap="nowrap" >0.441104609740173</td></tr>
+<tr><td nowrap="nowrap" >11</td><td nowrap="nowrap"  >11</td><td nowrap="nowrap" bgcolor="Orange"><b>-4.66440153610615</b></td><td nowrap="nowrap" >4.66440153610615</td><td nowrap="nowrap" >0.336594182961784</td></tr>
+<tr><td nowrap="nowrap" >12</td><td nowrap="nowrap"  >12</td><td nowrap="nowrap" bgcolor="Orange"><b>-0.955879588522869</b></td><td nowrap="nowrap" >0.955879588522869</td><td nowrap="nowrap" >0.204930810763955</td></tr>
+<tr><td nowrap="nowrap" >13</td><td nowrap="nowrap"  >13</td><td nowrap="nowrap" bgcolor="Orange"><b>-0.0807652123856641</b></td><td nowrap="nowrap" >0.0807652123856641</td><td nowrap="nowrap" >0.0844930819272661</td></tr>
+<tr><td nowrap="nowrap" >14</td><td nowrap="nowrap"  >14</td><td nowrap="nowrap" bgcolor="Orange"><b>-0.00151996513670838</b></td><td nowrap="nowrap" >0.00151996513670838</td><td nowrap="nowrap" >0.0188195522776607</td></tr>
+<tr><td nowrap="nowrap" >15</td><td nowrap="nowrap"  >15</td><td nowrap="nowrap" bgcolor="Orange"><b>-2.46143589066605e-006</b></td><td nowrap="nowrap" >2.46143589066605e-006</td><td nowrap="nowrap" >0.00161940286077647</td></tr>
+<tr><td nowrap="nowrap" bgcolor="Chartreuse">16</td><td nowrap="nowrap" bgcolor="Chartreuse" >16</td><td nowrap="nowrap" bgcolor="Chartreuse">-7.5132788879273e-011</td><td nowrap="nowrap" bgcolor="Chartreuse">7.5132788879273e-011</td><td nowrap="nowrap" bgcolor="Chartreuse">3.05239673981281e-005</td></tr>
+</table>
+</div>
+<div style="width:75%;">
+  <canvas id="canvas_steady_1_residue_evolution"></canvas>
+  <button style="width:15%; display: inline-block;" id="showPlot_steady_1_residue_evolution">Show Plots</button>
+  <button style="width:15%; display: inline-block;" id="hidePlot_steady_1_residue_evolution">Hide Plots</button>
+  <button style="width:15%; display: inline-block;" id="viewDataFile_steady_1_residue_evolution">View data file</button>
+</div>
+<script>
+var randomColorFactor = function() {
+  return Math.round(Math.random() * 255);
+};
+var randomColor = function(opacity) {
+  return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',' + (opacity || '.3') + ')';
+};
+var config_steady_1_residue_evolution = {
+  type: 'line',
+  data: {
+    labels: [
+0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16				],
+    datasets: [
+      {
+        label: "r1",
+        data: [-1093.3795598328,-1007.80429450471,-872.958498511438,-691.391783321075,-490.951667140995,-310.723159822241,-186.201029643754,-109.819964684282,-61.2323397973378,-31.4157713304313,-13.8576415523964,-4.66440153610615,-0.955879588522869,-0.0807652123856641,-0.00151996513670838,-2.46143589066605e-006,-7.5132788879273e-011],
+        fill: false,
+        hidden: false,
+      }
+	  ]
+  },
+  options: {
+    responsive: true,
+    title: {
+      display:true,
+      text:'Residue Evolution'
+    },
+    tooltips: {
+      mode: 'label',
+    },
+    hover: {
+      mode: 'dataset'
+    },
+    legend: {
+      position: 'bottom',
+    },
+    scales: {
+      xAxes: [{
+        display: true,
+        scaleLabel: {
+          show: true,
+          labelString: 'Iterations'
+        }
+      }],
+      yAxes: [{
+        display: true,
+        scaleLabel: {
+          show: true,
+          labelString: 'Value'
+        }
+      }]
+    }
+  }
+};
+$.each(config_steady_1_residue_evolution.data.datasets, function(i, dataset) {
+dataset.borderColor = randomColor(0.4);
+dataset.backgroundColor = randomColor(0.5);
+dataset.pointBorderColor = randomColor(0.7);
+dataset.pointBackgroundColor = randomColor(0.5);
+dataset.pointBorderWidth = 1;
+});
+$('#showPlot_steady_1_residue_evolution').click(function() {
+  $.each(config_steady_1_residue_evolution.data.datasets, function(i, dataset) {
+     dataset.hidden = false;})
+  window.myLine_steady_1_residue_evolution.update();
+});
+$('#hidePlot_steady_1_residue_evolution').click(function() {
+  $.each(config_steady_1_residue_evolution.data.datasets, function(i, dataset) {
+     dataset.hidden = true;})
+  window.myLine_steady_1_residue_evolution.update();
+});
+$('#viewDataFile_steady_1_residue_evolution').click(function() {
+  var win = window.open("./log_data/plot_steady-1-residue-evolution_data.dat", '_blank');
+  win.focus();
+});
+</script>
+<p>Convergence reached.</p>
+<h3>Calculated Jacobian Matrix</h3>
+<p>Colors: red background means null row or column</p>
+<p>Iteration 1: Calculated Jacobian matrix (J) (Valid iteration 1)</p>
+<div style="width: 100%; height: 100%; overflow: auto">
+<table border="1" cellspacing="0" cellpadding="3" summary="Jacobian matrix (Iteration 0)">
+<tr><th nowrap="nowrap" bgcolor="#A8A8A8"><b>JACOBIAN (J)</b></th><th nowrap="nowrap"><b><a rel="external" data-ajax='false' href="#Residue-1-1">Residue-1</a></b></th></tr>
+<tr><td nowrap="nowrap"><b>CombCha_1.p_out_ch</b></td><td nowrap="nowrap" >9.33211534478081</td></tr>
+</table>
+</div>
+<p>Iteration 2: Broyden factorized rank-one update of 1/J matrix. (Valid iteration 2)</p>
+<p>Iteration 3: Broyden factorized rank-one update of 1/J matrix. (Valid iteration 3)</p>
+<p>Iteration 4: Broyden factorized rank-one update of 1/J matrix. (Valid iteration 4)</p>
+<p>Iteration 5: Broyden factorized rank-one update of 1/J matrix. (Valid iteration 5)</p>
+<p>Iteration 6: Broyden factorized rank-one update of 1/J matrix. (Valid iteration 6)</p>
+<p>Iteration 7: Broyden factorized rank-one update of 1/J matrix. (Valid iteration 7)</p>
+<p>Iteration 8: Broyden factorized rank-one update of 1/J matrix. (Valid iteration 8)</p>
+<p>Iteration 9: Broyden factorized rank-one update of 1/J matrix. (Valid iteration 9)</p>
+<p>Iteration 10: Broyden factorized rank-one update of 1/J matrix. (Valid iteration 10)</p>
+<p>Iteration 11: Broyden factorized rank-one update of 1/J matrix. (Valid iteration 11)</p>
+<p>Iteration 12: Broyden factorized rank-one update of 1/J matrix. (Valid iteration 12)</p>
+<p>Iteration 13: Broyden factorized rank-one update of 1/J matrix. (Valid iteration 13)</p>
+<p>Iteration 14: Broyden factorized rank-one update of 1/J matrix. (Valid iteration 14)</p>
+<p>Iteration 15: Broyden factorized rank-one update of 1/J matrix. (Valid iteration 15)</p>
+<p>Iteration 16: Broyden factorized rank-one update of 1/J matrix. (Valid iteration 16)</p>
+<script>
+window.onload = function() {
+var ctx_steady_1_unknown_delta_evolution = document.getElementById("canvas_steady_1_unknown_delta_evolution").getContext("2d");
+window.myLine_steady_1_unknown_delta_evolution = new Chart(ctx_steady_1_unknown_delta_evolution, config_steady_1_unknown_delta_evolution);
+var ctx_steady_1_residue_evolution = document.getElementById("canvas_steady_1_residue_evolution").getContext("2d");
+window.myLine_steady_1_residue_evolution = new Chart(ctx_steady_1_residue_evolution, config_steady_1_residue_evolution);
+};
+</script>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 1 (code ESI:7:267:31:98)  ***</h1>
+<p>Detected singular Jacobian matrix (2,Iteration 0, Row 1[ThrustMonitor.M_out] is null, Column 1[Residue(1)] is null). This can lead to either convergence problems or wrong results, even when converging (See log file)
+</p>
+</div>
+<br><br><hr size="2"><p><h2><b>(NR, BOX 2 ITERATION, TIME: 0) </b></h2></p><hr size="2"><p>Convergence reached.</p>
+<h2>Statistics</h2>
+<table border="1" cellspacing="0" cellpadding="3" summary="Tracing">
+<tr><td nowrap="nowrap"><b>Number of unknowns</b></td><td nowrap="nowrap">1</td></tr>
+<tr><td nowrap="nowrap"><b>Number of valid iterations</b></td><td nowrap="nowrap">10</td></tr>
+<tr><td nowrap="nowrap"><b>Number of valid Jacobian evaluations</b></td><td nowrap="nowrap">3</td></tr>
+<tr><td nowrap="nowrap"><b>Number of valid Broyden estimations</b></td><td nowrap="nowrap">12</td></tr>
+<tr><td nowrap="nowrap"><b>Number of total iterations</b></td><td nowrap="nowrap">15</td></tr>
+<tr><td nowrap="nowrap"><b>Number of total Jacobian evaluations</b></td><td nowrap="nowrap">3</td></tr>
+<tr><td nowrap="nowrap"><b>Number of total Broyden estimations</b></td><td nowrap="nowrap">12</td></tr>
+<tr><td nowrap="nowrap"><b>Number of total residues evaluations</b></td><td nowrap="nowrap">19</td></tr>
+</table>
+<h2>Solver parameters</h2>
+<h3>Global settings</h3>
+<table border="1" cellspacing="0" cellpadding="3" summary="Global settings">
+<tr><td nowrap="nowrap"><b>Global convergence criteria (TOLTYPE)</b></td><td nowrap="nowrap">RELTOL</td></tr>
+<tr><td nowrap="nowrap"><b>Global tolerance (TOLERANCE)</b></td><td nowrap="nowrap">1e-006</td></tr>
+<tr><td nowrap="nowrap"><b>Maximum number of iterations (MAXITER)</b></td><td nowrap="nowrap">10000</td></tr>
+<tr><td nowrap="nowrap"><b>Maximum number of valid/no-valid residue evaluations (MAXFEVAL)</b></td><td nowrap="nowrap">40000</td></tr>
+<tr><td nowrap="nowrap"><b>Maximum number of valid/no-valid Jacobian evaluations (MAXJACEVAL)</b></td><td nowrap="nowrap">60</td></tr>
+<tr><td nowrap="nowrap"><b>Maximum number of consecutive Broyden updates (MAXBROYDEN)</b></td><td nowrap="nowrap">60</td></tr>
+</table>
+<h2>Unknown variables</h2>
+<p>Colors: yellow background means that dynamic is frozen, instead uses the derivative</p>
+<div style="width: 100%; height: 100%; overflow: auto">
+<table border="1" cellspacing="0" cellpadding="3" summary="Unknown variables parameters">
+<tr><th nowrap="nowrap"><b>#<b></th><th nowrap="nowrap"><b>Name<b></th><th nowrap="nowrap"><b>Initial guess</b></th><th nowrap="nowrap"><b>Absolute perturbation</b></th><th nowrap="nowrap"><b>Relative perturbation</b></th><th nowrap="nowrap"><b>Absolute maximum step</b></th><th nowrap="nowrap"><b>Relative maximum step</b></th></tr>
+<tr><td nowrap="nowrap" >1</td><td nowrap="nowrap" ><b>ThrustMonitor.M_out</b></td><td nowrap="nowrap" >100</td><td nowrap="nowrap" >1.5e-008</td><td nowrap="nowrap" >1.5e-008</td><td nowrap="nowrap" >1.79769313486232e+308</td><td nowrap="nowrap" >1.79769313486232e+308</td></tr>
+</table>
+</div>
+<h2>Residue equations</h2>
+<div style="width: 100%; height: 100%; overflow: auto">
+<table border="1" cellspacing="0" cellpadding="3" summary="Residue equations parameters">
+<tr><th nowrap="nowrap"><b>#</b></th><th nowrap="nowrap"><b>Normalisation mode</b></th><th nowrap="nowrap"><b>Local tolerance</b></th><th nowrap="nowrap"><b>Residue expression</b></th></tr>
+<tr><td nowrap="nowrap"><b><a name="Residue-1-2">Residue-1</a></b>:</td><td nowrap="nowrap">ABSTOL</td><td nowrap="nowrap">1e-006</td><td nowrap="nowrap">[166] ThrustMonitor.g.W * sqrt(LPRES.R(ThrustMonitor.g.fluid) * ThrustMonitor.g.Tt) / ThrustMonitor.g.A_out / CombCha_1.p_c = sqrt(LPRES.gamma(ThrustMonitor.g.fluid)) * ThrustMonitor.M_out * (1 + (LPRES.gamma(ThrustMonitor.g.fluid) - 1) / 2 * ThrustMonitor.M_out ** 2) ** (-(LPRES.gamma(ThrustMonitor.g.fluid) + 1) / 2 / (LPRES.gamma(ThrustMonitor.g.fluid) - 1))</td></tr>
+</table>
+</div>
+<h2>Iterative process results</h2>
+<h3>Unknown tracing table. Jacobian variables plus variables marked with trace flag.</h3>
+<p>Colors: yellow background means that dynamic is frozen, instead uses the derivative. Orange background means highest relative increment</p>
+<p><b>I</b>: Iteration, <b>VI</b>: Valid-iteration, <b>SR</b>: Step-reduction, <b>SRU</b>: Step-reduction-unknown.</p>
+<br/>
+<div style="width: 100%; height: 100%; overflow: auto">
+<table border="1" cellspacing="0" cellpadding="3" summary="Unknowns">
+<tr><th nowrap="nowrap"><b>I</b></th><th nowrap="nowrap"><b>VI</b></th><th nowrap="nowrap"><b>SR</b></th><th nowrap="nowrap"><b>SRU</b></th><th nowrap="nowrap" bgcolor="#4B0082"></th><th nowrap="nowrap"><b> ThrustMonitor.M_out</b></th><th nowrap="nowrap" bgcolor="#4B0082"></th></tr>
+<tr><td nowrap="nowrap">0</td><td nowrap="nowrap">0</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap">100</td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">1</td><td nowrap="nowrap"> NO</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>90</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">2</td><td nowrap="nowrap">1</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>95</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">3</td><td nowrap="nowrap">2</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>85</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">4</td><td nowrap="nowrap">3</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>65</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">5</td><td nowrap="nowrap">4</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>25</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">6</td><td nowrap="nowrap"> NO</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>-55</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">7</td><td nowrap="nowrap"> NO</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>65</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">8</td><td nowrap="nowrap">5</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>5</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">9</td><td nowrap="nowrap"> NO</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>-12.8120560456309</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">10</td><td nowrap="nowrap"> NO</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>20.85598741064</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">11</td><td nowrap="nowrap">6</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>4.3348642759778</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">12</td><td nowrap="nowrap">7</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>4.60102969508754</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">13</td><td nowrap="nowrap">8</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>4.54128554679444</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">14</td><td nowrap="nowrap">9</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>4.53132132901737</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">15</td><td nowrap="nowrap">10</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>4.53180494986946</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+</table>
+</div>
+<br/>
+<h3>Increment of unknowns with respect to their initial value.</h3>
+<p>Criteria: &delta;&nbsp;unk is calculated as (unk - unk0) / unk0, where unk0 is the initial value</p>
+<p>Colors: yellow background means that dynamic is frozen, instead uses the derivative. Orange background means highest normalized unknown on iteration</p>
+<p><b>I</b>: Iteration, <b>VI</b>: Valid-iteration, <b>SR</b>: Step-reduction, <b>SRU</b>: Step-reduction-unknown.</p>
+<br/>
+<div style="width: 100%; height: 100%; overflow: auto">
+<table border="1" cellspacing="0" cellpadding="3" summary="Unknowns (normalized)">
+<tr><th nowrap="nowrap"><b>I</b></th><th nowrap="nowrap"><b>VI</b></th><th nowrap="nowrap"><b>SR</b></th><th nowrap="nowrap"><b>SRU</b></th><th nowrap="nowrap" bgcolor="#4B0082"></th><th nowrap="nowrap"><b>&delta;&nbsp;ThrustMonitor.M_out</b></th></tr>
+<tr><td nowrap="nowrap">0</td><td nowrap="nowrap">0</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap">0</td></tr>
+<tr><td nowrap="nowrap">1</td><td nowrap="nowrap"> NO</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>-0.1</b></td></tr>
+<tr><td nowrap="nowrap">2</td><td nowrap="nowrap">1</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>-0.05</b></td></tr>
+<tr><td nowrap="nowrap">3</td><td nowrap="nowrap">2</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>-0.15</b></td></tr>
+<tr><td nowrap="nowrap">4</td><td nowrap="nowrap">3</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>-0.35</b></td></tr>
+<tr><td nowrap="nowrap">5</td><td nowrap="nowrap">4</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>-0.75</b></td></tr>
+<tr><td nowrap="nowrap">6</td><td nowrap="nowrap"> NO</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>-1.55</b></td></tr>
+<tr><td nowrap="nowrap">7</td><td nowrap="nowrap"> NO</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>-0.35</b></td></tr>
+<tr><td nowrap="nowrap">8</td><td nowrap="nowrap">5</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>-0.95</b></td></tr>
+<tr><td nowrap="nowrap">9</td><td nowrap="nowrap"> NO</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>-1.12812056045631</b></td></tr>
+<tr><td nowrap="nowrap">10</td><td nowrap="nowrap"> NO</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>-0.7914401258936</b></td></tr>
+<tr><td nowrap="nowrap">11</td><td nowrap="nowrap">6</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>-0.956651357240222</b></td></tr>
+<tr><td nowrap="nowrap">12</td><td nowrap="nowrap">7</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>-0.953989703049125</b></td></tr>
+<tr><td nowrap="nowrap">13</td><td nowrap="nowrap">8</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>-0.954587144532056</b></td></tr>
+<tr><td nowrap="nowrap">14</td><td nowrap="nowrap">9</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>-0.954686786709826</b></td></tr>
+<tr><td nowrap="nowrap">15</td><td nowrap="nowrap">10</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap" bgcolor="Orange"><b>-0.954681950501305</b></td></tr>
+</table>
+</div>
+<div style="width:75%;">
+  <canvas id="canvas_steady_1_unknown_delta_evolution"></canvas>
+  <button style="width:15%; display: inline-block;" id="showPlot_steady_1_unknown_delta_evolution">Show Plots</button>
+  <button style="width:15%; display: inline-block;" id="hidePlot_steady_1_unknown_delta_evolution">Hide Plots</button>
+  <button style="width:15%; display: inline-block;" id="viewDataFile_steady_1_unknown_delta_evolution">View data file</button>
+</div>
+<script>
+var randomColorFactor = function() {
+  return Math.round(Math.random() * 255);
+};
+var randomColor = function(opacity) {
+  return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',' + (opacity || '.3') + ')';
+};
+var config_steady_1_unknown_delta_evolution = {
+  type: 'line',
+  data: {
+    labels: [
+0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15				],
+    datasets: [
+      {
+        label: "ThrustMonitor.M_out (u1)",
+        data: [0,-0.1,-0.05,-0.15,-0.35,-0.75,-1.55,-0.35,-0.95,-1.12812056045631,-0.7914401258936,-0.956651357240222,-0.953989703049125,-0.954587144532056,-0.954686786709826,-0.954681950501305],
+        fill: false,
+        hidden: false,
+      }
+	  ]
+  },
+  options: {
+    responsive: true,
+    title: {
+      display:true,
+      text:'Unknown Evolution'
+    },
+    tooltips: {
+      mode: 'label',
+    },
+    hover: {
+      mode: 'dataset'
+    },
+    legend: {
+      position: 'bottom',
+    },
+    scales: {
+      xAxes: [{
+        display: true,
+        scaleLabel: {
+          show: true,
+          labelString: 'Iterations'
+        }
+      }],
+      yAxes: [{
+        display: true,
+        scaleLabel: {
+          show: true,
+          labelString: 'Value'
+        }
+      }]
+    }
+  }
+};
+$.each(config_steady_1_unknown_delta_evolution.data.datasets, function(i, dataset) {
+dataset.borderColor = randomColor(0.4);
+dataset.backgroundColor = randomColor(0.5);
+dataset.pointBorderColor = randomColor(0.7);
+dataset.pointBackgroundColor = randomColor(0.5);
+dataset.pointBorderWidth = 1;
+});
+$('#showPlot_steady_1_unknown_delta_evolution').click(function() {
+  $.each(config_steady_1_unknown_delta_evolution.data.datasets, function(i, dataset) {
+     dataset.hidden = false;})
+  window.myLine_steady_1_unknown_delta_evolution.update();
+});
+$('#hidePlot_steady_1_unknown_delta_evolution').click(function() {
+  $.each(config_steady_1_unknown_delta_evolution.data.datasets, function(i, dataset) {
+     dataset.hidden = true;})
+  window.myLine_steady_1_unknown_delta_evolution.update();
+});
+$('#viewDataFile_steady_1_unknown_delta_evolution').click(function() {
+  var win = window.open("./log_data/plot_steady-1-unknown-delta-evolution_data.dat", '_blank');
+  win.focus();
+});
+</script>
+<div style="width:75%;">
+  <canvas id="canvas_steady_1_unknown_delta_evolution_valid"></canvas>
+  <button style="width:15%; display: inline-block;" id="showPlot_steady_1_unknown_delta_evolution_valid">Show Plots</button>
+  <button style="width:15%; display: inline-block;" id="hidePlot_steady_1_unknown_delta_evolution_valid">Hide Plots</button>
+  <button style="width:15%; display: inline-block;" id="viewDataFile_steady_1_unknown_delta_evolution_valid">View data file</button>
+</div>
+<script>
+var randomColorFactor = function() {
+  return Math.round(Math.random() * 255);
+};
+var randomColor = function(opacity) {
+  return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',' + (opacity || '.3') + ')';
+};
+var config_steady_1_unknown_delta_evolution_valid = {
+  type: 'line',
+  data: {
+    labels: [
+0,2,3,4,5,8,11,12,13,14,15				],
+    datasets: [
+      {
+        label: "ThrustMonitor.M_out (u1)",
+        data: [0,-0.05,-0.15,-0.35,-0.75,-0.95,-0.956651357240222,-0.953989703049125,-0.954587144532056,-0.954686786709826,-0.954681950501305],
+        fill: false,
+        hidden: false,
+      }
+	  ]
+  },
+  options: {
+    responsive: true,
+    title: {
+      display:true,
+      text:'Unknown Evolution (Only Valid Iterations)'
+    },
+    tooltips: {
+      mode: 'label',
+    },
+    hover: {
+      mode: 'dataset'
+    },
+    legend: {
+      position: 'bottom',
+    },
+    scales: {
+      xAxes: [{
+        display: true,
+        scaleLabel: {
+          show: true,
+          labelString: 'Iterations'
+        }
+      }],
+      yAxes: [{
+        display: true,
+        scaleLabel: {
+          show: true,
+          labelString: 'Value'
+        }
+      }]
+    }
+  }
+};
+$.each(config_steady_1_unknown_delta_evolution_valid.data.datasets, function(i, dataset) {
+dataset.borderColor = randomColor(0.4);
+dataset.backgroundColor = randomColor(0.5);
+dataset.pointBorderColor = randomColor(0.7);
+dataset.pointBackgroundColor = randomColor(0.5);
+dataset.pointBorderWidth = 1;
+});
+$('#showPlot_steady_1_unknown_delta_evolution_valid').click(function() {
+  $.each(config_steady_1_unknown_delta_evolution_valid.data.datasets, function(i, dataset) {
+     dataset.hidden = false;})
+  window.myLine_steady_1_unknown_delta_evolution_valid.update();
+});
+$('#hidePlot_steady_1_unknown_delta_evolution_valid').click(function() {
+  $.each(config_steady_1_unknown_delta_evolution_valid.data.datasets, function(i, dataset) {
+     dataset.hidden = true;})
+  window.myLine_steady_1_unknown_delta_evolution_valid.update();
+});
+$('#viewDataFile_steady_1_unknown_delta_evolution_valid').click(function() {
+  var win = window.open("./log_data/plot_steady-1-unknown-delta-evolution-valid_data.dat", '_blank');
+  win.focus();
+});
+</script>
+<h3>Convergence process table</h3>
+<p>Colors: yellow background means that dynamic is frozen, instead uses the derivative. Orange background means highest residue on iteration. Green background means convergence reached.</p>
+<p><b>I</b>: Iteration, <b>VI</b>: Valid-iteration.</p>
+<br/>
+<div style="width: 100%; height: 100%; overflow: auto">
+<table border="1" cellspacing="0" cellpadding="3" summary="Residues">
+<tr><th nowrap="nowrap"><b>I</b></th><th nowrap="nowrap"><b>VI</b></th><th nowrap="nowrap"><b><a rel="external" data-ajax='false' href="#Residue-1-2">Residue-1</a></b></th><th nowrap="nowrap"><b>Global Error</b></th><th nowrap="nowrap"><b>Convergence Ratio</b></th></tr>
+<tr><td nowrap="nowrap" >0</td><td nowrap="nowrap"  >0</td><td nowrap="nowrap" bgcolor="Orange"><b>0.0114232483857879</b></td><td nowrap="nowrap" >0.0114232483857879</td><td nowrap="nowrap" >1</td></tr>
+<tr><td nowrap="nowrap" >1</td><td nowrap="nowrap"  >NO</td><td nowrap="nowrap" bgcolor="Orange"><b>0.011423248385772</b></td><td nowrap="nowrap" >0.0114232483857879</td><td nowrap="nowrap" >1</td></tr>
+<tr><td nowrap="nowrap" >2</td><td nowrap="nowrap"  >1</td><td nowrap="nowrap" bgcolor="Orange"><b>0.0114232483857821</b></td><td nowrap="nowrap" >0.0114232483857821</td><td nowrap="nowrap" >0.999999999999496</td></tr>
+<tr><td nowrap="nowrap" >3</td><td nowrap="nowrap"  >2</td><td nowrap="nowrap" bgcolor="Orange"><b>0.0114232483857537</b></td><td nowrap="nowrap" >0.0114232483857537</td><td nowrap="nowrap" >0.999999999997511</td></tr>
+<tr><td nowrap="nowrap" >4</td><td nowrap="nowrap"  >3</td><td nowrap="nowrap" bgcolor="Orange"><b>0.0114232483852215</b></td><td nowrap="nowrap" >0.0114232483852215</td><td nowrap="nowrap" >0.999999999953416</td></tr>
+<tr><td nowrap="nowrap" >5</td><td nowrap="nowrap"  >4</td><td nowrap="nowrap" bgcolor="Orange"><b>0.011423242850062</b></td><td nowrap="nowrap" >0.011423242850062</td><td nowrap="nowrap" >0.999999515447851</td></tr>
+<tr><td nowrap="nowrap" >6</td><td nowrap="nowrap"  >NO</td><td nowrap="nowrap" bgcolor="Orange"><b>0.0114232483886776</b></td><td nowrap="nowrap" >0.011423242850062</td><td nowrap="nowrap" >0.999999515447851</td></tr>
+<tr><td nowrap="nowrap" >7</td><td nowrap="nowrap"  >NO</td><td nowrap="nowrap" bgcolor="Orange"><b>0.0114232483852215</b></td><td nowrap="nowrap" >0.011423242850062</td><td nowrap="nowrap" >0.999999515447851</td></tr>
+<tr><td nowrap="nowrap" >8</td><td nowrap="nowrap"  >5</td><td nowrap="nowrap" bgcolor="Orange"><b>0.00538112610492831</b></td><td nowrap="nowrap" >0.00538112610492831</td><td nowrap="nowrap" >0.471068170007356</td></tr>
+<tr><td nowrap="nowrap" >9</td><td nowrap="nowrap"  >NO</td><td nowrap="nowrap" bgcolor="Orange"><b>0.0114260930494197</b></td><td nowrap="nowrap" >0.00538112610492831</td><td nowrap="nowrap" >0.471068170007356</td></tr>
+<tr><td nowrap="nowrap" >10</td><td nowrap="nowrap"  >NO</td><td nowrap="nowrap" bgcolor="Orange"><b>0.011423217549542</b></td><td nowrap="nowrap" >0.00538112610492831</td><td nowrap="nowrap" >0.471068170007356</td></tr>
+<tr><td nowrap="nowrap" >11</td><td nowrap="nowrap"  >6</td><td nowrap="nowrap" bgcolor="Orange"><b>-0.00358991550841089</b></td><td nowrap="nowrap" >0.00358991550841089</td><td nowrap="nowrap" >0.667130901303922</td></tr>
+<tr><td nowrap="nowrap" >12</td><td nowrap="nowrap"  >7</td><td nowrap="nowrap" bgcolor="Orange"><b>0.00103902298268828</b></td><td nowrap="nowrap" >0.00103902298268828</td><td nowrap="nowrap" >0.289428255415463</td></tr>
+<tr><td nowrap="nowrap" >13</td><td nowrap="nowrap"  >8</td><td nowrap="nowrap" bgcolor="Orange"><b>0.000148519494266494</b></td><td nowrap="nowrap" >0.000148519494266494</td><td nowrap="nowrap" >0.142941490940101</td></tr>
+<tr><td nowrap="nowrap" >14</td><td nowrap="nowrap"  >9</td><td nowrap="nowrap" bgcolor="Orange"><b>-7.57622383238364e-006</b></td><td nowrap="nowrap" >7.57622383238364e-006</td><td nowrap="nowrap" >0.051011645776206</td></tr>
+<tr><td nowrap="nowrap" bgcolor="Chartreuse">15</td><td nowrap="nowrap" bgcolor="Chartreuse" >10</td><td nowrap="nowrap" bgcolor="Chartreuse">5.17164967499956e-008</td><td nowrap="nowrap" bgcolor="Chartreuse">5.17164967499956e-008</td><td nowrap="nowrap" bgcolor="Chartreuse">0.00682615744916877</td></tr>
+</table>
+</div>
+<div style="width:75%;">
+  <canvas id="canvas_steady_1_residue_evolution"></canvas>
+  <button style="width:15%; display: inline-block;" id="showPlot_steady_1_residue_evolution">Show Plots</button>
+  <button style="width:15%; display: inline-block;" id="hidePlot_steady_1_residue_evolution">Hide Plots</button>
+  <button style="width:15%; display: inline-block;" id="viewDataFile_steady_1_residue_evolution">View data file</button>
+</div>
+<script>
+var randomColorFactor = function() {
+  return Math.round(Math.random() * 255);
+};
+var randomColor = function(opacity) {
+  return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',' + (opacity || '.3') + ')';
+};
+var config_steady_1_residue_evolution = {
+  type: 'line',
+  data: {
+    labels: [
+0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15				],
+    datasets: [
+      {
+        label: "r1",
+        data: [0.0114232483857879,0.011423248385772,0.0114232483857821,0.0114232483857537,0.0114232483852215,0.011423242850062,0.0114232483886776,0.0114232483852215,0.00538112610492831,0.0114260930494197,0.011423217549542,-0.00358991550841089,0.00103902298268828,0.000148519494266494,-7.57622383238364e-006,5.17164967499956e-008],
+        fill: false,
+        hidden: false,
+      }
+	  ]
+  },
+  options: {
+    responsive: true,
+    title: {
+      display:true,
+      text:'Residue Evolution'
+    },
+    tooltips: {
+      mode: 'label',
+    },
+    hover: {
+      mode: 'dataset'
+    },
+    legend: {
+      position: 'bottom',
+    },
+    scales: {
+      xAxes: [{
+        display: true,
+        scaleLabel: {
+          show: true,
+          labelString: 'Iterations'
+        }
+      }],
+      yAxes: [{
+        display: true,
+        scaleLabel: {
+          show: true,
+          labelString: 'Value'
+        }
+      }]
+    }
+  }
+};
+$.each(config_steady_1_residue_evolution.data.datasets, function(i, dataset) {
+dataset.borderColor = randomColor(0.4);
+dataset.backgroundColor = randomColor(0.5);
+dataset.pointBorderColor = randomColor(0.7);
+dataset.pointBackgroundColor = randomColor(0.5);
+dataset.pointBorderWidth = 1;
+});
+$('#showPlot_steady_1_residue_evolution').click(function() {
+  $.each(config_steady_1_residue_evolution.data.datasets, function(i, dataset) {
+     dataset.hidden = false;})
+  window.myLine_steady_1_residue_evolution.update();
+});
+$('#hidePlot_steady_1_residue_evolution').click(function() {
+  $.each(config_steady_1_residue_evolution.data.datasets, function(i, dataset) {
+     dataset.hidden = true;})
+  window.myLine_steady_1_residue_evolution.update();
+});
+$('#viewDataFile_steady_1_residue_evolution').click(function() {
+  var win = window.open("./log_data/plot_steady-1-residue-evolution_data.dat", '_blank');
+  win.focus();
+});
+</script>
+<div style="width:75%;">
+  <canvas id="canvas_steady_1_residue_evolution_valid"></canvas>
+  <button style="width:15%; display: inline-block;" id="showPlot_steady_1_residue_evolution_valid">Show Plots</button>
+  <button style="width:15%; display: inline-block;" id="hidePlot_steady_1_residue_evolution_valid">Hide Plots</button>
+  <button style="width:15%; display: inline-block;" id="viewDataFile_steady_1_residue_evolution_valid">View data file</button>
+</div>
+<script>
+var randomColorFactor = function() {
+  return Math.round(Math.random() * 255);
+};
+var randomColor = function(opacity) {
+  return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',' + (opacity || '.3') + ')';
+};
+var config_steady_1_residue_evolution_valid = {
+  type: 'line',
+  data: {
+    labels: [
+0,2,3,4,5,8,11,12,13,14,15				],
+    datasets: [
+      {
+        label: "r1",
+        data: [0.0114232483857879,0.0114232483857821,0.0114232483857537,0.0114232483852215,0.011423242850062,0.00538112610492831,-0.00358991550841089,0.00103902298268828,0.000148519494266494,-7.57622383238364e-006,5.17164967499956e-008],
+        fill: false,
+        hidden: false,
+      }
+	  ]
+  },
+  options: {
+    responsive: true,
+    title: {
+      display:true,
+      text:'Residue Evolution (Only Valid Iterations)'
+    },
+    tooltips: {
+      mode: 'label',
+    },
+    hover: {
+      mode: 'dataset'
+    },
+    legend: {
+      position: 'bottom',
+    },
+    scales: {
+      xAxes: [{
+        display: true,
+        scaleLabel: {
+          show: true,
+          labelString: 'Iterations'
+        }
+      }],
+      yAxes: [{
+        display: true,
+        scaleLabel: {
+          show: true,
+          labelString: 'Value'
+        }
+      }]
+    }
+  }
+};
+$.each(config_steady_1_residue_evolution_valid.data.datasets, function(i, dataset) {
+dataset.borderColor = randomColor(0.4);
+dataset.backgroundColor = randomColor(0.5);
+dataset.pointBorderColor = randomColor(0.7);
+dataset.pointBackgroundColor = randomColor(0.5);
+dataset.pointBorderWidth = 1;
+});
+$('#showPlot_steady_1_residue_evolution_valid').click(function() {
+  $.each(config_steady_1_residue_evolution_valid.data.datasets, function(i, dataset) {
+     dataset.hidden = false;})
+  window.myLine_steady_1_residue_evolution_valid.update();
+});
+$('#hidePlot_steady_1_residue_evolution_valid').click(function() {
+  $.each(config_steady_1_residue_evolution_valid.data.datasets, function(i, dataset) {
+     dataset.hidden = true;})
+  window.myLine_steady_1_residue_evolution_valid.update();
+});
+$('#viewDataFile_steady_1_residue_evolution_valid').click(function() {
+  var win = window.open("./log_data/plot_steady-1-residue-evolution-valid_data.dat", '_blank');
+  win.focus();
+});
+</script>
+<p>Convergence reached.</p>
+<h3>Calculated Jacobian Matrix</h3>
+<p>Colors: red background means null row or column</p>
+<p>Iteration 1: Calculated Jacobian matrix (J) (Valid iteration 1)</p>
+<div style="width: 100%; height: 100%; overflow: auto">
+<table border="1" cellspacing="0" cellpadding="3" summary="Jacobian matrix (Iteration 0)">
+<tr><th nowrap="nowrap" bgcolor="#A8A8A8"><b>JACOBIAN (J)</b></th><th nowrap="nowrap"><b><a rel="external" data-ajax='false' href="#Residue-1-2">Residue-1</a></b></th></tr>
+<tr><td nowrap="nowrap"><b>ThrustMonitor.M_out</b></td><td nowrap="nowrap" >0</td></tr>
+</table>
+</div>
+<p>Iteration 2: Broyden factorized rank-one update of 1/J matrix. (Valid iteration 1)</p>
+<p>Iteration 3: Broyden factorized rank-one update of 1/J matrix. (Valid iteration 2)</p>
+<p>Iteration 4: Broyden factorized rank-one update of 1/J matrix. (Valid iteration 3)</p>
+<p>Iteration 5: Broyden factorized rank-one update of 1/J matrix. (Valid iteration 4)</p>
+<p>Iteration 6: Broyden factorized rank-one update of 1/J matrix. (Invalid iteration)</p>
+<p>Iteration 7: Broyden factorized rank-one update of 1/J matrix. (Invalid iteration)</p>
+<p>Colors: red background means null row or column</p>
+<p>Iteration 8: Calculated Jacobian matrix (J) (Valid iteration 5)</p>
+<div style="width: 100%; height: 100%; overflow: auto">
+<table border="1" cellspacing="0" cellpadding="3" summary="Jacobian matrix (Iteration 8)">
+<tr><th nowrap="nowrap" bgcolor="#A8A8A8"><b>JACOBIAN (J)</b></th><th nowrap="nowrap"><b><a rel="external" data-ajax='false' href="#Residue-1-2">Residue-1</a></b></th></tr>
+<tr><td nowrap="nowrap"><b>ThrustMonitor.M_out</b></td><td nowrap="nowrap" >2.10479781751853e-009</td></tr>
+</table>
+</div>
+<p>Iteration 9: Broyden factorized rank-one update of 1/J matrix. (Invalid iteration)</p>
+<p>Iteration 10: Broyden factorized rank-one update of 1/J matrix. (Invalid iteration)</p>
+<p>Colors: red background means null row or column</p>
+<p>Iteration 11: Calculated Jacobian matrix (J) (Valid iteration 6)</p>
+<div style="width: 100%; height: 100%; overflow: auto">
+<table border="1" cellspacing="0" cellpadding="3" summary="Jacobian matrix (Iteration 11)">
+<tr><th nowrap="nowrap" bgcolor="#A8A8A8"><b>JACOBIAN (J)</b></th><th nowrap="nowrap"><b><a rel="external" data-ajax='false' href="#Residue-1-2">Residue-1</a></b></th></tr>
+<tr><td nowrap="nowrap"><b>ThrustMonitor.M_out</b></td><td nowrap="nowrap" >0.00809026776127375</td></tr>
+</table>
+</div>
+<p>Iteration 12: Broyden factorized rank-one update of 1/J matrix. (Valid iteration 7)</p>
+<p>Iteration 13: Broyden factorized rank-one update of 1/J matrix. (Valid iteration 8)</p>
+<p>Iteration 14: Broyden factorized rank-one update of 1/J matrix. (Valid iteration 9)</p>
+<p>Iteration 15: Broyden factorized rank-one update of 1/J matrix. (Valid iteration 10)</p>
+<script>
+window.onload = function() {
+var ctx_steady_1_unknown_delta_evolution = document.getElementById("canvas_steady_1_unknown_delta_evolution").getContext("2d");
+window.myLine_steady_1_unknown_delta_evolution = new Chart(ctx_steady_1_unknown_delta_evolution, config_steady_1_unknown_delta_evolution);
+var ctx_steady_1_unknown_delta_evolution_valid = document.getElementById("canvas_steady_1_unknown_delta_evolution_valid").getContext("2d");
+window.myLine_steady_1_unknown_delta_evolution_valid = new Chart(ctx_steady_1_unknown_delta_evolution_valid, config_steady_1_unknown_delta_evolution_valid);
+var ctx_steady_1_residue_evolution = document.getElementById("canvas_steady_1_residue_evolution").getContext("2d");
+window.myLine_steady_1_residue_evolution = new Chart(ctx_steady_1_residue_evolution, config_steady_1_residue_evolution);
+var ctx_steady_1_residue_evolution_valid = document.getElementById("canvas_steady_1_residue_evolution_valid").getContext("2d");
+window.myLine_steady_1_residue_evolution_valid = new Chart(ctx_steady_1_residue_evolution_valid, config_steady_1_residue_evolution_valid);
+};
+</script>
+<br><br><hr size="2"><p><h2><b>(NR, GLOBAL ITERATION, TIME: 0) </b></h2></p><hr size="2"><p>Convergence reached.</p>
+<h2>Statistics</h2>
+<table border="1" cellspacing="0" cellpadding="3" summary="Tracing">
+<tr><td nowrap="nowrap"><b>Number of unknowns</b></td><td nowrap="nowrap">2</td></tr>
+<tr><td nowrap="nowrap"><b>Number of valid iterations</b></td><td nowrap="nowrap">1</td></tr>
+<tr><td nowrap="nowrap"><b>Number of valid Jacobian evaluations</b></td><td nowrap="nowrap">1</td></tr>
+<tr><td nowrap="nowrap"><b>Number of valid Broyden estimations</b></td><td nowrap="nowrap">0</td></tr>
+<tr><td nowrap="nowrap"><b>Number of total iterations</b></td><td nowrap="nowrap">1</td></tr>
+<tr><td nowrap="nowrap"><b>Number of total Jacobian evaluations</b></td><td nowrap="nowrap">1</td></tr>
+<tr><td nowrap="nowrap"><b>Number of total Broyden estimations</b></td><td nowrap="nowrap">0</td></tr>
+<tr><td nowrap="nowrap"><b>Number of total residues evaluations</b></td><td nowrap="nowrap">4</td></tr>
+</table>
+<h2>Solver parameters</h2>
+<h3>Global settings</h3>
+<table border="1" cellspacing="0" cellpadding="3" summary="Global settings">
+<tr><td nowrap="nowrap"><b>Global convergence criteria (TOLTYPE)</b></td><td nowrap="nowrap">RELTOL</td></tr>
+<tr><td nowrap="nowrap"><b>Global tolerance (TOLERANCE)</b></td><td nowrap="nowrap">1e-006</td></tr>
+<tr><td nowrap="nowrap"><b>Maximum number of iterations (MAXITER)</b></td><td nowrap="nowrap">10000</td></tr>
+<tr><td nowrap="nowrap"><b>Maximum number of valid/no-valid residue evaluations (MAXFEVAL)</b></td><td nowrap="nowrap">40000</td></tr>
+<tr><td nowrap="nowrap"><b>Maximum number of valid/no-valid Jacobian evaluations (MAXJACEVAL)</b></td><td nowrap="nowrap">60</td></tr>
+<tr><td nowrap="nowrap"><b>Maximum number of consecutive Broyden updates (MAXBROYDEN)</b></td><td nowrap="nowrap">60</td></tr>
+</table>
+<h2>Unknown variables</h2>
+<p>Colors: yellow background means that dynamic is frozen, instead uses the derivative</p>
+<div style="width: 100%; height: 100%; overflow: auto">
+<table border="1" cellspacing="0" cellpadding="3" summary="Unknown variables parameters">
+<tr><th nowrap="nowrap"><b>#<b></th><th nowrap="nowrap"><b>Name<b></th><th nowrap="nowrap"><b>Initial guess</b></th><th nowrap="nowrap"><b>Absolute perturbation</b></th><th nowrap="nowrap"><b>Relative perturbation</b></th><th nowrap="nowrap"><b>Absolute maximum step</b></th><th nowrap="nowrap"><b>Relative maximum step</b></th></tr>
+<tr><td nowrap="nowrap" >1</td><td nowrap="nowrap" ><b>CombCha_1.p_out_ch</b></td><td nowrap="nowrap" >4252.08677343859</td><td nowrap="nowrap" >1.5e-008</td><td nowrap="nowrap" >1.5e-008</td><td nowrap="nowrap" >1.79769313486232e+308</td><td nowrap="nowrap" >1.79769313486232e+308</td></tr>
+<tr><td nowrap="nowrap" >2</td><td nowrap="nowrap" ><b>ThrustMonitor.M_out</b></td><td nowrap="nowrap" >4.53180494986946</td><td nowrap="nowrap" >1.5e-008</td><td nowrap="nowrap" >1.5e-008</td><td nowrap="nowrap" >1.79769313486232e+308</td><td nowrap="nowrap" >1.79769313486232e+308</td></tr>
+</table>
+</div>
+<h2>Residue equations</h2>
+<div style="width: 100%; height: 100%; overflow: auto">
+<table border="1" cellspacing="0" cellpadding="3" summary="Residue equations parameters">
+<tr><th nowrap="nowrap"><b>#</b></th><th nowrap="nowrap"><b>Normalisation mode</b></th><th nowrap="nowrap"><b>Local tolerance</b></th><th nowrap="nowrap"><b>Residue expression</b></th></tr>
+<tr><td nowrap="nowrap"><b><a name="Residue-1-3">Residue-1</a></b>:</td><td nowrap="nowrap">ABSTOL</td><td nowrap="nowrap">1e-006</td><td nowrap="nowrap">[142] ThrustMonitor.g.A_out / CombCha_1.A_r = LPRES.FGAMMA(ThrustMonitor.g.fluid) / ((CombCha_1.p_out_ch / CombCha_1.p_c) ** (1 / LPRES.gamma(ThrustMonitor.g.fluid)) * sqrt(2 * LPRES.gamma(ThrustMonitor.g.fluid) * (1 - (CombCha_1.p_out_ch / CombCha_1.p_c) ** ((LPRES.gamma(ThrustMonitor.g.fluid) - 1) / LPRES.gamma(ThrustMonitor.g.fluid))) / (LPRES.gamma(ThrustMonitor.g.fluid) - 1)))</td></tr>
+<tr><td nowrap="nowrap"><b><a name="Residue-2-3">Residue-2</a></b>:</td><td nowrap="nowrap">ABSTOL</td><td nowrap="nowrap">1e-006</td><td nowrap="nowrap">[166] ThrustMonitor.g.W * sqrt(LPRES.R(ThrustMonitor.g.fluid) * ThrustMonitor.g.Tt) / ThrustMonitor.g.A_out / CombCha_1.p_c = sqrt(LPRES.gamma(ThrustMonitor.g.fluid)) * ThrustMonitor.M_out * (1 + (LPRES.gamma(ThrustMonitor.g.fluid) - 1) / 2 * ThrustMonitor.M_out ** 2) ** (-(LPRES.gamma(ThrustMonitor.g.fluid) + 1) / 2 / (LPRES.gamma(ThrustMonitor.g.fluid) - 1))</td></tr>
+</table>
+</div>
+<h2>Iterative process results</h2>
+<h3>Unknown tracing table. Jacobian variables plus variables marked with trace flag.</h3>
+<p>Colors: yellow background means that dynamic is frozen, instead uses the derivative. Orange background means highest relative increment</p>
+<p><b>I</b>: Iteration, <b>VI</b>: Valid-iteration, <b>SR</b>: Step-reduction, <b>SRU</b>: Step-reduction-unknown.</p>
+<br/>
+<div style="width: 100%; height: 100%; overflow: auto">
+<table border="1" cellspacing="0" cellpadding="3" summary="Unknowns">
+<tr><th nowrap="nowrap"><b>I</b></th><th nowrap="nowrap"><b>VI</b></th><th nowrap="nowrap"><b>SR</b></th><th nowrap="nowrap"><b>SRU</b></th><th nowrap="nowrap" bgcolor="#4B0082"></th><th nowrap="nowrap"><b> CombCha_1.p_out_ch</b></th><th nowrap="nowrap"><b> ThrustMonitor.M_out</b></th><th nowrap="nowrap" bgcolor="#4B0082"></th></tr>
+<tr><td nowrap="nowrap">0</td><td nowrap="nowrap">0</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap">4252.08677343859</td><td nowrap="nowrap">4.53180494986946</td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+<tr><td nowrap="nowrap">1</td><td nowrap="nowrap">1</td><td nowrap="nowrap">NO</td><td nowrap="nowrap">-</td><td nowrap="nowrap" bgcolor="#4B0082"></td><td nowrap="nowrap">4252.08677344571</td><td nowrap="nowrap" bgcolor="Orange"><b>4.53180166983979</b></td><td nowrap="nowrap" bgcolor="#4B0082"></td></tr>
+</table>
+</div>
+<br/>
+<h3>Convergence process table</h3>
+<p>Colors: yellow background means that dynamic is frozen, instead uses the derivative. Orange background means highest residue on iteration. Green background means convergence reached.</p>
+<p><b>I</b>: Iteration, <b>VI</b>: Valid-iteration.</p>
+<br/>
+<div style="width: 100%; height: 100%; overflow: auto">
+<table border="1" cellspacing="0" cellpadding="3" summary="Residues">
+<tr><th nowrap="nowrap"><b>I</b></th><th nowrap="nowrap"><b>VI</b></th><th nowrap="nowrap"><b><a rel="external" data-ajax='false' href="#Residue-1-3">Residue-1</a></b></th><th nowrap="nowrap"><b><a rel="external" data-ajax='false' href="#Residue-2-3">Residue-2</a></b></th><th nowrap="nowrap"><b>Global Error</b></th><th nowrap="nowrap"><b>Convergence Ratio</b></th></tr>
+<tr><td nowrap="nowrap" >0</td><td nowrap="nowrap"  >0</td><td nowrap="nowrap">-7.5132788879273e-011</td><td nowrap="nowrap" bgcolor="Orange"><b>5.17164967499956e-008</b></td><td nowrap="nowrap" >5.17165513257435e-008</td><td nowrap="nowrap" >1</td></tr>
+<tr><td nowrap="nowrap" bgcolor="Chartreuse">1</td><td nowrap="nowrap" bgcolor="Chartreuse" >1</td><td nowrap="nowrap" bgcolor="Chartreuse">7.105427357601e-015</td><td nowrap="nowrap" bgcolor="Chartreuse">-1.24194057815608e-013</td><td nowrap="nowrap" bgcolor="Chartreuse">1.243971506693e-013</td><td nowrap="nowrap" bgcolor="Chartreuse">2.40536438490974e-006</td></tr>
+</table>
+</div>
+<p>Convergence reached.</p>
+<h3>Calculated Jacobian Matrix</h3>
+<p>Colors: red background means null row or column</p>
+<p>Iteration 1: Calculated Jacobian matrix (J) (Valid iteration 1)</p>
+<div style="width: 100%; height: 100%; overflow: auto">
+<table border="1" cellspacing="0" cellpadding="3" summary="Jacobian matrix (Iteration 0)">
+<tr><th nowrap="nowrap" bgcolor="#A8A8A8"><b>JACOBIAN (J)</b></th><th nowrap="nowrap"><b><a rel="external" data-ajax='false' href="#Residue-1-3">Residue-1</a></b></th><th nowrap="nowrap"><b><a rel="external" data-ajax='false' href="#Residue-2-3">Residue-2</a></b></th></tr>
+<tr><td nowrap="nowrap"><b>CombCha_1.p_out_ch</b></td><td nowrap="nowrap" >0.0105465233334642</td><td nowrap="nowrap" >0</td></tr>
+<tr><td nowrap="nowrap"><b>ThrustMonitor.M_out</b></td><td nowrap="nowrap" >0</td><td nowrap="nowrap" >0.0157670819961958</td></tr>
+</table>
+</div>
+<div data-role="collapsible" data-mini="true" data-theme="d">
+<h1>***  WARNING level 1 (code 7:213:24:98) path: ThrustMonitor. in file "LPRES_CompBasic.el" at line 894  ***</h1>
+<p>Assertion violation((ThrustMonitor.p_out / ThrustMonitor.p_amb) > ((1.88 * ThrustMonitor.M_out - 1) ** -0.64)): ACCORDING TO SCHMUCKER CRITERION, THE NOZZLE HAS A REGION OF DETACHMENT!</p>
+</div>
+
+</div>
+<br/><p><font size="2">(Document generated automatically with PROOSIS Version: 3.8.1 Date: 2018:06:05 Time: 13:56:16)</font></p>
+</div>
+</div>
+</body>
+</html>

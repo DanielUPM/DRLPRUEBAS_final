@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<partitionInfo version="1.0" library="DRLPRUEBAS" component="prueba1" partition="partition2">
+<noDerivatives value="FALSE"/>
+<inhibitReductionConstantCoefEqts value="FALSE"/>
+<generatePartitionClass value="FALSE"/>
+<removeNotUsedVars value="FALSE"/>
+<showPropertyPanel value="FALSE"/>
+<generateProtectedMathFunctions value="TRUE"/>
+<generatePerformanceMeters value="FALSE"/>
+<generateObfuscatedCpp value="FALSE"/>
+<generateParInfoHTML value="TRUE"/>
+<generateMaxSignificantDigits value="FALSE"/>
+<noDatas>
+  <variable name="Regulator_F.Ag"/>
+</noDatas>
+<boundaries>
+  <variable name="LPRES.Altitude"/>
+  <variable name="Regulator_F.Ag"/>
+</boundaries>
+<dynamics>
+  <variable name="CombCha.rho_trans"/>
+  <variable name="CombCha.g.Tt"/>
+  <variable name="CoolingJacket.rho_trans"/>
+  <variable name="CoolingJacket.g.Tt"/>
+</dynamics>
+<algebraics>
+  <variable name="CombCha.W_F"/>
+  <variable name="CombCha.phi"/>
+  <variable name="HeadLoss_TF.f_in.W"/>
+  <variable name="Pump_F.U"/>
+  <variable name="Turbine.M_2"/>
+  <variable name="ThrustMonitor.g.W"/>
+  <variable name="CombCha.p_out_ch"/>
+  <variable name="CombCha.M_r"/>
+  <variable name="ThrustMonitor.M_out"/>
+</algebraics>
+</partitionInfo>

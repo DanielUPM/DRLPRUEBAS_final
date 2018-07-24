@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<partitionInfo version="1.0" library="DRLPRUEBAS" component="F1" partition="partition1">
+<noDerivatives value="FALSE"/>
+<inhibitReductionConstantCoefEqts value="FALSE"/>
+<generatePartitionClass value="FALSE"/>
+<removeNotUsedVars value="FALSE"/>
+<showPropertyPanel value="FALSE"/>
+<generateProtectedMathFunctions value="TRUE"/>
+<generatePerformanceMeters value="FALSE"/>
+<generateObfuscatedCpp value="FALSE"/>
+<generateParInfoHTML value="TRUE"/>
+<generateMaxSignificantDigits value="FALSE"/>
+<noDatas>
+  <variable name="Nozzle_1.A"/>
+</noDatas>
+<boundaries>
+  <variable name="LPRES.Altitude"/>
+  <variable name="Nozzle_1.A"/>
+</boundaries>
+<dynamics>
+  <variable name="CombCha_1.rho_trans"/>
+  <variable name="CombCha_1.g.Tt"/>
+  <variable name="GasGen.rho_trans"/>
+  <variable name="GasGen.g.Tt"/>
+</dynamics>
+<algebraics>
+  <variable name="CombCha_1.W_F"/>
+  <variable name="CombCha_1.phi"/>
+  <variable name="GasGen.W_F"/>
+  <variable name="GasGen.phi"/>
+  <variable name="Nozzle_1.g.W"/>
+  <variable name="Pump_F.U"/>
+  <variable name="ThrustMonitor_1.g.W"/>
+  <variable name="ThrustMonitor_1.M_out"/>
+  <variable name="CombCha_1.p_out_ch"/>
+</algebraics>
+</partitionInfo>

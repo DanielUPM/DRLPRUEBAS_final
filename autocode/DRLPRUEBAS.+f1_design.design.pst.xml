@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<partitionStats version="1.0">
+<statistics>
+  <statistic id="nExplicit" value="374"/>
+  <statistic id="nData" value="71"/>
+  <statistic id="nDyn" value="4"/>
+  <statistic id="nDer" value="0"/>
+  <statistic id="nAlgebraic" value="4"/>
+  <statistic id="nBoundary" value="4"/>
+  <statistic id="nEquations" value="378"/>
+  <statistic id="nVariables" value="438"/>
+  <statistic id="nNonLinearBoxes" value="4"/>
+  <statistic id="nLinearBoxes" value="0"/>
+  <statistic id="jacSizeFull" value="4"/>
+  <statistic id="jacSize" value="4"/>
+  <statistic id="jacSparseFactor" value="75"/>
+</statistics>
+</partitionStats>

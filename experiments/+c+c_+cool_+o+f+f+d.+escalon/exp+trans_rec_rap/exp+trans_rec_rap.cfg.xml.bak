@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<experiment version="1.4.0">
+	<experimentViews>
+		<tab name="Tab_1">
+			<tableWindow title="Table_1" x="0" y="0" dx="350" dy="250" state="maximized">
+				<table id="Table_1" colums="false">
+					<var name="#Calculation id"/>
+					<var name="#Status"/>
+					<var name="#ESI"/>
+					<var name="#Case"/>
+					<var name="#Point"/>
+					<var name="TIME"/>
+					<var name="CombCha_1.g.Tt"/>
+					<var name="CombCha_1.g.pt"/>
+					<var name="CombCha_1.rho_trans"/>
+					<var name="CombCha_1.g.W"/>
+					<var name="Injector_F.PR"/>
+					<var name="Injector_O.PR"/>
+					<var name="Injector_F.f_out.W"/>
+					<var name="Injector_F.f_out.T"/>
+					<var name="Injector_F.f_out.p"/>
+					<var name="Injector_O.f_out.W"/>
+					<var name="Injector_O.f_out.T"/>
+					<var name="Injector_O.f_out.p"/>
+					<var name="ThrustMonitor.A_out"/>
+					<var name="ThrustMonitor.p_amb"/>
+					<var name="ThrustMonitor.p_out"/>
+					<var name="ThrustMonitor.M_out"/>
+					<var name="ThrustMonitor.T_out"/>
+					<var name="ThrustMonitor.v_out"/>
+					<var name="Injector_F.A_d"/>
+					<var name="Injector_O.A_d"/>
+					<var name="CombCha_1.g.Tt'"/>
+					<var name="CombCha_1.p_out_ch"/>
+					<var name="CombCha_1.rho_trans'"/>
+					<var name="CoolingJacket.g.Tt"/>
+					<var name="CoolingJacket.g.Tt'"/>
+					<var name="CoolingJacket.rho_trans"/>
+					<var name="CoolingJacket.rho_trans'"/>
+					<var name="CoolingJacket.v"/>
+				</table>
+			</tableWindow>
+		</tab>
+		<tab name="Tab_2">
+			<plotWindow title="Plot_3" x="801" y="8" dx="350" dy="250" state="maximized">
+				<plot id="Plot_3" graphType="plot_time">
+						<title value="">
+							<font family="MS Shell Dlg 2"/>
+						</title>
+						<axeX variableName="TIME">
+							<titleAxe value="TIME"/>
+							<scale scaleType="auto"/>
+						</axeX>
+						<axeY>
+							<titleAxe value=""/>
+							<scale scaleType="auto"/>
+						</axeY>
+						<axeY2>
+							<titleAxe value=""/>
+							<scale scaleType="auto"/>
+						</axeY2>
+						<layout>
+							<font family="MS Shell Dlg 2"/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font family="MS Shell Dlg 2"/>
+						</legend>
+						<chartStyles>
+							<var name="CoolingJacket.g.Tt" nick=""/>
+							<var name="CoolingJacket.g.Tt&#39;" nick="" isShowed="false" isY2="TRUE"/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
+			<plotWindow title="Plot_4" x="242" y="61" dx="350" dy="250" state="maximized">
+				<plot id="Plot_4" graphType="plot_time">
+						<title value="">
+							<font family="MS Shell Dlg 2"/>
+						</title>
+						<axeX variableName="TIME">
+							<titleAxe value="TIME"/>
+							<scale minCurrent="2.96792" maxCurrent="3.39559" scaleType="current"/>
+						</axeX>
+						<axeY>
+							<titleAxe value=""/>
+							<scale minCurrent="9.95313" maxCurrent="10.3289" scaleType="current"/>
+						</axeY>
+						<axeY2>
+							<titleAxe value=""/>
+							<scale minCurrent="-4.50023" maxCurrent="32.9737" scaleType="current"/>
+						</axeY2>
+						<layout>
+							<font family="MS Shell Dlg 2"/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font family="MS Shell Dlg 2"/>
+						</legend>
+						<chartStyles>
+							<var name="CoolingJacket.rho_trans" nick=""/>
+							<var name="CoolingJacket.rho_trans&#39;" nick="" isShowed="false" isY2="TRUE"/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
+			<plotWindow title="Plot_1" x="0" y="0" dx="350" dy="250" state="maximized">
+				<plot id="Plot_1" graphType="plot_time">
+						<title value="">
+							<font family="MS Shell Dlg 2"/>
+						</title>
+						<axeX variableName="TIME">
+							<titleAxe value="TIME"/>
+							<scale minCurrent="-5.07649" maxCurrent="11.0905" scaleType="current"/>
+						</axeX>
+						<axeY>
+							<titleAxe value=""/>
+							<scale minCurrent="1.45646" maxCurrent="1.47406" scaleType="current"/>
+						</axeY>
+						<axeY2 isShowed="TRUE">
+							<titleAxe value=""/>
+							<scale minCurrent="5.48315" maxCurrent="17.8609" scaleType="current"/>
+						</axeY2>
+						<layout>
+							<font family="MS Shell Dlg 2"/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font family="MS Shell Dlg 2"/>
+						</legend>
+						<chartStyles>
+							<var name="CombCha_1.rho_trans" nick=""/>
+							<var name="CombCha_1.rho_trans&#39;" nick="" isShowed="false" isY2="TRUE"/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
+		</tab>
+	</experimentViews>
+	<watch width="266" height="128" visible="true" pos="right" >
+		<currentTab name="view"/>
+		<variables>
+			<tab name="initial"> 
+			</tab> 
+			<tab name="inputs"> 
+			</tab> 
+			<tab name="view"> 
+			</tab> 
+		</variables>
+		<layout>
+			<tab name="initial"> 
+				<column name="name" width="100"/> 
+				<column name="value" width="100"/> 
+				<column name="units" width="100"/> 
+				<column name="category" width="100"/> 
+				<column name="type" width="100"/> 
+			</tab> 
+			<tab name="inputs"> 
+				<column name="name" width="100"/> 
+				<column name="value" width="100"/> 
+				<column name="units" width="100"/> 
+				<column name="category" width="100"/> 
+			</tab> 
+			<tab name="view"> 
+				<column name="name" width="100"/> 
+				<column name="value" width="100"/> 
+				<column name="units" width="100"/> 
+				<column name="category" width="100"/> 
+			</tab> 
+		</layout>
+	</watch>
+	<outputWindow height="128" width="1440" visible="true" pos="bottom" />
+	<alarms globalEnabled="TRUE">
+	</alarms>
+
+	<mainWindow  mode="maximized" currentTab="Tab_2" />
+</experiment>
